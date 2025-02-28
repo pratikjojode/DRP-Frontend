@@ -29,6 +29,10 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.drp.org.in/courses/Computer-Programming</loc>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.drp.org.in/drpsoftwareabout</loc>
         <priority>0.7</priority>
     </url>
