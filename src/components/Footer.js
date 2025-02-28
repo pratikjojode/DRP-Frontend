@@ -261,7 +261,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="mailto:comptraning@drp.com">comptraning@drp.org.in</a>
+              <a href="mailto:comptraning@drp.com">comptraining@drp.org.in</a>
             </li>
             <li>
               <a href="mailto:ceo@drp.com">ceo@drp.org.in</a>
