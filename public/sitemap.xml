@@ -5,11 +5,11 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://www.drp.org.in/drpIndia&AbroadEducation</loc>
+        <loc>https://www.drp.org.in/drpIndia&amp;AbroadEducation</loc>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://www.drp.org.in/drpSoftwareSolutions&pvtltd</loc>
+        <loc>https://www.drp.org.in/drpSoftwareSolutions&amp;pvtltd</loc>
         <priority>0.9</priority>
     </url>
     <url>
