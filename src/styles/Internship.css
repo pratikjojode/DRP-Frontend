@@ -1,0 +1,225 @@
+.internship-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.internship-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+}
+
+.internship-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.internship-card {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: left;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.internship-benefits,
+.internship-apply {
+  margin-top: 40px;
+  background: #eef5ff;
+  padding: 30px;
+  border-radius: 12px;
+
+  h2 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+
+      &::before {
+        content: "✔";
+        color: #0073e6;
+        font-size: 1.3rem;
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+}
+
+/* 🌐 Responsive Design */
+@media (max-width: 1024px) {
+  .internship-container {
+    padding: 30px 15px;
+  }
+
+  .internship-header {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .internship-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .internship-benefits,
+  .internship-apply {
+    padding: 25px;
+    h2 {
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    ul li {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .internship-header {
+    h1 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .internship-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-card {
+    padding: 15px;
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.95rem;
+    }
+  }
+
+  .internship-benefits,
+  .internship-apply {
+    padding: 20px;
+    h2 {
+      font-size: 1.6rem;
+    }
+    p,
+    ul li {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .internship-container {
+    padding: 20px;
+  }
+
+  .internship-header {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .internship-img {
+    max-height: 300px;
+  }
+
+  .internship-card {
+    padding: 12px;
+    h3 {
+      font-size: 1.4rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .internship-benefits,
+  .internship-apply {
+    padding: 15px;
+    h2 {
+      font-size: 1.4rem;
+    }
+    p,
+    ul li {
+      font-size: 0.9rem;
+    }
+  }
+}

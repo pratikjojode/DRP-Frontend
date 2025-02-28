@@ -1,0 +1,807 @@
+.study-aboard-con {
+  background-color: #71bbb2;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.study-ab-cards-con {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.study-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.study-card i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.study-card p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.study-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.study-card:hover i {
+  color: #0056b3;
+}
+
+.couseliing-con {
+  padding: 30px;
+  background-color: #0056b3;
+}
+
+.couseling-con {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+}
+
+.couseling-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-section,
+.info-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Ensure two sections align side by side */
+}
+
+.form-section h2,
+.info-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.info-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.info-section ul li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .couseling-div {
+    flex-direction: column;
+  }
+
+  .form-section,
+  .info-section {
+    width: 100%;
+  }
+}
+
+.happy-students-con {
+  padding: 50px 20px;
+  background-color: #b1c29e;
+  text-align: center;
+}
+
+.happy-students-card-main-div {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.happy-student-card {
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover {
+  transform: scale(1.05);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.overlay span {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.image-card:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .happy-students-card-main-div {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.unversity-div-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 30px auto;
+}
+
+.uni-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.uni-items:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.uni-items img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover; /* Ensures images fit nicely within the container */
+}
+
+.uni-items img:hover {
+  opacity: 0.85; /* Adds a slight hover effect on the image */
+}
+
+.uni-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* reviews */
+.reviews-section {
+  text-align: center;
+  padding: 50px 0;
+  background: linear-gradient(135deg, #003366, #000000);
+  color: white;
+}
+
+.reviews-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.reviews-container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.review-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px; /* Set fixed height */
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+}
+
+.review-img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.review-img {
+  width: 200px; /* Set fixed image width */
+  height: 200px; /* Set fixed image height */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.review-name {
+  font-size: 1.5rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* Slick Dots Customization */
+.slick-dots li button:before {
+  color: white !important;
+  font-size: 12px !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #f4b400 !important;
+  font-size: 16px !important;
+}
+
+/* Mobile and Tablet Responsiveness */
+@media (max-width: 768px) {
+  .reviews-title {
+    font-size: 2rem;
+  }
+
+  .reviews-container {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .review-card {
+    width: 100%;
+    margin: 10px 0;
+    height: auto; /* Remove fixed height */
+    padding: 15px;
+  }
+
+  .review-img {
+    width: 150px; /* Adjust image size for smaller screens */
+    height: 150px;
+  }
+
+  .review-name {
+    font-size: 1.3rem; /* Adjust name font size for mobile */
+  }
+
+  .review-text {
+    font-size: 1rem; /* Adjust review text size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .review-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .review-name {
+    font-size: 1.2rem; /* Reduce name font size for very small screens */
+  }
+
+  .review-text {
+    font-size: 0.9rem; /* Reduce review text size for very small screens */
+  }
+
+  .reviews-title {
+    font-size: 1.8rem;
+  }
+
+  .reviews-container {
+    width: 100%;
+    padding: 5px;
+  }
+
+  .review-card {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+}
+
+/* blogs */
+/* Main container for the blog page */
+.blog-container {
+  padding: 20px;
+  background-color: #f4f4f9;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #003366;
+}
+
+/* Blog grid layout */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Blog item styling */
+.blog-item {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.3s ease;
+}
+
+.blog-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.blog-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Truncated content styling */
+.blog-item p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  height: 80px;
+  overflow: hidden;
+}
+
+/* Read More button styling */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background-color: #003366;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #00509e;
+}
+
+/* No blogs available message styling */
+.no-blogs {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 50px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .blog-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .blog-item {
+    padding: 15px;
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .blog-item p {
+    font-size: 0.9rem;
+    height: 70px; /* Adjusted height for content on smaller screens */
+  }
+
+  .read-more-btn {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-container h1 {
+    font-size: 1.2rem;
+  }
+
+  .blog-item {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .blog-item p {
+    font-size: 0.85rem;
+    height: 60px;
+  }
+
+  .read-more-btn {
+    padding: 6px 14px;
+  }
+}
+
+/* home */
+/* Main container for home section */
+.home-con {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Flex container for slides */
+.home-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh; /* Ensure it fills the screen */
+}
+
+/* Hero image for the home section */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block; /* Ensures the image loads properly */
+}
+
+/* Slide text with centered content */
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 80%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Heading style */
+.slide-text h2 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Paragraph text styling */
+.slide-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Arrow buttons for the carousel */
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/* Previous arrow positioning */
+.slick-prev {
+  left: 15px;
+}
+
+/* Next arrow positioning */
+.slick-next {
+  right: 15px;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 1024px) {
+  /* Slide text adjustments for tablets */
+  .slide-text {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .slide-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .slide-text p {
+    font-size: 1rem;
+  }
+
+  /* Arrow button adjustments */
+  .slick-prev,
+  .slick-next {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  /* Image adjustments for smaller screens */
+  .hero-image {
+    height: 70vh; /* Make the image smaller on tablets */
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Slide text adjustments for mobile */
+  .slide-text {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+
+  .slide-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .slide-text p {
+    font-size: 0.9rem;
+  }
+
+  /* Hero image height adjustment for smaller screens */
+  .hero-image {
+    height: 60vh; /* Reduce image height further */
+  }
+
+  /* Arrow button adjustments */
+  .slick-prev,
+  .slick-next {
+    font-size: 18px;
+    padding: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .slide-text {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+  .home-slide {
+    height: auto;
+  }
+  .slide-text h2 {
+    font-size: 1.3rem;
+  }
+
+  .slide-text p {
+    font-size: 0.8rem;
+  }
+
+  /* Hero image height adjustment */
+  .hero-image {
+    height: 50vh; /* Reduce the height of the image even more on small screens */
+  }
+
+  /* Arrow button adjustments */
+  .slick-prev,
+  .slick-next {
+    font-size: 16px;
+    padding: 6px;
+  }
+}
+/* Overall Section */
+.countries-con {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(
+    135deg,
+    #004d99,
+    #66a3ff
+  ); /* Professional blue gradient */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.countries-con h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.countries-con p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Carousel Container */
+.countries-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Country Card Styling */
+.country-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 280px;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.country-card img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.country-card h2 {
+  font-size: 1.4rem;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #004d99;
+}
+
+.country-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Ant Design Carousel Customization */
+.slick-prev,
+.slick-next {
+  font-size: 22px !important;
+  color: #fff !important;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #ffd700 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .countries-con h1 {
+    font-size: 2.2rem;
+  }
+
+  .countries-con p {
+    font-size: 1.1rem;
+  }
+
+  .country-card {
+    max-width: 250px;
+  }
+
+  /* Adjusting the carousel to show only one slide at a time */
+  .slick-slider {
+    width: 100% !important;
+  }
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+}

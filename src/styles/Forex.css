@@ -1,0 +1,134 @@
+/* General Styles for Consistency */
+.forex-container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  background-color: #f9f9f9;
+}
+
+.forex-banner {
+  text-align: left; /* Changed from center to left */
+  margin-bottom: 30px;
+}
+
+.forex-banner h1 {
+  font-size: 36px;
+  color: #000000; /* Black text */
+  margin-top: 20px;
+  font-weight: 700;
+  text-align: left; /* Ensure the heading aligns to the left */
+}
+
+.forex-banner p {
+  font-size: 18px;
+  color: #000000; /* Black text */
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left; /* Ensure the paragraph aligns to the left */
+}
+
+.forex-banner img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Styling */
+.forex-section {
+  margin-bottom: 40px;
+}
+
+.forex-section h2 {
+  font-size: 28px;
+  color: #000000; /* Changed to black */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.forex-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.forex-section ul li {
+  font-size: 18px;
+  color: #000000; /* Changed to black */
+  line-height: 1.8;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.forex-section ul li strong {
+  font-weight: bold;
+  color: #000000; /* Changed to black */
+}
+
+.forex-section ul li ul {
+  margin-left: 20px;
+}
+
+.forex-section ul li ul li {
+  font-size: 16px;
+  color: #000000; /* Changed to black */
+}
+
+.forex-section ul li ul li strong {
+  color: #000000; /* Changed to black */
+}
+
+.forex-section ul li:hover {
+  background-color: #e0e0e0;
+}
+
+/* Text Content */
+.forex-section p {
+  font-size: 18px;
+  color: #000000; /* Changed to black */
+  line-height: 1.6;
+}
+
+/* Links Styling */
+a {
+  color: #000000; /* Changed to black */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer Section */
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 16px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .forex-container {
+    padding: 10px;
+  }
+
+  .forex-banner h1 {
+    font-size: 28px;
+  }
+
+  .forex-section h2 {
+    font-size: 24px;
+  }
+
+  .forex-section ul li {
+    font-size: 16px;
+  }
+}

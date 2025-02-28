@@ -1,0 +1,227 @@
+/* Page Container */
+.graphic-page {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hero Section */
+.graphic-hero {
+  text-align: center;
+  position: relative;
+  padding: 50px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.graphic-hero-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.graphic-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.graphic-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-top: 8px;
+  opacity: 0.8;
+}
+
+/* Content Section */
+.graphic-content {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Section Title */
+.graphic-section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ffb400;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Grid Layout */
+.graphic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+/* Aspect Cards */
+.graphic-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border-left: 5px solid #ffb400;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.graphic-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.graphic-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.graphic-card:hover .graphic-card-title {
+  color: #ffb400;
+}
+
+.graphic-card-desc {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* Subtle Hover Effect */
+.graphic-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background: #ffb400;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.graphic-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* 🔥 Responsive Design 🔥 */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+  .graphic-title {
+    font-size: 2.2rem;
+  }
+
+  .graphic-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .graphic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .graphic-card {
+    padding: 18px;
+  }
+
+  .graphic-card-title {
+    font-size: 1.4rem;
+  }
+
+  .graphic-card-desc {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .graphic-page {
+    padding: 15px;
+  }
+
+  .graphic-hero {
+    padding: 40px 15px;
+  }
+
+  .graphic-title {
+    font-size: 1.8rem;
+  }
+
+  .graphic-subtitle {
+    font-size: 1rem;
+  }
+
+  .graphic-section-title {
+    font-size: 1.9rem;
+  }
+
+  .graphic-content {
+    padding: 20px;
+  }
+
+  .graphic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .graphic-card {
+    padding: 15px;
+  }
+
+  .graphic-card-title {
+    font-size: 1.2rem;
+  }
+
+  .graphic-card-desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+  .graphic-title {
+    font-size: 1.6rem;
+  }
+
+  .graphic-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .graphic-section-title {
+    font-size: 1.7rem;
+  }
+
+  .graphic-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .graphic-card {
+    padding: 12px;
+  }
+
+  .graphic-card-title {
+    font-size: 1.1rem;
+  }
+
+  .graphic-card-desc {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,17 @@
+.header-main {
+  background-color: #003366;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Stop scrolling on hover */
+.marquee:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,198 @@
+/* General Styles */
+.company-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+
+  color: #333;
+}
+
+/* Content Box */
+.company-content {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.company-content:hover {
+  transform: scale(1.02);
+}
+
+/* Title Styles */
+.company-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.company-title span {
+  color: #007bff;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description Styles */
+.company-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/* Subsidiaries Section */
+.subsidiaries-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subsidiaries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.8rem;
+}
+
+/* Subsidiary Card */
+.subsidiary {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+.subsidiary:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+}
+
+.subsidiary h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.subsidiary p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Icons */
+.icon {
+  margin-right: 8px;
+  color: #007bff;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  transition: color 0.3s ease;
+}
+
+.subsidiary:hover .icon {
+  color: white;
+}
+
+/* Conclusion Styles */
+.company-conclusion {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.company-conclusion:hover {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .company-title {
+    font-size: 2.4rem;
+  }
+
+  .subsidiaries-title {
+    font-size: 2rem;
+  }
+
+  .subsidiary h3 {
+    font-size: 1.4rem;
+  }
+
+  .company-conclusion {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-container {
+    padding: 2rem 1rem;
+  }
+
+  .company-title {
+    font-size: 2rem;
+  }
+
+  .company-description {
+    font-size: 1.1rem;
+  }
+
+  .subsidiary {
+    padding: 1.5rem;
+  }
+
+  .subsidiary h3 {
+    font-size: 1.3rem;
+  }
+
+  .subsidiary p {
+    font-size: 1rem;
+  }
+
+  .company-conclusion {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-title {
+    font-size: 1.8rem;
+  }
+
+  .company-description {
+    font-size: 1rem;
+  }
+  .company-content {
+    padding: 10px;
+  }
+  .subsidiaries-title {
+    font-size: 1.6rem;
+  }
+
+  .subsidiary h3 {
+    font-size: 1.2rem;
+  }
+
+  .company-conclusion {
+    font-size: 1rem;
+  }
+}

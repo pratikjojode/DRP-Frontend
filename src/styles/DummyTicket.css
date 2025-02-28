@@ -1,0 +1,75 @@
+/* Container */
+.dummy-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Container */
+.dummy-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dummy-image {
+  width: 100%;
+  border-radius: 10px;
+  height: 450px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Heading */
+.dummy-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Paragraph */
+.dummy-paragraph {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000000;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Subheading */
+.dummy-subheading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* List */
+.dummy-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.dummy-list li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #000000;
+}
+
+/* Note */
+.dummy-note {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  background: #fff3cd;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #d9534f;
+  margin-top: 30px;
+}

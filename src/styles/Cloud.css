@@ -1,0 +1,140 @@
+/* Container for the entire page */
+.container-cloud {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero-section-cloud {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-image-cloud {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hero-text-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-title-cloud {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle-cloud {
+  font-size: 1.2rem;
+}
+
+/* Content Wrapper */
+.content-wrapper-cloud {
+  margin-bottom: 40px;
+}
+
+.section-title-cloud {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grid Container for Cards */
+.grid-container-cloud {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Service Cards */
+.service-card-cloud {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card-cloud:hover {
+  transform: translateY(-5px);
+}
+
+.card-title-cloud {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-description-cloud {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-examples-cloud {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Provider Cards */
+.provider-card {
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aws-card {
+  background-color: #ff9900;
+}
+
+.azure-card {
+  background-color: #0078d4;
+}
+
+.gcp-card {
+  background-color: #34a853;
+}
+/* Benefits Section */
+.benefit-card-cloud {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.benefit-card-cloud:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icon-cloud {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #0078d4; /* You can change this color */
+}
+
+/* Responsive Design for Benefits Section */
+@media (max-width: 768px) {
+  .benefit-card-cloud {
+    padding: 20px;
+  }
+
+  .benefit-icon-cloud {
+    font-size: 2rem;
+  }
+}

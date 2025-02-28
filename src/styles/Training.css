@@ -1,0 +1,101 @@
+/* General container styling */
+.training-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Introduction section */
+.training-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.training-intro h1 {
+  font-size: 2rem;
+  color: black; /* Updated to black */
+}
+
+.training-intro p {
+  font-size: 1.2rem;
+  color: black; /* Updated to black */
+  margin-bottom: 15px;
+}
+
+.training-banner {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Training programs grid */
+.training-programs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Individual training card */
+.training-card {
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: left;
+}
+
+.training-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Training icon wrapper */
+.training-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: black; /* Updated to black */
+  margin-bottom: 1rem;
+}
+
+/* Training card details */
+.training-details {
+  padding: 15px;
+}
+
+.training-details h2 {
+  font-size: 20px;
+  color: black; /* Updated to black */
+  margin-bottom: 10px;
+}
+
+.training-details p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.training-details ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.training-details li {
+  font-size: 14px;
+  color: black; /* Updated to black */
+  margin-bottom: 5px;
+}
+
+/* Training duration */
+.training-duration {
+  font-weight: bold;
+  color: black; /* Updated to black */
+  margin-top: 10px;
+}

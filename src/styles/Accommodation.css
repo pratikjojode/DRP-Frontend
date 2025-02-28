@@ -1,0 +1,107 @@
+.accommodation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: left;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added stronger shadow */
+}
+
+.accommodation-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added shadow around the image */
+}
+
+.accommodation-container h1,
+.accommodation-container h2,
+.accommodation-container h3 {
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.accommodation-container h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.accommodation-container h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.accommodation-container h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.accommodation-container p {
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.accommodation-container ul,
+.accommodation-container ol {
+  margin-left: 20px;
+  padding: 0;
+}
+
+.accommodation-container li {
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.accommodation-container strong {
+  font-weight: bold;
+  color: #000000;
+}
+
+.accommodation-container h3::before {
+  content: " ";
+  font-weight: bold;
+  color: #000000;
+  margin-right: 5px;
+}
+
+.accommodation-container ul li,
+.accommodation-container ol li {
+  font-weight: bold;
+  color: #000000;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Added shadow for list items */
+}
+
+/* Additional box shadow for containers in the footer and header */
+.accommodation-container footer,
+.accommodation-container header {
+  font-weight: bold;
+  background-color: #000000;
+  color: white;
+  padding: 15px 0;
+  margin-top: 40px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow for footer and header */
+}
+
+.accommodation-container footer a,
+.accommodation-container header a {
+  color: white;
+  text-decoration: none;
+}
+
+.accommodation-container footer a:hover,
+.accommodation-container header a:hover {
+  text-decoration: underline;
+}

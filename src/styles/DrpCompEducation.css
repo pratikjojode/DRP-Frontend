@@ -1,0 +1,297 @@
+/* Hero Section with Parallax Effect */
+/* Parallax Hero Section */
+.drpcomp-hero {
+  height: 90vh;
+  background: url("../images/paraa.webp") no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark Overlay for Better Contrast */
+.drpcomp-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Hero Content Styling */
+.drpcomp-hero-content {
+  color: yellow;
+  padding: 20px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.drpcomp-hero-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.drpcomp-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #f8f8f8;
+}
+.drpcomp-hero-content h2 {
+  font-size: 30px;
+}
+/* Hero List */
+.drpcomp-hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.drpcomp-hero-list li {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  color: yellow;
+}
+
+/* Animated Button */
+.drpcomp-hero-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.drpcomp-hero-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #00408b);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-get-started {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #1890ff, #40a9ff);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(24, 144, 255, 0.4);
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-get-started:hover {
+  background: linear-gradient(135deg, #40a9ff, #1890ff);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(24, 144, 255, 0.6);
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 20px;
+  margin: 60px auto;
+  max-width: 1200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.courses-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.courses-section h2::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #1890ff;
+  border-radius: 2px;
+}
+
+/* Carousel Custom Styling */
+.carousel-slide {
+  padding: 0 20px;
+}
+
+/* Course Card Styling */
+.course-card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease-in-out;
+  background: white;
+  width: 90%;
+  margin: 0 auto; /* Center the card */
+  border: none;
+}
+
+.course-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.course-card .ant-card-cover img {
+  height: 200px; /* Adjusted for better visibility */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.course-card:hover .ant-card-cover img {
+  transform: scale(1.1);
+}
+
+.course-card .ant-card-meta-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.course-card .ant-card-meta-description {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 10px;
+  text-align: center;
+  padding: 0 15px 20px;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+  }
+
+  .courses-section h2 {
+    font-size: 2rem;
+  }
+
+  .course-card .ant-card-cover img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 120px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .btn-get-started {
+    font-size: 1rem;
+    padding: 14px 28px;
+  }
+
+  .courses-section {
+    padding: 60px 15px;
+  }
+
+  .courses-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .course-card {
+    width: 100%;
+  }
+
+  .course-card .ant-card-cover img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .courses-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .course-card .ant-card-cover img {
+    height: 120px;
+  }
+}
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.custom-prev-arrow {
+  left: -40px;
+}
+
+.custom-next-arrow {
+  right: -40px;
+}
+
+.custom-prev-arrow:hover,
+.custom-next-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

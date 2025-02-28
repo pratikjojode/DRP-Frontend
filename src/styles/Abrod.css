@@ -1,0 +1,213 @@
+/* General Styles */
+
+/* Page Styling */
+.abroad-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Top Image Styling */
+.abroad-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.abroad-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Styling */
+.abroad-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.abroad-title::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  border-radius: 3px;
+}
+
+/* Description Styling */
+.abroad-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 30px 0;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Styling */
+.universities-section {
+  margin: 50px 0;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 80px;
+  height: 5px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  border-radius: 3px;
+}
+
+/* Country Category Styling */
+.country-category {
+  margin-bottom: 40px;
+  padding: 25px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.country-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.country-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #3498db, #8e44ad);
+  border-radius: 2px;
+}
+
+/* University List Styling */
+.university-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.university-item {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  padding: 20px;
+  font-weight: 500;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #060000;
+}
+
+.university-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Country-Specific Gradients for University Cards */
+.usa-category .university-item {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.uk-category .university-item {
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+}
+
+.canada-category .university-item {
+  background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+
+.australia-category .university-item {
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+}
+
+.germany-category .university-item {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+}
+
+.europe-category .university-item {
+  background: linear-gradient(135deg, #f6d365, #fda085);
+}
+
+.asia-category .university-item {
+  background: linear-gradient(135deg, #96e6a1, #d4fc79);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .abroad-title {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .country-title {
+    font-size: 1.6rem;
+  }
+
+  .university-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .abroad-title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .country-title {
+    font-size: 1.4rem;
+  }
+
+  .university-list {
+    grid-template-columns: 1fr;
+  }
+
+  .abroad-description {
+    padding: 20px;
+  }
+}

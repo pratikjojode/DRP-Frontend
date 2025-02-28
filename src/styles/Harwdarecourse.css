@@ -1,0 +1,83 @@
+/* Container */
+.hardware-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+.hardware-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.hardware-subtitle {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+/* Course Grid */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Course Card */
+.course-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Course Image */
+.course-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Course Title */
+.course-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #000000;
+}
+
+/* Course Description */
+.course-description {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hardware-title {
+    font-size: 2rem;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .course-title {
+    font-size: 1.3rem;
+  }
+}

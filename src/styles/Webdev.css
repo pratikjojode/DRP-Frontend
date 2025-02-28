@@ -1,0 +1,168 @@
+/* WebDev Page Styling */
+.webdev-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Image */
+.webdev-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.webdev-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+
+  margin-top: 20px;
+}
+
+/* Description */
+.webdev-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 30px;
+  color: #222;
+  border-bottom: 3px solid #003366;
+  padding-bottom: 5px;
+}
+
+/* Web Development Sections */
+.webdev-section {
+  padding: 25px;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webdev-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtitles */
+.sub-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+/* Technologies Title */
+.tech-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 15px;
+  color: #000000;
+}
+
+/* List Styling */
+.tech-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.tech-list li {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.tech-list li::before {
+  content: "✔";
+  color: #000000;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .webdev-container {
+    padding: 30px 15px;
+  }
+
+  .webdev-title {
+    font-size: 2.2rem;
+  }
+
+  .webdev-description {
+    font-size: 1.1rem;
+  }
+
+  .webdev-section {
+    padding: 20px;
+  }
+
+  .sub-title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .webdev-title {
+    font-size: 2rem;
+  }
+
+  .webdev-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .sub-title {
+    font-size: 1.3rem;
+  }
+
+  .tech-list li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .webdev-container {
+    padding: 20px 10px;
+  }
+
+  .webdev-title {
+    font-size: 1.8rem;
+  }
+
+  .webdev-description {
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .sub-title {
+    font-size: 1.2rem;
+  }
+
+  .tech-list li {
+    font-size: 0.95rem;
+  }
+}

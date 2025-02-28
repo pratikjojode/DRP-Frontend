@@ -1,0 +1,38 @@
+/* Loading Spinner Styles */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Cover the whole screen */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+}
+
+/* Spinner */
+.spinner {
+  border: 8px solid #f3f3f3; /* Light gray background */
+  border-top: 8px solid #3498db; /* Blue spinner */
+  border-radius: 50%; /* Circle shape */
+  width: 60px; /* Slightly larger width */
+  height: 60px; /* Slightly larger height */
+  animation: spin 1.5s ease-in-out infinite; /* Smoother animation */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow effect for depth */
+  transform-origin: center; /* Rotate around the center */
+}
+
+/* Gradient and Hover Effect */
+.spinner:hover {
+  border-top-color: #1abc9c; /* Change spinner color on hover */
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start from 0 degrees */
+  }
+  50% {
+    transform: rotate(180deg); /* Halfway rotation */
+  }
+  100% {
+    transform: rotate(360deg); /* Full rotation */
+  }
+}

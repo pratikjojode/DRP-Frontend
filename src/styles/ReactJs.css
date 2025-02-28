@@ -1,0 +1,174 @@
+/* General Styles */
+.react-course-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  color: black;
+}
+
+/* Course Image */
+.react-course-image {
+  width: 100%;
+  height: 500px; /* Increased height */
+  border-radius: 10px;
+}
+
+/* Titles */
+.react-course-title {
+  font-size: 36px; /* Increased size */
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.react-course-subtitle {
+  font-size: 30px; /* Increased size */
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Course Description */
+.react-course-description {
+  font-size: 20px; /* Increased size */
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+/* Course Benefits & Features */
+.react-course-benefits,
+.react-course-features {
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 25px;
+}
+
+.react-course-benefits li,
+.react-course-features li {
+  font-size: 22px; /* Increased size */
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* Enroll Section */
+.react-enroll-section {
+  background-color: #222;
+  color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.react-enroll-title {
+  font-size: 28px; /* Increased size */
+  font-weight: bold;
+}
+
+.react-enroll-info {
+  font-size: 20px; /* Increased size */
+  margin: 10px 0;
+}
+
+.react-enroll-button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 22px; /* Increased size */
+  font-weight: bold;
+  color: white;
+  background-color: #ff4d4f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.react-enroll-button:hover {
+  background-color: #d9363e;
+}
+
+/* Modal Styles */
+.react-apply-modal {
+  text-align: center;
+}
+
+/* Form Styles */
+.react-apply-form {
+  padding: 15px;
+}
+
+.react-form-item {
+  text-align: left;
+}
+
+.react-input-field,
+.react-select-field {
+  width: 100%;
+  padding: 12px;
+  font-size: 20px; /* Increased size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.react-submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 20px; /* Increased size */
+  font-weight: bold;
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.react-submit-btn:hover {
+  background-color: #d9363e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .react-course-container {
+    padding: 20px;
+  }
+
+  .react-course-image {
+    height: 350px; /* Adjusted for mobile */
+  }
+
+  .react-course-title {
+    font-size: 28px;
+  }
+
+  .react-course-subtitle {
+    font-size: 24px;
+  }
+
+  .react-course-description {
+    font-size: 18px;
+  }
+
+  .react-course-benefits li,
+  .react-course-features li {
+    font-size: 20px;
+  }
+
+  .react-enroll-section {
+    padding: 20px;
+  }
+
+  .react-enroll-title {
+    font-size: 24px;
+  }
+
+  .react-enroll-info {
+    font-size: 18px;
+  }
+
+  .react-enroll-button {
+    font-size: 20px;
+  }
+
+  .react-submit-btn {
+    font-size: 18px;
+  }
+}

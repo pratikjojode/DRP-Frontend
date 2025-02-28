@@ -1,0 +1,144 @@
+/* Courses.css */
+
+/* General container styling */
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form styling */
+.form-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-card input[type="text"],
+.form-card input[type="number"],
+.form-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.form-card input[type="file"] {
+  margin-bottom: 15px;
+}
+
+.form-card button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-card button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #dc3545;
+  margin-bottom: 15px;
+}
+
+/* Success message styling */
+.create-success {
+  color: #28a745;
+  margin-bottom: 15px;
+}
+
+/* Courses grid styling */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.course-card h3 {
+  font-size: 18px;
+  margin: 15px 10px 10px;
+  color: #333;
+}
+
+.course-card p {
+  font-size: 14px;
+  margin: 0 10px 10px;
+  color: #666;
+}
+
+.course-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+
+.course-actions button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.course-actions button:hover {
+  background-color: #0056b3;
+}
+
+.course-actions .inquiry-btn {
+  background-color: #28a745;
+}
+
+.course-actions .inquiry-btn:hover {
+  background-color: #218838;
+}
+
+/* Loading and error message styling */
+.loading,
+.error {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #333;
+}
+
+.error {
+  color: #dc3545;
+}

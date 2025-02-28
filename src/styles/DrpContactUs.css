@@ -1,0 +1,338 @@
+/* DrpContactUs.css */
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  margin: 10px auto;
+  max-width: 1200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-us-content {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.contact-us-content h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.contact-us-content p {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.contact-us-content a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-us-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.contact-form {
+  flex: 1;
+  padding-left: 40px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form p {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 25px;
+  line-height: 1.8;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+.map {
+  margin-top: 60px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map iframe {
+  width: 100%;
+  max-width: 800px;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.map iframe:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-us-content,
+  .contact-form {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-us-content {
+    padding-right: 0;
+  }
+
+  .contact-form {
+    padding-left: 0;
+  }
+
+  .map {
+    margin-top: 40px;
+  }
+
+  .contact-us-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .contact-form p,
+  .contact-us-content p {
+    font-size: 1rem;
+  }
+
+  .faq-section,
+  .testimonials {
+    padding: 20px;
+  }
+
+  .faq-section h2,
+  .testimonials h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Additional CSS for new sections */
+
+.contact-info {
+  margin-bottom: 30px;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.social-media {
+  margin-bottom: 30px;
+}
+
+.social-media h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-links a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+.faq-section {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.faq {
+  margin-bottom: 20px;
+}
+
+.faq h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faq h3::before {
+  content: "❓";
+  font-size: 1.2rem;
+}
+
+.faq p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.testimonials {
+  margin-top: 60px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonials:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.testimonial {
+  margin-bottom: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}

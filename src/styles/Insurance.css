@@ -1,0 +1,134 @@
+/* Insurance Page Styles */
+.insurance-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fc;
+  color: #000000; /* Set default font color to black */
+}
+
+/* Banner Image */
+.insurance-banner {
+  width: 100%;
+  max-height: 400px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+  object-fit: cover; /* Ensure the image covers the area nicely */
+}
+
+/* Heading */
+.insurance-heading {
+  text-align: center;
+  color: #002b5b;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card Styles */
+.insurance-card {
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+  padding: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  color: #000000; /* Set font color to black */
+}
+
+.insurance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Paragraph Styling */
+.insurance-card p {
+  font-size: 17px;
+  color: #000000; /* Set font color to black */
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* List Styling */
+.insurance-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.insurance-list li {
+  font-size: 17px;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  font-weight: 500;
+  color: #000000; /* Set font color to black */
+  transition: color 0.3s ease-in-out;
+}
+
+.insurance-list li:hover {
+  color: #0056b3; /* Change color on hover for better interactivity */
+}
+
+.insurance-list li::before {
+  content: "\2713"; /* Checkmark */
+  color: #0056b3;
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .insurance-container {
+    padding: 20px;
+  }
+
+  .insurance-heading {
+    font-size: 28px;
+  }
+
+  .insurance-card {
+    padding: 20px;
+  }
+
+  .insurance-list li {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insurance-container {
+    padding: 15px;
+  }
+
+  .insurance-heading {
+    font-size: 24px;
+  }
+
+  .insurance-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .insurance-heading {
+    font-size: 22px;
+  }
+
+  .insurance-card {
+    padding: 15px;
+  }
+
+  .insurance-list li {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,120 @@
+.edu-services {
+  background-image: url("../images/servciesalll.png");
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Overlay for better text visibility */
+.edu-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Content Styling */
+.edu-services-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading Styling */
+.edu-services-content h1 {
+  font-size: clamp(40px, 7vw, 70px); /* Responsive font size */
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edu-services {
+    height: 40vh;
+    padding: 10px;
+  }
+
+  .edu-services-content h1 {
+    font-size: clamp(30px, 6vw, 50px);
+  }
+}
+
+/* /servciues */
+.edu-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 90%;
+  padding: 40px;
+  border-radius: 12px;
+  margin: 20px auto;
+}
+
+/* Grid Item */
+.grid-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Image Styling */
+.grid-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Text Overlay */
+.grid-text {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: yellow;
+  text-align: center;
+}
+
+/* Hover Effect */
+.grid-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edu-services-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 20px;
+  }
+
+  .grid-image {
+    height: 140px;
+  }
+}

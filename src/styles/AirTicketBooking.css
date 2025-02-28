@@ -1,0 +1,81 @@
+.air-ticket-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.air-ticket-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.air-ticket-title {
+  font-size: 2rem;
+  color: #000102;
+  margin-top: 20px;
+}
+
+.air-ticket-subtitle {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 20px;
+  border-bottom: 2px solid #000000;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.air-ticket-text {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.air-ticket-list,
+.air-ticket-tips {
+  text-align: left;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.air-ticket-list li,
+.air-ticket-tips li {
+  font-size: 1rem;
+  color: #000000;
+  margin: 10px 0;
+  padding-left: 10px;
+  line-height: 1.5;
+}
+
+.air-ticket-highlight {
+  color: #000000;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .air-ticket-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .air-ticket-title {
+    font-size: 1.8rem;
+  }
+
+  .air-ticket-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .air-ticket-text,
+  .air-ticket-list li,
+  .air-ticket-tips li {
+    font-size: 0.95rem;
+  }
+}

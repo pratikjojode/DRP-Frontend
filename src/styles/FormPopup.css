@@ -1,0 +1,31 @@
+.popup-form .ant-modal-content {
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.popup-form .ant-modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.popup-form .ant-input,
+.popup-form .ant-select-selector {
+  border-radius: 8px;
+}
+
+.popup-form .ant-form-item {
+  margin-bottom: 12px;
+}
+
+.popup-form .ant-btn-primary {
+  background: linear-gradient(135deg, #003366, #0055a5);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.popup-form .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #002244, #004488);
+}

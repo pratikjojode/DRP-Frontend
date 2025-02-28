@@ -1,0 +1,226 @@
+/* Feedback Page Container */
+.feedback-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Left and Right Sections */
+.feedback-left,
+.feedback-right {
+  flex: 1;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.feedback-left:hover,
+.feedback-right:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Feedback Image */
+.feedback-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Feedback Heading */
+.feedback-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003366;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Feedback Description */
+.feedback-text p {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Additional Sections */
+.feedback-info,
+.feedback-support {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.feedback-info h3,
+.feedback-support h3 {
+  font-size: 1.4rem;
+  color: #003366;
+}
+
+.feedback-info p,
+.feedback-support p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.feedback-support a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.feedback-support a:hover {
+  color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Feedback Form Container */
+.feedback-container {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 15px;
+  background: #f8f9fa;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feedback-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Title */
+.feedback-container h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+/* Form Styling */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input and Textarea */
+.feedback-form label {
+  font-size: 1rem;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease-in-out;
+  background: #fff;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  border-color: #003366;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.5);
+}
+
+/* Submit Button */
+.feedback-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background: #003366;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.feedback-form button:hover {
+  background: #0056b3;
+}
+
+.feedback-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.feedback-form button:disabled:hover {
+  background: #ccc;
+}
+
+/* Validation Styling */
+.feedback-form input:invalid,
+.feedback-form textarea:invalid {
+  border-color: #ff4444;
+}
+
+.feedback-form input:valid,
+.feedback-form textarea:valid {
+  border-color: #00c851;
+}
+
+.feedback-form .error-message {
+  color: #ff4444;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-page {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .feedback-left,
+  .feedback-right {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .feedback-image {
+    height: 400px;
+  }
+
+  .feedback-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .feedback-text p {
+    font-size: 1rem;
+  }
+
+  .feedback-container {
+    padding: 1.5rem;
+  }
+
+  .feedback-container h2 {
+    font-size: 1.5rem;
+  }
+}

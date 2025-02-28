@@ -1,0 +1,146 @@
+/* General Styling */
+.counselling-background {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+/* Main Container */
+.counselling-container {
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Left Image Section */
+.counselling-image {
+  flex: 1;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.counselling-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Right Form Section */
+.counselling-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.counselling-content h2 {
+  font-size: 28px;
+  color: #003366;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.counselling-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Form Card */
+.form-card {
+  background: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Spinner Styling */
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Disable button when loading */
+button:disabled {
+  background-color: #007bff;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+/* Input Fields */
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  border-color: #003366;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.5);
+}
+
+/* Submit Button */
+.form-card button {
+  width: 100%;
+  padding: 12px;
+  background: #003366;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.form-card button:hover {
+  background: #001f4d;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .counselling-container {
+    flex-direction: column;
+  }
+
+  .counselling-image {
+    display: none; /* Hide the image on small screens */
+  }
+
+  .counselling-content {
+    padding: 20px;
+  }
+
+  .form-card {
+    padding: 20px;
+  }
+}

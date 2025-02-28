@@ -1,0 +1,119 @@
+/* General Styles */
+.net-course-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Header Section */
+.net-course-header {
+  text-align: center;
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.net-course-image {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.net-course-header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.net-course-header p {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Course Content */
+.net-course-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.net-course-content h2 {
+  font-size: 26px;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.net-course-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+/* Highlights & Benefits */
+.net-course-highlights,
+.net-course-benefits,
+.net-who-can-join {
+  list-style: none;
+  padding: 0;
+}
+
+.net-course-highlights li,
+.net-course-benefits li,
+.net-who-can-join li {
+  font-size: 16px;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  background: #e6f0ff;
+  color: #000000;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.net-course-highlights li::before,
+.net-course-benefits li::before,
+.net-who-can-join li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: #000000;
+}
+
+/* Course Modules */
+.net-course-modules {
+  margin-top: 30px;
+}
+
+.net-course-modules h3 {
+  font-size: 22px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.net-course-modules p {
+  font-size: 16px;
+  color: #555;
+  margin-left: 15px;
+  line-height: 1.5;
+}
+
+/* Footer Section */
+.net-course-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #003366, #0055a4);
+  color: white;
+  border-radius: 10px;
+}
+
+.net-course-footer p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Enroll Button */

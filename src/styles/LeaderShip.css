@@ -1,0 +1,128 @@
+/* Leadership Wrapper */
+.leadership-wrapper {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+/* Heading Styling */
+.leadership-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #002855;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.leadership-heading span {
+  color: #007bff;
+}
+
+.leadership-heading::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #007bff;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Container for Leadership Cards */
+.leadership-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the cards */
+  width: 100%;
+  gap: 30px;
+}
+
+/* Leadership Card */
+.leadership-card {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+
+  padding: 30px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the image */
+  text-align: left; /* Ensures text is left-aligned */
+}
+
+/* Leader Image */
+.leader-img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Leader Name */
+.leader-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #002855;
+  text-align: center;
+  width: 100%; /* Ensures full width for alignment */
+}
+
+/* Leader Title */
+.leader-title {
+  font-size: 1.3rem;
+  color: #007bff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-align: center;
+  width: 100%; /* Ensures full width for alignment */
+}
+
+/* Leader Description */
+.leader-description {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  opacity: 0.9;
+  width: 100%; /* Ensures full width for alignment */
+}
+
+/* Hover Effects */
+.leadership-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.leadership-card:hover .leader-img {
+  border-color: #ff9800;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leadership-card {
+    width: 95%;
+  }
+
+  .leadership-heading {
+    font-size: 2.5rem;
+  }
+
+  .leader-name {
+    font-size: 1.8rem;
+  }
+}

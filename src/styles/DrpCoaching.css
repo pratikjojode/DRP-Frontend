@@ -1,0 +1,94 @@
+.edu-coaching {
+  background-image: url("../images/coaching.png");
+  height: 70vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Overlay for better text visibility */
+.edu-coaching::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+/* Content Styling */
+.edu-coaching-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading Styling */
+.edu-coaching-content h1 {
+  font-size: clamp(40px, 7vw, 70px); /* Responsive font size */
+  color: yellow;
+  font-weight: bold;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edu-coaching {
+    height: 40vh;
+    padding: 10px;
+  }
+
+  .edu-coaching-content h1 {
+    font-size: clamp(30px, 6vw, 50px);
+  }
+}
+
+/* coahig  grid */
+.coaching-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+.coaching-grid-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.coaching-grid-item:hover {
+  transform: translateY(-5px);
+}
+.coaching-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.coaching-grid h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+.coaching-grid p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 500px) {
+  .coaching-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

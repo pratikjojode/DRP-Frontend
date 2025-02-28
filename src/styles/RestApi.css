@@ -1,0 +1,124 @@
+.rest-api-course-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.course-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.course-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.course-description {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.why-choose-title {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.course-benefits-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.course-curriculum-title {
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+.modules-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.module {
+  width: 45%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.module-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.module-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cta-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.cta-btn {
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .module {
+    width: 100%;
+  }
+
+  .course-title {
+    font-size: 1.5rem;
+  }
+
+  .course-description {
+    font-size: 0.9rem;
+  }
+
+  .why-choose-title,
+  .course-curriculum-title {
+    font-size: 1.2rem;
+  }
+
+  .cta-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .course-title {
+    font-size: 1.2rem;
+  }
+
+  .course-description {
+    font-size: 0.85rem;
+  }
+
+  .cta-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,97 @@
+/* Banner image styling */
+.sim-card-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow for depth */
+  margin-bottom: 30px; /* Added space below the banner image */
+}
+
+/* Container for the entire content */
+.sim-cards-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff; /* White background for the container */
+}
+
+/* Card styling */
+.sim-card {
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Softer shadow for a clean look */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: #ffffff; /* White background for cards */
+}
+
+/* Hover effect for cards */
+.sim-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow on hover */
+}
+
+/* Card title styling */
+.sim-card .ant-card-head {
+  background-color: #ffffff; /* White background */
+  color: #000000; /* Black text color for contrast */
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px 10px 0 0; /* Rounded top corners */
+  /* Removed border-bottom to avoid underline */
+}
+
+/* Card content styling */
+.sim-card p,
+.sim-card ul {
+  font-size: 1rem;
+  color: #000000; /* Ensuring black font */
+  line-height: 1.7;
+  margin: 0 15px 20px;
+}
+
+/* Styling for unordered list */
+.sim-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sim-card li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #000000; /* Ensuring all list items are in black */
+}
+
+/* Styling for specific heading sizes */
+.sim-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000000; /* All headings in black */
+  margin-bottom: 12px;
+}
+
+/* Footer styling */
+.ant-layout-footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #ffffff; /* White footer */
+  margin-top: 40px;
+  font-size: 1.1rem;
+  color: #000000; /* Black text in footer */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sim-cards-container {
+    padding: 15px;
+  }
+
+  .sim-card {
+    margin-bottom: 25px;
+  }
+
+  .sim-card-banner {
+    margin-bottom: 25px;
+  }
+}

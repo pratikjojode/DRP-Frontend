@@ -1,0 +1,90 @@
+.not-found-container {
+  text-align: center;
+  position: relative;
+  padding: 10px;
+  background-color: #03010b;
+  height: 100vh;
+}
+
+.not-found-content {
+  z-index: 2;
+  position: relative;
+  margin: 10% auto;
+}
+
+.not-found-title {
+  font-size: 8rem;
+  margin: 0;
+  color: #ff6f61;
+  animation: float 3s ease-in-out infinite;
+}
+
+.not-found-message {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.not-found-description {
+  font-size: 1rem;
+  margin: 10px 0 20px;
+}
+
+.not-found-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ff6f61;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.not-found-button:hover {
+  background-color: #e65a50;
+}
+
+.not-found-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.astronaut {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: float 3s ease-in-out infinite;
+}
+
+.planet {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

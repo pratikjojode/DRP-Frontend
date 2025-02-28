@@ -1,0 +1,147 @@
+/* Education Loan Page - Premium Styling */
+.education-loan-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Background Image */
+.abroad-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.abroad-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card & List Containers */
+.benefits-list,
+.challenges-list,
+.destinations-grid,
+.education-loan-container ol,
+.education-loan-container ul {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.benefits-list:hover,
+.challenges-list:hover,
+.education-loan-container ol:hover,
+.education-loan-container ul:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* List Item Styling */
+.benefits-list li,
+.challenges-list li,
+.education-loan-container ol li,
+.education-loan-container ul li {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: all 0.2s ease-in-out;
+}
+
+.benefits-list li:last-child,
+.challenges-list li:last-child,
+.education-loan-container ol li:last-child,
+.education-loan-container ul li:last-child {
+  border-bottom: none;
+}
+
+/* List Item Hover Effect */
+.benefits-list li:hover,
+.challenges-list li:hover,
+.education-loan-container ol li:hover,
+.education-loan-container ul li:hover {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Destination Cards Grid */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+/* Destination Cards - Enhanced Premium Look */
+.destination-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(6, 0, 0, 0.59);
+  cursor: pointer;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #eef5ff, #ffffff);
+}
+
+/* Destination Card Images */
+.destination-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Destination Card Text */
+.destination-card strong {
+  display: block;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.destination-card:hover::before {
+  opacity: 1;
+}
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,103 @@
+/* InquiryForm.css */
+.inquiry-form-container {
+  margin: 0 auto;
+  padding: 40px;
+  max-width: 900px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.inquiry-form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.inquiry-form-container input,
+.inquiry-form-container select,
+.inquiry-form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.inquiry-form-container input:focus,
+.inquiry-form-container select:focus,
+.inquiry-form-container textarea:focus {
+  border-color: #007bff;
+  background-color: #f1f8ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+}
+
+.inquiry-form-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.inquiry-form-container button {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.inquiry-form-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.inquiry-form-container button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.inquiry-form-container input[type="text"],
+.inquiry-form-container input[type="email"] {
+  border-color: #ddd;
+  background-color: #f9f9f9;
+}
+
+.inquiry-form-container input[type="text"]:focus,
+.inquiry-form-container input[type="email"]:focus {
+  border-color: #007bff;
+  background-color: #f1f8ff;
+}
+
+.inquiry-form-container select {
+  font-size: 16px;
+  color: #555;
+  background-color: #f9f9f9;
+}
+
+.inquiry-form-container select:focus {
+  border-color: #007bff;
+  background-color: #f1f8ff;
+}
+
+@media (max-width: 768px) {
+  .inquiry-form-container {
+    padding: 20px;
+  }
+
+  .inquiry-form-container h2 {
+    font-size: 22px;
+  }
+
+  .inquiry-form-container button {
+    font-size: 16px;
+  }
+}

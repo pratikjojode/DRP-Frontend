@@ -1,0 +1,111 @@
+/* Perii Container */
+.perii-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Perii Cards */
+.perii-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.perii-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Unique Styles for Each Card */
+.vision-card {
+  border-left: 6px solid #007bff;
+  background: linear-gradient(135deg, #e3f2fd, #f8f9fa);
+}
+
+.mission-card {
+  border-left: 6px solid #ff9800;
+  background: linear-gradient(135deg, #fff3e0, #f8f9fa);
+}
+
+/* Icons */
+.perii-icon {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.mission-card .perii-icon {
+  color: #ff9800;
+}
+
+/* Titles */
+.perii-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.perii-title span {
+  color: inherit;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mission-card .perii-title span {
+  background: linear-gradient(45deg, #ff9800, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.perii-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .perii-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .perii-card {
+    width: 90%;
+  }
+
+  .perii-title {
+    font-size: 1.8rem;
+  }
+
+  .perii-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .perii-title {
+    font-size: 1.6rem;
+  }
+
+  .perii-description {
+    font-size: 1rem;
+  }
+}

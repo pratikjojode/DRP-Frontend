@@ -1,0 +1,195 @@
+/* General Styling */
+
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+
+.hero-image-alo img {
+  width: 100%;
+  height: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Highlights Section */
+.course-highlights-sss {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.course-highlights h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.course-highlights ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-highlights li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.course-highlights li:before {
+  content: "✅";
+  margin-right: 10px;
+}
+
+/* Who Can Join Section */
+.who-can-join {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.who-can-join h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.who-can-join ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.who-can-join li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Course Curriculum Section */
+.course-curriculum {
+  margin-bottom: 40px;
+}
+
+.module {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.module h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.module ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.module li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* What You Will Learn Section */
+.what-you-learn {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.what-you-learn h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.what-you-learn ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.what-you-learn li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.what-you-learn li:before {
+  content: "✔️";
+  margin-right: 10px;
+}
+
+/* Course Features Section */
+.course-features {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.course-features h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.course-features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-features li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* CTA Section */
+.cta-section {
+  background-color: #003366;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cta-section .enroll-button {
+  background-color: #ffcc00;
+  color: #003366;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-section .enroll-button:hover {
+  background-color: #ffaa00;
+}

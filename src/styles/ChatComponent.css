@@ -1,0 +1,67 @@
+/* Chat container styles */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+/* Messages container */
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 10px;
+  margin-bottom: 10px;
+  max-height: 300px; /* You can adjust this based on the desired height */
+}
+
+/* Styling for individual messages */
+.my-message,
+.other-message {
+  margin-bottom: 10px;
+}
+
+.my-message {
+  text-align: right;
+}
+
+.other-message {
+  text-align: left;
+}
+
+/* Input and button container */
+.input-container {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field styling */
+input {
+  flex-grow: 1;
+  padding: 8px;
+  border-radius: 20px;
+  border: 2px solid #ddd;
+  outline: none;
+}
+
+/* Send button styling */
+button {
+  padding: 8px 12px;
+  background-color: #4f85d2;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ab7;
+}

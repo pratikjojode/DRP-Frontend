@@ -1,0 +1,168 @@
+.course-detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+  background-color: #f5f5f5; /* Light background for the entire container */
+}
+
+/* Course Info Section */
+.course-info {
+  flex: 1;
+  max-width: 55%;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.course-info h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  margin-top: 15px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.course-image:hover {
+  transform: scale(1.02);
+}
+
+.course-description {
+  font-size: 16px;
+  margin: 20px 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.enroll-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.enroll-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.enroll-button:active {
+  transform: translateY(0);
+}
+
+/* Inquiry Form Section */
+.inquiry-form {
+  flex: 1;
+  max-width: 40%;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inquiry-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .course-detail-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .course-info,
+  .inquiry-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .course-info h1 {
+    font-size: 26px;
+  }
+
+  .course-description {
+    font-size: 15px;
+  }
+
+  .enroll-button {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-detail-container {
+    padding: 20px;
+  }
+
+  .course-info,
+  .inquiry-form {
+    padding: 20px;
+  }
+
+  .course-info h1 {
+    font-size: 24px;
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+
+  .enroll-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-detail-container {
+    padding: 15px;
+  }
+
+  .course-info h1 {
+    font-size: 22px;
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+
+  .enroll-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .inquiry-form {
+    padding: 15px;
+  }
+}

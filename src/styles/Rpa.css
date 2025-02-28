@@ -1,0 +1,98 @@
+/* Rpa.css */
+
+.rpa-course-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rpa-course-image {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rpa-course-title {
+  font-size: 2rem;
+  color: #000000;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.rpa-course-subtitle {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.rpa-course-description {
+  font-size: 1.1rem;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.rpa-course-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.rpa-course-benefits li {
+  font-size: 1.1rem;
+  color: #000000;
+  background: #e6f7ff;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 5px 0;
+}
+
+.rpa-course-features,
+.rpa-course-who,
+.rpa-course-curriculum {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.rpa-course-features h3,
+.rpa-course-who h3,
+.rpa-course-curriculum h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  border-left: 5px solid #0056b3;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.rpa-course-features ul,
+.rpa-course-who ul,
+.rpa-course-curriculum ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rpa-course-features li,
+.rpa-course-who li,
+.rpa-course-curriculum li {
+  font-size: 1rem;
+  color: #000000;
+  background: #f0f8ff;
+  padding: 8px;
+  border-radius: 6px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.rpa-course-features li::before,
+.rpa-course-who li::before,
+.rpa-course-curriculum li::before {
+  content: "✔️";
+  color: #000000;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}

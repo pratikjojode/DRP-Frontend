@@ -1,0 +1,238 @@
+/* General Container */
+.create-blog {
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Title Styling */
+
+/* Form Styling */
+.create-blog-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Item Styling */
+.create-blog-form .ant-form-item-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.create-blog-form .ant-input,
+.create-blog-form .ant-input-textarea {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.create-blog-form .ant-upload-button {
+  background: #003366;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.create-blog-form .ant-upload-button:hover {
+  background: #002244;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #003366;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #002244;
+}
+
+/* Blog Stats Styling */
+.blog-stats {
+  margin: 40px 0;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.blog-title-main {
+  font-size: 20px;
+  color: black;
+}
+
+.blog-stats h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.blog-stats p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Table View Styling */
+.blog-list .ant-table {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ant-table-thead th {
+  background: #003366;
+  color: white;
+  font-size: 14px;
+  padding: 12px;
+}
+
+.ant-table-tbody td {
+  font-size: 14px;
+  padding: 12px;
+}
+
+.ant-table-tbody tr:hover {
+  background: #f1f1f1;
+}
+
+.ant-table-tbody .ant-btn-link {
+  color: #003366;
+  font-weight: 600;
+}
+
+.ant-table-tbody .ant-btn-link:hover {
+  color: #002244;
+}
+
+/* Grid View Styling */
+.blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding-top: 20px;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+}
+
+.blog-content {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.blog-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-btn,
+.edit-btn {
+  background: #ff4d4f;
+  color: white;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: #28a745;
+}
+
+.delete-btn:hover {
+  background: #f5222d;
+}
+
+.edit-btn:hover {
+  background: #218838;
+}
+
+/* Modal Styling */
+.edit-modal .ant-modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.edit-modal .ant-modal-header {
+  background: #003366;
+  color: white;
+  padding: 16px;
+}
+
+.edit-modal .ant-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.edit-modal .ant-form-item-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.edit-modal .ant-input,
+.edit-modal .ant-input-textarea {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Toggle Button for View Mode */
+.switch-container {
+  margin: 20px 0;
+}
+
+.ant-switch-checked {
+  background-color: #003366;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #003366;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

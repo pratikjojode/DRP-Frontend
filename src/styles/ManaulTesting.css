@@ -1,0 +1,162 @@
+/* General container styling */
+.manual-testing-container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  color: black;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Course image styling */
+.manual-testing-image {
+  width: 100%;
+  height: 450px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+
+/* Content section */
+.manual-testing-content {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  color: black;
+}
+
+/* Titles & Headings */
+.course-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000102;
+  margin-bottom: 10px;
+}
+
+.course-subtitle {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.course-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+/* Lists */
+.course-highlights,
+.course-benefits,
+.course-audience,
+.course-modules,
+.course-features {
+  text-align: left;
+  max-width: 750px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course-highlights li,
+.course-benefits li,
+.course-audience li,
+.module-list li {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  padding-left: 10px;
+  line-height: 1.6;
+}
+
+.course-highlights li::before,
+.course-benefits li::before,
+.course-audience li::before,
+.module-list li::before {
+  content: "✔";
+  color: #000205;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Sections */
+.course-section-title {
+  font-size: 1.8rem;
+  color: #000000;
+
+  margin-top: 30px;
+}
+
+.module-title {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 20px;
+}
+
+/* Enrollment Section */
+.enroll-section {
+  background: linear-gradient(135deg, #004aad, #002855);
+  color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.enroll-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.enroll-info {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+/* Button */
+.enroll-button {
+  background-color: #ffcc00;
+  color: #000;
+  padding: 12px 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+.enroll-button:hover {
+  background-color: #ffaa00;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .manual-testing-container {
+    padding: 20px;
+  }
+
+  .course-title {
+    font-size: 2rem;
+  }
+
+  .course-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .manual-testing-content {
+    padding: 20px;
+  }
+
+  .enroll-section {
+    padding: 20px;
+  }
+}

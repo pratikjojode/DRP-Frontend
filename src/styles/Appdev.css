@@ -1,0 +1,214 @@
+/* Global Styles for App Development Page */
+.app-development-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section */
+.app-hero-section {
+  position: relative;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.app-hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.app-hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
+}
+
+.app-hero-subtitle {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Content Section */
+.app-content-section {
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.app-section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000000;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.app-section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #000000;
+  display: block;
+  margin: 8px auto 0;
+  border-radius: 5px;
+}
+
+/* Card Container */
+.app-card-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Card Styling */
+.app-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  flex: 1 1 calc(50% - 30px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.app-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(135deg, #0077b6, #00a8e8);
+  transition: width 0.3s ease-in-out;
+}
+
+.app-card:hover::before {
+  width: 10px;
+}
+
+.app-card-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #000000;
+  font-weight: 600;
+}
+
+.app-card-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+.app-card-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 12px;
+}
+
+.app-card-item {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.app-card-item::before {
+  content: "✔";
+  color: #000000;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .app-hero-title {
+    font-size: 2.6rem;
+  }
+
+  .app-hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .app-section-title {
+    font-size: 2.2rem;
+  }
+
+  .app-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .app-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .app-section-title {
+    font-size: 2rem;
+  }
+
+  .app-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-hero-title {
+    font-size: 1.8rem;
+    top: 45%;
+  }
+
+  .app-hero-subtitle {
+    font-size: 1rem;
+    top: 55%;
+  }
+
+  .app-section-title {
+    font-size: 1.8rem;
+  }
+
+  .app-card-title {
+    font-size: 1.4rem;
+  }
+
+  .app-card-description {
+    font-size: 0.95rem;
+  }
+
+  .app-card-item {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,111 @@
+/* Main About Container */
+.about-container-comp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f9f9f9;
+  padding: 60px 5%;
+  gap: 40px;
+}
+
+/* Left Content Section */
+.about-content-comp {
+  flex: 1;
+  max-width: 600px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* About Title */
+.about-title-comp {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Description */
+.about-description-comp {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Subtitle */
+.about-subtitle-comp {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+/* Program List */
+.about-list-comp {
+  list-style: none;
+  padding: 0;
+}
+
+.about-list-comp li {
+  font-size: 1.1rem;
+  color: #222;
+  margin: 10px 0;
+  padding-left: 30px;
+  position: relative;
+}
+
+/* Custom List Bullet */
+.about-list-comp li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Footer Text */
+.about-footer-comp {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* Right Image Section */
+.about-image-container-comp {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .about-container-comp {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content-comp {
+    max-width: 100%;
+  }
+
+  .about-image-container-comp {
+    max-width: 100%;
+  }
+
+  .about-list-comp li {
+    padding-left: 20px;
+  }
+}

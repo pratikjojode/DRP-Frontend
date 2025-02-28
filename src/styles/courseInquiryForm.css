@@ -1,0 +1,38 @@
+.course-inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.course-inquiry-form input,
+.course-inquiry-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-detail-container {
+    flex-direction: column;
+  }
+
+  .course-info,
+  .inquiry-form {
+    max-width: 100%;
+  }
+}
