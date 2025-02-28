@@ -3,6 +3,10 @@
     {
       "source": "/api/v1/:path*",
       "destination": "https://drp-backend-1y8r.onrender.com/api/v1/:path*"
+    },
+    {
+      "source": "/uploads/:path*",
+      "destination": "https://drp-backend-1y8r.onrender.com/uploads/:path*"
     }
   ]
 }
