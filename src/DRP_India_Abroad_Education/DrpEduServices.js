@@ -15,7 +15,7 @@ import forex from "../images/foreee.avif";
 import Footer from "../components/Footer";
 const DrpEduServices = () => {
   const services = [
-    { name: "Education Loan", link: "/service1", image: loan },
+    { name: "Abroad Education", link: "/service1", image: loan },
     { name: "Insurance", link: "/service2", image: insurance },
     { name: "SIM Cards", link: "/service3", image: simcards },
     { name: "Forex", link: "/service4", image: forex },
