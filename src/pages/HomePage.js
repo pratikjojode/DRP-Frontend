@@ -87,7 +87,7 @@ const HomePage = () => {
               </div>
               <p className="card-description">{card.description}</p>
               <button
-                className="inquire-btn"
+                className="inquire-btn-1"
                 onClick={(e) => {
                   e.preventDefault();
                   showModal(card.title);
@@ -95,7 +95,7 @@ const HomePage = () => {
               >
                 Inquire Now
               </button>
-              <button className="learn-more-btn">Learn More</button>
+              <button className="learn-more-btn-1">Learn More</button>
             </div>
           </Link>
         ))}
