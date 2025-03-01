@@ -128,10 +128,16 @@ const DrpIndiaEduHome = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3, // Default for larger screens
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 768, // For tablets and below
+        settings: {
+          slidesToShow: 1, // Show only one slide
+        },
+      },
+    ],
   };
 
   // fetch blogss
@@ -276,15 +282,24 @@ const DrpIndiaEduHome = () => {
 
         <div className="countries-container">
           <Carousel
-            dots={true}
-            infinite={true}
-            arrows={true}
             autoplay
-            slidesToShow={3}
-            centerMode={true}
+            dots={true}
+            arrows
+            slidesToShow={3} // Default: Show 3 slides
+            responsive={[
+              {
+                breakpoint: 1024, // Tablets
+                settings: { slidesToShow: 2 },
+              },
+              {
+                breakpoint: 768, // Mobile
+                settings: { slidesToShow: 1 },
+              },
+            ]}
+            className="custom-carousel"
           >
             <div className="carousel-slide">
-              <div className="country-card canada-bg">
+              <div className="country-card">
                 <img alt="Canada" src={canada} />
                 <h2>Learn in Canada</h2>
                 <p>Canada is the second-largest country in the world...</p>
@@ -292,7 +307,7 @@ const DrpIndiaEduHome = () => {
             </div>
 
             <div className="carousel-slide">
-              <div className="country-card japan-bg">
+              <div className="country-card">
                 <img alt="Japan" src={japan} />
                 <h2>Explore Japan</h2>
                 <p>Japan is an island nation in East Asia...</p>
@@ -300,7 +315,7 @@ const DrpIndiaEduHome = () => {
             </div>
 
             <div className="carousel-slide">
-              <div className="country-card brazil-bg">
+              <div className="country-card">
                 <img alt="Brazil" src={brazil} />
                 <h2>Discover Brazil</h2>
                 <p>Brazil is the largest country in South America...</p>
@@ -308,7 +323,7 @@ const DrpIndiaEduHome = () => {
             </div>
 
             <div className="carousel-slide">
-              <div className="country-card australia-bg">
+              <div className="country-card">
                 <img alt="Australia" src={australia} />
                 <h2>Visit Australia</h2>
                 <p>Australia is renowned for its unique wildlife...</p>
@@ -316,7 +331,7 @@ const DrpIndiaEduHome = () => {
             </div>
 
             <div className="carousel-slide">
-              <div className="country-card italy-bg">
+              <div className="country-card">
                 <img alt="Italy" src={italy} />
                 <h2>Explore Italy</h2>
                 <p>Italy is a country rich in history, culture, and art...</p>
@@ -324,7 +339,7 @@ const DrpIndiaEduHome = () => {
             </div>
 
             <div className="carousel-slide">
-              <div className="country-card france-bg">
+              <div className="country-card">
                 <img alt="France" src={france} />
                 <h2>Discover France</h2>
                 <p>France is famous for its romantic ambiance...</p>
