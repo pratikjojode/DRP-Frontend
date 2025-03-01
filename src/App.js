@@ -101,7 +101,7 @@ import NetFullstackDevelopmentComp from "./DrpComputerEducation/NetFullstackDeve
 import ReactJsComp from "./DrpComputerEducation/ReactJsComp";
 import RpaComp from "./DrpComputerEducation/RpaComp";
 import HardwareNetworkingComp from "./DrpComputerEducation/HardwareNetworkingComp";
-
+import { Analytics } from "@vercel/analytics/react";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -151,6 +151,7 @@ const App = () => {
   return (
     <Router>
       <ScrollToTop />
+      <Analytics />
       <FormPopup />
       <Routes>
         <Route path="/login" element={<Login />} />
