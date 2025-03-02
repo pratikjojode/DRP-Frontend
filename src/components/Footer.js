@@ -119,7 +119,7 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <ul>
             <li>
-              <a href="https://facebook.com" target="_blank">
+              <a href="https://www.facebook.com/profile.php?id=61573323855079">
                 <i className="fab fa-facebook"></i> Facebook
               </a>
             </li>
@@ -134,7 +134,10 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://instagram.com" target="_blank">
+              <a
+                href="https://www.instagram.com/drdrpatilgroup/"
+                target="_blank"
+              >
                 <i className="fab fa-instagram"></i> Instagram
               </a>
             </li>
