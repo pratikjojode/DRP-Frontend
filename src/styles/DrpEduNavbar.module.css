@@ -1,265 +1,157 @@
-/* 🔹 Navbar Styles */
+/* Navbar Styles */
 .navbar {
   background: #010810;
-  padding: 12px 18px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
+  position: sticky; /* Change from fixed to sticky */
+  top: 0; /* Sticks to the top */
   width: 100%;
   z-index: 1000;
 }
 
-/* Navbar Container */
-.navbarContainer {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-}
-
-/* 🔹 Logo */
-.logo {
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 16px;
-  width: 100px;
-}
-
-/* 🔹 Hamburger Button */
-.hamburger {
-  display: none; /* Hide by default */
-  font-size: 24px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* 🔹 Navigation Menu */
+/* Navbar Links */
 .navMenu {
-  list-style: none;
   display: flex;
-  margin-left: auto;
-}
-
-.navMenu li {
-  margin: 0 12px;
-  position: relative;
-}
-
-.navMenu li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 10px 14px;
-  transition: 0.3s ease-in-out;
-}
-
-/* Underline effect */
-.navMenu li a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0%;
-  background: #ffcc00;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transition: all 0.3s ease-in-out;
-  transform: translateX(-50%);
-}
-
-/* Active link */
-.navMenu li a:hover::after,
-.navMenu li a.active::after {
-  width: 100%;
-}
-
-/* 🔹 Dropdown */
-.dropdown {
-  position: relative;
-  cursor: pointer;
-}
-
-.dropdown span {
-  color: #fff;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* 🔹 Dropdown Menu */
-.dropdownMenu {
-  position: absolute;
-  background: #010810;
-  list-style: none;
-  top: 100%;
-  left: 0;
-  width: 250px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.dropdown:hover .dropdownMenu,
-.dropdown.active .dropdownMenu {
-  opacity: 1;
-  visibility: visible;
-}
-
-.dropdownMenu li {
-  padding: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background: #010810;
-  font-size: 14px;
-}
-
-.dropdownMenu li a {
-  color: #fff;
-  text-decoration: none;
-  display: block;
-  width: 100%;
-  transition: 0.3s;
-}
-
-.dropdownMenu li:hover {
-  background: #003366;
-}
-
-@media screen and (max-width: 900px) {
-  .hamburger {
-    display: block;
-    margin-left: auto;
-  }
-
-  .navMenu {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    background: #010810;
-    padding-top: 60px;
-    transition: left 0.4s ease-in-out;
-    z-index: 999;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-  }
-
-  .navMenu.active {
-    left: 0;
-  }
-
-  .navMenu li {
-    padding: 12px 20px;
-    text-align: left;
-  }
-
-  .navMenu li a {
-    display: block;
-    font-size: 16px;
-    padding: 10px 20px;
-    width: 100%;
-  }
-
-  /* 🔹 Fixing Dropdown for Small Screens */
-  .dropdownMenu {
-    position: static;
-    background: #003366;
-    width: 100%;
-    opacity: 1;
-    visibility: visible;
-    display: none;
-  }
-
-  .dropdown.active .dropdownMenu {
-    display: block;
-  }
-
-  .dropdownMenu li {
-    text-align: left;
-    padding: 12px 20px;
-  }
+  list-style: none; /* Remove bullets */
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+  padding: 0;
 }
 .drpppp {
   color: white !important;
+  cursor: pointer;
 }
-/* 🔹 Modal Overlay */
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+.drpppp:hover {
+  color: yellow !important;
 }
-
-/* 🔹 Modal Content */
-.modalContent {
-  background: white;
-  padding: 20px;
-  width: 350px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-
-/* 🔹 Form Styles */
-.formGroup {
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.formGroup label {
-  display: block;
-  font-weight: bold;
-}
-
-.formGroup input,
-.formGroup select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-/* 🔹 Buttons */
-.submitBtn {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
+/* Navbar Links */
+.navMenu li a {
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 10px 15px;
+  display: block;
 }
 
-.submitBtn:hover {
-  background: #0056b3;
+/* Active Link */
+.navMenu li a.active {
+  color: yellow !important; /* Active link color */
 }
 
-.closeBtn {
+/* Hover Effect */
+.navMenu li a:hover {
+  color: yellow !important;
+}
+
+/* Navbar container */
+.navbarContainer {
+  display: flex;
   width: 100%;
-  padding: 10px;
-  background: #ccc;
-  color: black;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.closeBtn:hover {
-  background: #999;
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* Ensuring visibility */
+}
+
+/* Hide navMenu on small screens */
+@media screen and (max-width: 767px) {
+  .navMenu {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #010810; /* Ensure mobile menu has same background */
+    width: 100%;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show menu when active */
+  .navMenu.active {
+    transform: translateX(0);
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  list-style: none; /* Remove bullets */
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #010810; /* Dropdown same background as navbar */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  display: none;
+  list-style: none; /* Remove bullets */
+  border-radius: 5px;
+}
+
+/* Dropdown links */
+.dropdownMenu li {
+  list-style: none; /* Remove bullets */
+  padding: 0px 10px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Hover effect on dropdown items */
+.dropdownMenu li:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Light white hover effect */
+}
+
+.dropdownMenu li a {
+  color: white; /* White text */
+  display: block;
+  transition: color 0.3s ease;
+  text-decoration: none; /* Remove underline */
+}
+
+/* Text color change on hover */
+.dropdownMenu li:hover a {
+  color: yellow !important;
+}
+
+/* Large screen dropdowns open on hover */
+@media screen and (min-width: 768px) {
+  .dropdown:hover .dropdownMenu {
+    display: block;
+  }
+}
+
+/* Small screen dropdowns open on click */
+@media screen and (max-width: 767px) {
+  .dropdownMenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdownMenu.show {
+    display: block;
+  }
 }

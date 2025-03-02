@@ -266,3 +266,12 @@
 .dropdown-menu-sol.open {
   display: block;
 }
+@media (max-width: 768px) {
+  .dropdown-sol:hover .dropdown-menu-sol {
+    display: none; /* Disable hover effect */
+  }
+
+  .dropdown-sol.active .dropdown-menu-sol {
+    display: block; /* Ensure dropdown opens when active class is added */
+  }
+}
