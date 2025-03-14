@@ -173,11 +173,16 @@ const CreateBlog = () => {
       key: "image",
       render: (image) =>
         image ? (
-          <img src={`/${image}`} alt="Blog" style={{ width: 100 }} />
+          <img
+            src={`https://res.cloudinary.com/dnxicetc5/image/upload/${image}`}
+            alt="Blog"
+            style={{ width: 100 }}
+          />
         ) : (
           "No Image"
         ),
     },
+
     {
       title: "Actions",
       key: "actions",
@@ -279,11 +284,11 @@ const CreateBlog = () => {
                 <p className="blog-content">Description: {blog.content}</p>
                 {blog.image && (
                   <img
-                    src={`/${blog.image}`}
+                    src={`https://res.cloudinary.com/dnxicetc5/image/upload/${blog.image}`}
                     alt={blog.title}
-                    className="blog-image"
                   />
                 )}
+
                 <div className="blog-actions">
                   <button
                     className="delete-btn"

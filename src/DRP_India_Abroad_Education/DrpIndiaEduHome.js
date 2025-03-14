@@ -651,8 +651,11 @@ const DrpIndiaEduHome = () => {
           <div className="blog-grid">
             {blogs.map((blog) => (
               <div key={blog.id} className="blog-item">
-                <h2>{blog.title}</h2>
-                <img src={blog.image} alt={blog.title} />
+                <h2>Title:{blog.title}</h2>
+                <img
+                  src={`https://res.cloudinary.com/dnxicetc5/image/upload/${blog.image}`}
+                  alt={blog.title}
+                />
                 <p>{blog.content.substring(0, 150)}...</p>{" "}
                 {/* Truncate content */}
                 <Link to={`/blogs/${blog._id}`} className="read-more-btn">

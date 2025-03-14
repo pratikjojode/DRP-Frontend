@@ -44,10 +44,11 @@ const BlogDetails = () => {
           <div className="blog-content-wrapper">
             <h2 className="blog-title">#{blog.title}</h2>
             <img
-              src={`/${blog.image.replace(/\\/g, "/")}`}
+              src={`https://res.cloudinary.com/dnxicetc5/image/upload/${blog.image}`}
               alt={blog.title}
               className="blog-thumbnail"
             />
+
             <p className="blog-published-date">
               Published on: {new Date(blog.createdAt).toDateString()}
             </p>

@@ -53,7 +53,11 @@ const BlogServices = () => {
                 currentBlogs.map((blog) => (
                   <div className="blog-card" key={blog._id}>
                     <h3>{blog.title}</h3>
-                    <img src={blog.image} alt={blog.title} />
+                    <img
+                      src={`https://res.cloudinary.com/dnxicetc5/image/upload/${blog.image}`}
+                      alt={blog.title}
+                    />
+
                     <p className="blog-date">
                       Published on:{" "}
                       {format(new Date(blog.createdAt), "MMMM d, yyyy")}
