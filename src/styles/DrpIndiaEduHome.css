@@ -43,11 +43,6 @@
   color: #0056b3;
 }
 
-.couseliing-con {
-  padding: 30px;
-  background-color: #0056b3;
-}
-
 .couseling-con {
   background-color: #f9f9f9;
   padding: 50px 20px;
@@ -820,7 +815,7 @@ button:hover {
   }
 
   .country-card {
-    max-width: 90%;
+    max-width: 100%;
   }
 
   .country-card img {
