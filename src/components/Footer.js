@@ -27,7 +27,12 @@ const Footer = () => {
       <div className="footer-container">
         {/* Logo Section */}
         <div className="footer-logo">
-          <img src={logo} alt="Logo" className="footer-logo-img" />
+          <img
+            src={logo}
+            alt="Logo"
+            className="footer-logo-img"
+            width="150px"
+          />
           <p>
             &copy; {new Date().getFullYear()} DRP Groups. All Rights Reserved.
           </p>
@@ -66,6 +71,46 @@ const Footer = () => {
         </div>
 
         {/* Register Form */}
+
+        <div className="footer-social">
+          <h3>Follow Us</h3>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61573323855079">
+                <i className="fab fa-facebook"></i> Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/DrDRPGroup" target="_blank">
+                <i className="fab fa-twitter"></i> Twitter
+              </a>
+            </li>
+            <li>
+              <a href="www.linkedin.com/in/drdrpgroup" target="_blank">
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/drdrpatilgroup/"
+                target="_blank"
+              >
+                <i className="fab fa-instagram"></i> Instagram
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/channel/UCW9vVLLGyc6SeOP9YgZVECA"
+                target="_blank"
+              >
+                <i className="fab fa-youtube"></i> Youtube
+              </a>
+            </li>
+            <Link to="/login">
+              <li>Login</li>
+            </Link>
+          </ul>
+        </div>
         <div className="footer-register">
           <h3>Stay Updated! 📩 Subscribe to Our Newsletter</h3>
 
@@ -113,52 +158,10 @@ const Footer = () => {
             </Button>
           </Form>
         </div>
-
-        {/* Social Links */}
-        <div className="footer-social">
-          <h3>Follow Us</h3>
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/profile.php?id=61573323855079">
-                <i className="fab fa-facebook"></i> Facebook
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/DrDRPGroup" target="_blank">
-                <i className="fab fa-twitter"></i> Twitter
-              </a>
-            </li>
-            <li>
-              <a href="www.linkedin.com/in/drdrpgroup" target="_blank">
-                <i className="fab fa-linkedin"></i> LinkedIn
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/drdrpatilgroup/"
-                target="_blank"
-              >
-                <i className="fab fa-instagram"></i> Instagram
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.youtube.com/channel/UCW9vVLLGyc6SeOP9YgZVECA"
-                target="_blank"
-              >
-                <i className="fab fa-youtube"></i> Youtube
-              </a>
-            </li>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-          </ul>
-        </div>
-
         <div className="footer-social">
           <ul>
             <h4 className="footer-drp-abroad">
-              DRPIndia&Abroad
+              SAARDRPIndia&Abroad
               <br />
               Education
             </h4>
@@ -190,7 +193,7 @@ const Footer = () => {
           <h3 className="footer-ser">Our Services</h3>
           <ul>
             <h4 className="footer-drp-sol">
-              DRPSoftwareSolutions
+              SAARDRPSoftwareSolutions
               <br />
             </h4>
             <li>
@@ -215,7 +218,7 @@ const Footer = () => {
         <div className="footer-social">
           <ul>
             <h4 className="footer-drp-edu">
-              DRPComputer
+              SAARDRPComputer
               <br />
               Education
             </h4>
@@ -240,6 +243,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+
         <div className="footer-contact">
           <h3>Contact Us</h3>
           <p>

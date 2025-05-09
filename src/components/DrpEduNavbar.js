@@ -8,12 +8,12 @@ import axios from "axios";
 const DrpEduNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [modalVisible, setModalVisible] = useState(false); // AntD Modal
+  const [modalVisible, setModalVisible] = useState(false);
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState(
     "DRP India & Abroad Education and Recruitment Services"
-  ); // Default service
+  );
   const location = useLocation();
 
   const toggleMenu = () => {
@@ -21,14 +21,17 @@ const DrpEduNavbar = () => {
   };
 
   const toggleDropdown = (menu) => {
+    // For mobile: toggle the dropdown
     setDropdownOpen(dropdownOpen === menu ? null : menu);
   };
 
   const showRegisterModal = (service) => {
     setSelectedService(
-      service || "DRP India & Abroad Education and Recruitment Services"
+      service || "SAARDRP India & Abroad Education and Recruitment Services"
     );
     setModalVisible(true);
+    // Close mobile menu after selection
+    setMenuOpen(false);
   };
 
   const handleCancel = () => {
@@ -63,6 +66,7 @@ const DrpEduNavbar = () => {
       setLoading(false);
     }
   };
+
   return (
     <>
       <nav className={styles.navbar}>
@@ -80,6 +84,7 @@ const DrpEduNavbar = () => {
               <Link
                 to="/"
                 className={location.pathname === "/" ? styles.active : ""}
+                onClick={() => setMenuOpen(false)}
               >
                 Welcome!
               </Link>
@@ -92,95 +97,130 @@ const DrpEduNavbar = () => {
                     ? styles.active
                     : ""
                 }
+                onClick={() => setMenuOpen(false)}
               >
                 Home
               </Link>
             </li>
 
             {/* Services Dropdown */}
-            <li
-              className={styles.dropdown}
-              onClick={() => toggleDropdown("services")}
-            >
-              <Link
-                to="/drpeduServices"
-                className={
-                  location.pathname === "/drpeduServices" ? styles.active : ""
-                }
+            <li className={styles.dropdown}>
+              <div
+                className={styles.dropdownToggle}
+                onClick={() => toggleDropdown("services")}
               >
-                <span>Services ▼</span>
-              </Link>
+                <span>Services</span>
+                <span className={styles.arrowIcon}>▼</span>
+              </div>
               <ul
                 className={`${styles.dropdownMenu} ${
                   dropdownOpen === "services" ? styles.show : ""
                 }`}
               >
                 <li>
-                  <Link to="/service1">Abroad Education</Link>
+                  <Link to="/service1" onClick={() => setMenuOpen(false)}>
+                    Abroad Education
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service9">Air Ticket Booking</Link>
+                  <Link to="/service9" onClick={() => setMenuOpen(false)}>
+                    Air Ticket Booking
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service7">Travel and Tourism</Link>
+                  <Link to="/service7" onClick={() => setMenuOpen(false)}>
+                    Travel and Tourism
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service6">Passport & Visa</Link>
+                  <Link to="/service6" onClick={() => setMenuOpen(false)}>
+                    Passport & Visa
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service8">Immigration</Link>
+                  <Link to="/service8" onClick={() => setMenuOpen(false)}>
+                    Immigration
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service5">Accommodation</Link>
+                  <Link to="/service5" onClick={() => setMenuOpen(false)}>
+                    Accommodation
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service2">Insurance</Link>
+                  <Link to="/service2" onClick={() => setMenuOpen(false)}>
+                    Insurance
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service3">SIM Cards</Link>
+                  <Link to="/service3" onClick={() => setMenuOpen(false)}>
+                    SIM Cards
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service4">Forex</Link>
+                  <Link to="/service4" onClick={() => setMenuOpen(false)}>
+                    Forex
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/service10">Dummy Ticket</Link>
+                  <Link to="/service10" onClick={() => setMenuOpen(false)}>
+                    Dummy Ticket
+                  </Link>
                 </li>
               </ul>
             </li>
 
             {/* Countries Dropdown */}
-            <li
-              className={styles.dropdown}
-              onClick={() => toggleDropdown("countries")}
-            >
-              <Link to="/countries">
-                <span>Countries ▼</span>
-              </Link>
+            <li className={styles.dropdown}>
+              <div
+                className={styles.dropdownToggle}
+                onClick={() => toggleDropdown("countries")}
+              >
+                <span>Countries</span>
+                <span className={styles.arrowIcon}>▼</span>
+              </div>
               <ul
                 className={`${styles.dropdownMenu} ${
                   dropdownOpen === "countries" ? styles.show : ""
                 }`}
               >
                 <li>
-                  <Link to="/services/education/india">India</Link>
+                  <Link
+                    to="/services/education/india"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    India
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/usa">USA</Link>
+                  <Link to="/usa" onClick={() => setMenuOpen(false)}>
+                    USA
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/uk">UK</Link>
+                  <Link to="/uk" onClick={() => setMenuOpen(false)}>
+                    UK
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/canada">Canada</Link>
+                  <Link to="/canada" onClick={() => setMenuOpen(false)}>
+                    Canada
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/australia">Australia</Link>
+                  <Link to="/australia" onClick={() => setMenuOpen(false)}>
+                    Australia
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/germany">Germany</Link>
+                  <Link to="/germany" onClick={() => setMenuOpen(false)}>
+                    Germany
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/europe">Europe</Link>
+                  <Link to="/europe" onClick={() => setMenuOpen(false)}>
+                    Europe
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -191,16 +231,21 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/drpCoaching" ? styles.active : ""
                 }
+                onClick={() => setMenuOpen(false)}
               >
                 Coaching
               </Link>
             </li>
 
-            {/* Register Dropdown - Opens Modal */}
+            {/* Register Dropdown */}
             <li className={styles.dropdown}>
-              <Link to="#">
-                <span>Register Now ▼</span>
-              </Link>
+              <div
+                className={styles.dropdownToggle}
+                onClick={() => toggleDropdown("register")}
+              >
+                <span>Register Now</span>
+                <span className={styles.arrowIcon}>▼</span>
+              </div>
               <ul
                 className={`${styles.dropdownMenu} ${
                   dropdownOpen === "register" ? styles.show : ""
@@ -208,13 +253,14 @@ const DrpEduNavbar = () => {
               >
                 <li
                   className={styles.drpppp}
-                  onClick={() =>
+                  onClick={() => {
                     showRegisterModal(
-                      "DRP India & Abroad Education and Recruitment Services"
-                    )
-                  }
+                      "SAARDRP India & Abroad Education and Recruitment Services"
+                    );
+                    setMenuOpen(false);
+                  }}
                 >
-                  DRP India & Abroad Education and Recruitment Services
+                  SAARDRP India & Abroad Education and Recruitment Services
                 </li>
               </ul>
             </li>
@@ -225,6 +271,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/drpEduBlogs" ? styles.active : ""
                 }
+                onClick={() => setMenuOpen(false)}
               >
                 Blogs
               </Link>
@@ -235,6 +282,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/contact" ? styles.active : ""
                 }
+                onClick={() => setMenuOpen(false)}
               >
                 Contact
               </Link>
@@ -245,6 +293,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/feedback" ? styles.active : ""
                 }
+                onClick={() => setMenuOpen(false)}
               >
                 Feedback
               </Link>

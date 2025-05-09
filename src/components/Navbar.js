@@ -11,10 +11,27 @@ const Navbar = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
+  const [activeDropdowns, setActiveDropdowns] = useState([]);
   const [form] = Form.useForm();
 
+  // Function to toggle specific dropdown by ID
+  const toggleDropdown = (dropdownId) => {
+    if (window.innerWidth <= 768) {
+      setActiveDropdowns((prevState) =>
+        prevState.includes(dropdownId)
+          ? prevState.filter((id) => id !== dropdownId)
+          : [...prevState, dropdownId]
+      );
+    }
+  };
+
+  // Check if dropdown is active
+  const isDropdownActive = (dropdownId) => {
+    return activeDropdowns.includes(dropdownId);
+  };
+
   const showModal = (serviceName) => {
-    console.log("Selected service:", serviceName); // Log to check value
+    console.log("Selected service:", serviceName);
     setSelectedService(serviceName);
     setModalVisible(true);
   };
@@ -39,7 +56,7 @@ const Navbar = () => {
       );
 
       setModalVisible(false);
-      form.resetFields(); // ✅ Reset form after submission
+      form.resetFields();
     } catch (error) {
       console.error("Error submitting the form:", error);
       message.error(
@@ -49,6 +66,11 @@ const Navbar = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Close mobile menu when clicking outside
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
   };
 
   useEffect(() => {
@@ -70,100 +92,207 @@ const Navbar = () => {
           <i className={`fa ${menuOpen ? "fa-times" : "fa-bars"}`}></i>
         </button>
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <button className="mobile-close" onClick={closeMobileMenu}>
+            ✕
+          </button>
+
           <li>
             <NavLink to="/" activeClassName="active">
               Home
             </NavLink>
           </li>
-          <li className="dropdown">
-            <span className="dropdown-toggle">About ▼</span>
+
+          <li className={`dropdown ${isDropdownActive("about") ? "show" : ""}`}>
+            <span
+              className="dropdown-toggle"
+              onClick={() => toggleDropdown("about")}
+            >
+              About▼ {isDropdownActive("about")}
+            </span>
             <ul className="dropdown-menu-home">
               <li>
-                <NavLink to="/about/vision">Company </NavLink>
+                <NavLink to="/about/vision" onClick={closeMobileMenu}>
+                  Company
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/about/mission">Vision & Mission</NavLink>
+                <NavLink to="/about/mission" onClick={closeMobileMenu}>
+                  Vision & Mission
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/about/core-values">Core Values</NavLink>
+                <NavLink to="/about/core-values" onClick={closeMobileMenu}>
+                  Core Values
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/about/our-skills">Our Skills</NavLink>
+                <NavLink to="/about/our-skills" onClick={closeMobileMenu}>
+                  Our Skills
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/about/leadership-team">Leadership Team</NavLink>
+                <NavLink to="/about/leadership-team" onClick={closeMobileMenu}>
+                  Leadership Team
+                </NavLink>
               </li>
             </ul>
           </li>
 
           {/* Services Dropdown */}
-          <li className="dropdown">
-            <span className="dropdown-toggle">Services ▼</span>
+          <li
+            className={`dropdown ${isDropdownActive("services") ? "show" : ""}`}
+          >
+            <span
+              className="dropdown-toggle"
+              onClick={() => toggleDropdown("services")}
+            >
+              Services▼ {isDropdownActive("services")}
+            </span>
             <ul className="dropdown-menu-home">
-              <li className="sub-dropdown">
-                <NavLink to="">Education ⏵</NavLink>
+              <li
+                className={`sub-dropdown ${
+                  isDropdownActive("education") ? "show" : ""
+                }`}
+              >
+                <span
+                  className="sub-dropdown-toggle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleDropdown("education");
+                  }}
+                >
+                  Education {isDropdownActive("education") ? "▼" : "▶"}
+                </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
-                    <NavLink to="/services/education/indiaHome">India</NavLink>
+                    <NavLink
+                      to="/services/education/indiaHome"
+                      onClick={closeMobileMenu}
+                    >
+                      India
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/education/abroad">Abroad</NavLink>
+                    <NavLink
+                      to="/services/education/abroad"
+                      onClick={closeMobileMenu}
+                    >
+                      Abroad
+                    </NavLink>
                   </li>
                 </ul>
               </li>
-              <li className="sub-dropdown">
-                <NavLink to="">IT Services ⏵</NavLink>
+
+              <li
+                className={`sub-dropdown ${
+                  isDropdownActive("it-services") ? "show" : ""
+                }`}
+              >
+                <span
+                  className="sub-dropdown-toggle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleDropdown("it-services");
+                  }}
+                >
+                  IT Services {isDropdownActive("it-services") ? "▼" : "▶"}
+                </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
-                    <NavLink to="/services/it-services/web-development">
+                    <NavLink
+                      to="/services/it-services/web-development"
+                      onClick={closeMobileMenu}
+                    >
                       Web Development
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/it-services/app-development">
+                    <NavLink
+                      to="/services/it-services/app-development"
+                      onClick={closeMobileMenu}
+                    >
                       App Development
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/it-services/cloud-services">
+                    <NavLink
+                      to="/services/it-services/cloud-services"
+                      onClick={closeMobileMenu}
+                    >
                       Cloud Services
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/it-services/hardware-networking">
+                    <NavLink
+                      to="/services/it-services/hardware-networking"
+                      onClick={closeMobileMenu}
+                    >
                       Hardware & N/W Services
                     </NavLink>
                   </li>
                 </ul>
               </li>
-              <li className="sub-dropdown">
-                <NavLink to="">Training ⏵</NavLink>
+
+              <li
+                className={`sub-dropdown ${
+                  isDropdownActive("training") ? "show" : ""
+                }`}
+              >
+                <span
+                  className="sub-dropdown-toggle"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleDropdown("training");
+                  }}
+                >
+                  Training {isDropdownActive("training") ? "▼" : "▶"}
+                </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
-                    <NavLink to="/services/training/mscit">MSCIT</NavLink>
+                    <NavLink
+                      to="/services/training/mscit"
+                      onClick={closeMobileMenu}
+                    >
+                      MSCIT
+                    </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/training/computer-programming">
+                    <NavLink
+                      to="/services/training/computer-programming"
+                      onClick={closeMobileMenu}
+                    >
                       Computer Programming
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/training/graphic-designing">
+                    <NavLink
+                      to="/services/training/graphic-designing"
+                      onClick={closeMobileMenu}
+                    >
                       Graphic Designing
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/training/hardware-courses">
+                    <NavLink
+                      to="/services/training/hardware-courses"
+                      onClick={closeMobileMenu}
+                    >
                       Hardware Courses
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/training/marketing-video-editing">
+                    <NavLink
+                      to="/services/training/marketing-video-editing"
+                      onClick={closeMobileMenu}
+                    >
                       Marketing & Video Editing
                     </NavLink>
                   </li>
                   <li>
-                    <NavLink to="/services/training/autodesk-cad">
+                    <NavLink
+                      to="/services/training/autodesk-cad"
+                      onClick={closeMobileMenu}
+                    >
                       AutoDesk CAD
                     </NavLink>
                   </li>
@@ -173,44 +302,63 @@ const Navbar = () => {
           </li>
 
           <li
-            className="dropdown"
-            onMouseEnter={() => setRegisterDropdownOpen(true)}
-            onMouseLeave={() => setRegisterDropdownOpen(false)}
+            className={`dropdown ${isDropdownActive("register") ? "show" : ""}`}
+            onMouseEnter={() =>
+              window.innerWidth > 768 && setRegisterDropdownOpen(true)
+            }
+            onMouseLeave={() =>
+              window.innerWidth > 768 && setRegisterDropdownOpen(false)
+            }
           >
-            <span className="dropdown-toggle">Register Now ▼</span>
+            <span
+              className="dropdown-toggle"
+              onClick={() => toggleDropdown("register")}
+            >
+              Register Now▼ {isDropdownActive("register")}
+            </span>
             <ul
               className={`dropdown-menu-home ${
-                registerDropdownOpen ? "show" : ""
+                registerDropdownOpen || isDropdownActive("register")
+                  ? "show"
+                  : ""
               }`}
             >
               <li>
                 <button
                   className="dropdown-btn"
-                  onClick={() =>
+                  onClick={() => {
                     showModal(
-                      "DRP India & Abroad Education and Recruitment Services"
-                    )
-                  }
+                      "SAARDRP India & Abroad Education and Recruitment Services"
+                    );
+                    closeMobileMenu();
+                  }}
                 >
-                  DRP India & Abroad Education and Recruitment Services
+                  SAARDRP India & Abroad Education and Recruitment Services
                 </button>
               </li>
               <li>
                 <button
                   className="dropdown-btn"
-                  onClick={() => showModal("DRP Software Solutions Pvt Ltd")}
+                  onClick={() => {
+                    showModal("SAARDRP Software Solutions");
+                    closeMobileMenu();
+                  }}
                 >
-                  DRP Software Solutions Pvt Ltd
+                  SAARDRP Software Solutions Pvt Ltd
                 </button>
               </li>
               <li>
                 <button
                   className="dropdown-btn"
-                  onClick={() =>
-                    showModal("DRP Computer Education and Training Institute")
-                  }
+                  onClick={() => {
+                    showModal(
+                      "SAARDRP Computer Education and Training Institute"
+                    );
+                    closeMobileMenu();
+                  }}
                 >
-                  DRP Computer Education and Training Institute
+                  <span className="saar-text">SAAR</span>DRP Computer Education
+                  and Training Institute
                 </button>
               </li>
             </ul>
@@ -229,7 +377,6 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Inquiry Modal */}
       <Modal
         title={`Register for ${selectedService}`}
         open={modalVisible}

@@ -17,7 +17,7 @@ import Users from "./Users";
 import InquiryForm from "./InquiryForm";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Adminfeedbacks from "./Adminfeedbacks";
-import logo from "../images/DRP12.png";
+
 import Footer from "../components/Footer";
 import "../styles/AdminDashboard.css";
 import drpmain from "../images/DRP_foot.png";
@@ -136,7 +136,6 @@ const AdminDashboard = () => {
             </div>
           </header>
           {renderContent()}
-          <Footer />
         </div>
       </div>
     </>

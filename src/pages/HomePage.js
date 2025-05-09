@@ -31,21 +31,30 @@ const HomePage = () => {
       <Navbar />
 
       <div className="content">
-        <h1>Welcome to DRP Group</h1>
+        <h1>
+          Welcome to <span className="smaller-text">SAAR</span>
+          DRP Group
+        </h1>
         <p>
-          The DRP Group, founded by <span className="dr">Dr. D. R. Patil</span>,
-          is a dynamic organization based in Maharashtra, India, with a strong
-          presence both nationally and internationally. We specialize in
-          education consultancy, recruitment services, software solutions, and
-          computer training, ensuring global accessibility and excellence.
+          The <span className="more-small">SAAR</span>DRP Group, founded by{" "}
+          <span className="dr">Dr. D. R. Patil</span>, is a dynamic organization
+          based in Maharashtra, India, with a strong presence both nationally
+          and internationally. We specialize in education consultancy,
+          recruitment services, software solutions, and computer training,
+          ensuring global accessibility and excellence.
         </p>
       </div>
 
       <div className="card-container">
         {[
           {
-            icon: eduhome, // Use the imported image instead of an icon
-            title: "DRP India & Abroad Education and Recruitment Services",
+            icon: eduhome,
+            title: (
+              <>
+                <span style={{ fontSize: "0.8em" }}>SAAR</span>DRP India &
+                Abroad Education and Recruitment Services
+              </>
+            ),
             img: cardImage1,
             description:
               "Providing expert services for education and recruitment both in India and abroad. Helping individuals achieve their academic and professional goals.",
@@ -53,15 +62,25 @@ const HomePage = () => {
           },
           {
             icon: sol,
-            title: ["DRP Software Solutions Pvt", <br key="br1" />, "Ltd"], // Line break added between "Pvt" and "Ltd"
+            title: (
+              <>
+                <span style={{ fontSize: "0.8em" }}>SAAR</span>DRP Software
+                Solutions
+              </>
+            ),
             img: cardImage2,
             description:
               "A leading software development company offering innovative solutions and cutting-edge technologies to help businesses grow. Our expert team delivers user-friendly applications ",
             link: "/drpSoftwareSolutions&pvtltd",
           },
           {
-            icon: ee, // You can replace this with another relevant image
-            title: "DRP Computer Education and Training Institute",
+            icon: ee,
+            title: (
+              <>
+                <span style={{ fontSize: "0.8em" }}>SAAR</span>DRP Computer
+                Education and Training Institute
+              </>
+            ),
             img: cardImage3,
             description:
               "Empowering the next generation of IT professionals through quality education and hands-on training in various computer technologies.",

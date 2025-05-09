@@ -19,14 +19,21 @@ const Company = () => {
       <div className="company-container">
         <div className="company-content">
           <h1 className="company-title">
-            <FaBuilding className="icon" /> Welcome to <span>DRP Group</span>
+            <FaBuilding className="icon" /> Welcome to{" "}
+            <span>
+              <span className="smaller-text">SAAR</span>DRP Group
+            </span>
           </h1>
 
           <p className="company-description">
-            The <strong>DRP Group</strong>, founded by{" "}
-            <strong>Dr. D. R. Patil</strong>, is a dynamic organization based in{" "}
-            <strong>Maharashtra, India</strong>, with a strong presence both
-            nationally and internationally. We specialize in{" "}
+            The{" "}
+            <strong>
+              <span className="more-small">SAAR</span>DRP Group
+            </strong>
+            , founded by <strong>Dr. D. R. Patil</strong>, is a dynamic
+            organization based in <strong>Maharashtra, India</strong>, with a
+            strong presence both nationally and internationally. We specialize
+            in{" "}
             <strong>
               Education Consultancy, Recruitment Services, Software Solutions,
               and Computer Training
@@ -42,8 +49,9 @@ const Company = () => {
           <div className="subsidiaries">
             <div className="subsidiary">
               <h3>
-                <FaUsers className="icon" /> DRP India & Abroad Education and
-                Recruitment Services
+                <FaUsers className="icon" />{" "}
+                <span className="more-small">SAAR</span>DRP India & Abroad
+                Education and Recruitment Services
               </h3>
               <p>
                 Providing expert guidance for students and professionals with
@@ -53,7 +61,9 @@ const Company = () => {
             </div>
             <div className="subsidiary">
               <h3>
-                <FaLaptopCode className="icon" /> DRP Software Solutions Pvt Ltd
+                <FaLaptopCode className="icon" />{" "}
+                <span className="more-small">SAAR</span>DRP Software Solutions
+                Pvt Ltd
               </h3>
               <p>
                 Delivering cutting-edge digital solutions tailored to business
@@ -63,7 +73,8 @@ const Company = () => {
             </div>
             <div className="subsidiary">
               <h3>
-                <FaChalkboardTeacher className="icon" /> DRP Computer Education
+                <FaChalkboardTeacher className="icon" />{" "}
+                <span className="more-small">SAAR</span>DRP Computer Education
                 and Training Institute
               </h3>
               <p>

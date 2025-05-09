@@ -23,8 +23,8 @@ const DrpSolHeader = () => {
           onMouseLeave={handleMouseLeave}
         >
           <span>
-            DRP Software Solutions Pvt ltd &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            SAARDRP Software Solutions &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </span>
           <span>
             <i className="fa-solid fa-envelope"></i> Email:

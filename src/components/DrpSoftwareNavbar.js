@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Modal, Button, Select, Form, Input, message } from "antd";
 import logoSoftware from "../images/DRP_banner4.png";
@@ -13,10 +13,21 @@ const DrpSoftwareNavbar = () => {
   const [servicesDropdown, setServicesDropdown] = useState(false);
   const [registerDropdown, setRegisterDropdown] = useState(false);
   const [certificationsDropdown, setCertificationsDropdown] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { Option } = Select;
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -47,21 +58,33 @@ const DrpSoftwareNavbar = () => {
       setLoading(false);
     }
   };
-  document.addEventListener("DOMContentLoaded", function () {
-    const dropdowns = document.querySelectorAll(".dropdown-sol");
 
-    dropdowns.forEach((dropdown) => {
-      const toggle = dropdown.querySelector(".dropdown-toggle-sol");
-      const menu = dropdown.querySelector(".dropdown-menu-sol");
+  const toggleServicesDropdown = (e) => {
+    if (isMobile) {
+      e.preventDefault();
+      setServicesDropdown(!servicesDropdown);
+      setCertificationsDropdown(false);
+      setRegisterDropdown(false);
+    }
+  };
 
-      if (window.innerWidth <= 768) {
-        toggle.addEventListener("click", function (event) {
-          event.preventDefault();
-          menu.classList.toggle("open");
-        });
-      }
-    });
-  });
+  const toggleCertificationsDropdown = (e) => {
+    if (isMobile) {
+      e.preventDefault();
+      setCertificationsDropdown(!certificationsDropdown);
+      setServicesDropdown(false);
+      setRegisterDropdown(false);
+    }
+  };
+
+  const toggleRegisterDropdown = (e) => {
+    if (isMobile) {
+      e.preventDefault();
+      setRegisterDropdown(!registerDropdown);
+      setServicesDropdown(false);
+      setCertificationsDropdown(false);
+    }
+  };
 
   return (
     <>
@@ -119,87 +142,90 @@ const DrpSoftwareNavbar = () => {
                   ].includes(location.pathname)
                     ? "active"
                     : ""
-                }`}
-                onMouseEnter={() => setServicesDropdown(true)}
-                onMouseLeave={() => setServicesDropdown(false)}
+                } ${servicesDropdown ? "dropdown-open" : ""}`}
+                onMouseEnter={() => !isMobile && setServicesDropdown(true)}
+                onMouseLeave={() => !isMobile && setServicesDropdown(false)}
               >
-                <span className="dropdown-toggle-sol">
+                <span
+                  className="dropdown-toggle-sol"
+                  onClick={toggleServicesDropdown}
+                >
                   Services <FaCaretDown />
                 </span>
-                {servicesDropdown && (
-                  <ul className="dropdown-menu-sol">
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/SoftwareDevelopment"
-                          ? "active"
-                          : ""
-                      }
+                <ul
+                  className={`dropdown-menu-sol ${
+                    servicesDropdown ? "open" : ""
+                  }`}
+                >
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/SoftwareDevelopment"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/SoftwareDevelopment"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/SoftwareDevelopment"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Software Development
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/Training"
-                          ? "active"
-                          : ""
-                      }
+                      Software Development
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/Training"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/Training"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/Training"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Training
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/Internship"
-                          ? "active"
-                          : ""
-                      }
+                      Training
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/Internship"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/Internship"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/Internship"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Internship
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/projects"
-                          ? "active"
-                          : ""
-                      }
+                      Internship
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/projects"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/projects"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/projects"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Projects – Diploma, BE, ME, PhD
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/educ"
-                          ? "active"
-                          : ""
-                      }
+                      Projects – Diploma, BE, ME, PhD
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/educ" ? "active" : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/educ"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/educ"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Educational Services
-                      </Link>
-                    </li>
-                  </ul>
-                )}
+                      Educational Services
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               <li
@@ -218,177 +244,199 @@ const DrpSoftwareNavbar = () => {
                   ].includes(location.pathname)
                     ? "active"
                     : ""
-                }`}
-                onMouseEnter={() => setCertificationsDropdown(true)}
-                onMouseLeave={() => setCertificationsDropdown(false)}
+                } ${certificationsDropdown ? "dropdown-open" : ""}`}
+                onMouseEnter={() =>
+                  !isMobile && setCertificationsDropdown(true)
+                }
+                onMouseLeave={() =>
+                  !isMobile && setCertificationsDropdown(false)
+                }
               >
-                <span className="dropdown-toggle-sol">
+                <span
+                  className="dropdown-toggle-sol"
+                  onClick={toggleCertificationsDropdown}
+                >
                   IT Certifications <FaCaretDown />
                 </span>
-                {certificationsDropdown && (
-                  <ul className="dropdown-menu-sol">
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/ManualTesting"
-                          ? "active"
-                          : ""
-                      }
+                <ul
+                  className={`dropdown-menu-sol ${
+                    certificationsDropdown ? "open" : ""
+                  }`}
+                >
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/ManualTesting"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/ManualTesting"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/ManualTesting"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Manual Testing
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/AutomationTesting"
-                          ? "active"
-                          : ""
-                      }
+                      Manual Testing
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/AutomationTesting"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/AutomationTesting"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/AutomationTesting"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Automation Testing (Python Or Java Selenium)
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname ===
-                        "/softwaresol/JavaFullStackDevelopment"
-                          ? "active"
-                          : ""
-                      }
+                      Automation Testing (Python Or Java Selenium)
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname ===
+                      "/softwaresol/JavaFullStackDevelopment"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/JavaFullStackDevelopment"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/JavaFullStackDevelopment"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Java Full Stack Development
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/SalesForce"
-                          ? "active"
-                          : ""
-                      }
+                      Java Full Stack Development
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/SalesForce"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/SalesForce"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/SalesForce"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        SalesForce
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/DataScience"
-                          ? "active"
-                          : ""
-                      }
+                      SalesForce
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/DataScience"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/DataScience"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/DataScience"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Data Science
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/RESTAPITesting"
-                          ? "active"
-                          : ""
-                      }
+                      Data Science
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/RESTAPITesting"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/RESTAPITesting"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/RESTAPITesting"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        REST API Testing
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname ===
-                        "/softwaresol/NetFullstackDevelopment"
-                          ? "active"
-                          : ""
-                      }
+                      REST API Testing
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname ===
+                      "/softwaresol/NetFullstackDevelopment"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/NetFullstackDevelopment"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/NetFullstackDevelopment"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        .Net Full Stack Development
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/ReactJsDevelopment"
-                          ? "active"
-                          : ""
-                      }
+                      .Net Full Stack Development
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/ReactJsDevelopment"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/ReactJsDevelopment"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/ReactJsDevelopment"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        React Js Development
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/RPA" ? "active" : ""
-                      }
+                      React Js Development
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/RPA" ? "active" : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/RPA"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/RPA"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        RPA (Robotic Process Automation)
-                      </Link>
-                    </li>
-                    <li
-                      className={
-                        location.pathname === "/softwaresol/Hardware&Networking"
-                          ? "active"
-                          : ""
-                      }
+                      RPA (Robotic Process Automation)
+                    </Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/softwaresol/Hardware&Networking"
+                        ? "active"
+                        : ""
+                    }
+                  >
+                    <Link
+                      to="/softwaresol/Hardware&Networking"
+                      onClick={() => setMenuOpen(false)}
                     >
-                      <Link
-                        to="/softwaresol/Hardware&Networking"
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        Hardware & Networking (CCNA, CCIE, CCNP)
-                      </Link>
-                    </li>
-                  </ul>
-                )}
+                      Hardware & Networking (CCNA, CCIE, CCNP)
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               {/* Register Dropdown */}
               <li
-                className="dropdown-sol"
-                onMouseEnter={() => setRegisterDropdown(true)}
-                onMouseLeave={() => setRegisterDropdown(false)}
+                className={`dropdown-sol ${
+                  registerDropdown ? "dropdown-open" : ""
+                }`}
+                onMouseEnter={() => !isMobile && setRegisterDropdown(true)}
+                onMouseLeave={() => !isMobile && setRegisterDropdown(false)}
               >
-                <span className="dropdown-toggle-sol">
+                <span
+                  className="dropdown-toggle-sol"
+                  onClick={toggleRegisterDropdown}
+                >
                   Register <FaCaretDown />
                 </span>
-                {registerDropdown && (
-                  <ul className="dropdown-menu-sol">
-                    <li>
-                      <span onClick={showModal} className="register-link">
-                        Drp Software <br /> Solutions and Pvt Ltd
-                      </span>
-                    </li>
-                  </ul>
-                )}
+                <ul
+                  className={`dropdown-menu-sol ${
+                    registerDropdown ? "open" : ""
+                  }`}
+                >
+                  <li>
+                    <span
+                      onClick={() => {
+                        showModal();
+                        setMenuOpen(false);
+                      }}
+                      className="register-link"
+                    >
+                      SAARDrp Software <br /> Solutions and Pvt Ltd
+                    </span>
+                  </li>
+                </ul>
               </li>
 
               <li
@@ -406,7 +454,7 @@ const DrpSoftwareNavbar = () => {
 
       {/* Modal for Register */}
       <Modal
-        title="Register for DRP Software Solutions Pvt Ltd"
+        title="Register for SAARDRP Software Solutions"
         open={isModalVisible}
         onCancel={handleCancel}
         footer={null}
@@ -416,7 +464,7 @@ const DrpSoftwareNavbar = () => {
         <Form
           layout="vertical"
           onFinish={handleFinish}
-          initialValues={{ serviceName: "DRP Software Solutions Pvt Ltd" }}
+          initialValues={{ serviceName: "SAARDRP Software Solutions " }}
           className="apply-form"
           form={form}
         >
@@ -464,8 +512,8 @@ const DrpSoftwareNavbar = () => {
             className="form-item"
           >
             <Select className="select-field">
-              <Option value=" DRP Software Solutions Pvt Ltd">
-                DRP Software Solutions Pvt Ltd
+              <Option value="SAARDRP Software Solutions">
+                SAARDRP Software Solutions Pvt Ltd
               </Option>
             </Select>
           </Form.Item>

@@ -66,7 +66,11 @@ const DrpSoftwareSolHome = () => {
         <div className="hero-container">
           <div className="hero-content">
             <h1>
-              At <span className="black">DRP Software Solutions Pvt Ltd,</span>{" "}
+              At{" "}
+              <span className="black">
+                <span className="more-small smaller">SAAR</span>DRP Software
+                Solutions ,
+              </span>{" "}
               we are a forward-thinking technology company committed to
               delivering cutting-edge software solutions that empower businesses
               to thrive in an ever-evolving digital world.
@@ -94,14 +98,15 @@ const DrpSoftwareSolHome = () => {
           <div className="story-content">
             <h2>Our Story </h2>
             <p>
-              At DRP Software Solutions Pvt Ltd, we believe that the journey of
-              innovation begins with a simple idea, and it’s the passion to turn
-              that idea into reality that drives us forward every day. Our story
-              is one of vision, determination, and a relentless pursuit of
-              excellence. What started as a small team with big dreams has grown
-              into a trusted partner for businesses across industries,
-              delivering state-of-the-art software solutions that transform the
-              way companies operate.
+              At <span className="more-small">SAAR</span>DRP Software Solutions
+              , we believe that the journey of innovation begins with a simple
+              idea, and it’s the passion to turn that idea into reality that
+              drives us forward every day. Our story is one of vision,
+              determination, and a relentless pursuit of excellence. What
+              started as a small team with big dreams has grown into a trusted
+              partner for businesses across industries, delivering
+              state-of-the-art software solutions that transform the way
+              companies operate.
             </p>
 
             <h3>The Beginning: A Vision for Innovation</h3>

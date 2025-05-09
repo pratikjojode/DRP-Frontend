@@ -1,191 +1,156 @@
-/* General body styles */
-.dark-mode body {
-  background-color: #121212;
-  color: #ffffff;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Dark Mode Styling */
+.dark-mode {
+  background-color: #1a202c; /* Dark background */
+  color: #e2e8f0; /* Light text color */
 }
 
-/* Dashboard container */
+/* Dashboard Container */
 .dashboard-container {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  background-color: #1a1a1a;
-  transition: background-color 0.3s ease;
-}
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 15px;
 }
 
-.header-icon {
-  font-size: 20px;
-  cursor: pointer;
-  color: #fff;
-}
-
-.header-icon:hover {
-  color: #ffd700; /* Gold hover effect */
-}
-
-.dark-mode .dashboard-container {
-  background-color: #121212;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #ffffff;
-  padding: 10px;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 1100;
-  transition: transform 0.2s ease;
-}
-
-.hamburger-menu:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-  }
-}
-
-/* Sidebar styling */
+/* Sidebar Styling */
 .sidebar {
-  width: 250px;
-  background-color: #222f3e;
-  color: #ffffff;
+  width: 250px; /* Default sidebar width */
+  background-color: #ffffff; /* Light sidebar background */
+  color: #333; /* Sidebar text color */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding: 20px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out;
-  z-index: 1000;
+  transition: transform 0.3s ease, width 0.3s ease;
+  position: fixed; /* Make sidebar fixed for better scrolling of main content */
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling if content exceeds height */
+  z-index: 1000; /* Ensure sidebar is above other content on small screens */
 }
 
-.sidebar.open {
-  left: 0;
+/* Dark mode sidebar styling */
+.dark-mode .sidebar {
+  background-color: #2d3748; /* Dark sidebar background */
+  color: #e2e8f0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar img {
+  display: block;
+  margin: 0 auto 20px auto; /* Center logo and add bottom margin */
 }
 
 .sidebar h3 {
-  color: #ffffff;
-  margin-bottom: 20px;
-  font-size: 24px;
   text-align: center;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #007bff; /* Highlight the dashboard title */
 }
 
-/* Sidebar list items */
+.dark-mode .sidebar h3 {
+  color: #90cdf4; /* Highlight in dark mode */
+}
+
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Allow the list to take available space */
 }
 
 .sidebar li {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 12px 15px;
   margin-bottom: 10px;
-  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: #ffffff;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sidebar li:hover,
-.sidebar li.active {
-  background-color: #0a3d62;
-  box-shadow: 0 0 15px rgba(26, 188, 156, 0.6);
-  transform: translateX(8px);
-}
-
-.sidebar li .fa-icon {
+.sidebar li svg {
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
-/* Logout Button */
-.sidebar .logout-button {
-  position: absolute;
-  bottom: 20px;
-  width: calc(100% - 40px);
-  text-align: left;
-  padding: 15px;
-  cursor: pointer;
-  color: #ffffff;
-  background-color: transparent;
-  transition: all 0.3s ease;
-  border-radius: 5px;
+.sidebar li:hover {
+  background-color: #e2e6ea; /* Light hover background */
+  color: #0056b3; /* Darker hover text color */
+}
+
+.dark-mode .sidebar li:hover {
+  background-color: #4a5568; /* Dark hover background */
+  color: #c3dafe; /* Lighter hover text color */
+}
+
+.sidebar li.active {
+  background-color: #007bff; /* Active item background */
+  color: #ffffff; /* Active item text color */
   font-weight: bold;
 }
 
-.sidebar .logout-button:hover {
-  background-color: #c0392b;
-  box-shadow: 0 0 10px rgba(192, 57, 43, 0.7);
-  transform: translateX(5px);
+.dark-mode .sidebar li.active {
+  background-color: #90cdf4; /* Dark mode active item background */
+  color: #1a202c; /* Dark mode active item text color */
 }
 
-/* Main content area */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  background-color: #1e272e;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.logout-button {
+  margin-top: auto; /* Push logout to the bottom */
+  color: #dc3545; /* Red color for logout */
+}
+
+.dark-mode .logout-button {
+  color: #fc8181; /* Lighter red in dark mode */
+}
+
+.logout-button:hover {
+  background-color: #dc3545;
   color: #ffffff;
 }
 
-.dark-mode .main-content {
-  background-color: #2c3e50;
+.dark-mode .logout-button:hover {
+  background-color: #fc8181;
+  color: #1a202c;
 }
 
-/* Header */
+/* Main Content Area */
+.main-content {
+  flex-grow: 1; /* Allow main content to take remaining space */
+  padding: 20px;
+  margin-left: 250px; /* Add margin equal to sidebar width */
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust main content margin when sidebar is closed (for responsiveness) */
+.dashboard-container.sidebar-closed .main-content {
+  margin-left: 0;
+}
+
+/* Header Styling */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  background-color: #ffffff; /* Light header background */
   padding: 15px 20px;
-  border-radius: 15px;
-  border-bottom: 2px solid #34495e;
-  background-color: #222f3e;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-radius: 8px; /* Rounded corners for a softer look */
 }
 
+/* Dark mode header styling */
 .dark-mode .header {
-  background-color: #121212;
-  border-bottom: 2px solid #3b3b3b;
+  background-color: #2d3748; /* Dark header background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: center;
+.header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
 }
 
-.logo-img {
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  transition: transform 0.2s ease;
-}
-
-.logo-img:hover {
-  transform: rotate(10deg);
+.dark-mode .header h1 {
+  color: #e2e8f0;
 }
 
 .header-right {
@@ -193,54 +158,133 @@
   align-items: center;
 }
 
-/* Dark mode toggle */
 .dark-mode-toggle {
+  font-size: 1.5em;
   cursor: pointer;
-  font-size: 24px;
-  color: #ffffff;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.dark-mode-toggle:hover {
-  color: #f1c40f;
-  transform: scale(1.1);
+  margin-left: 20px;
+  color: #ffc107; /* Sun icon color */
 }
 
 .dark-mode .dark-mode-toggle {
-  color: #f1c40f;
+  color: #a0aec0; /* Moon icon color in dark mode */
 }
 
-/* Titles */
-
-.dark-mode h2 {
-  color: #f1c40f;
+/* Content Area within Main Content */
+.content-area {
+  flex-grow: 1; /* Allow content area to fill space */
+  background-color: #ffffff; /* White background for content cards */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Smooth Transitions */
-.dashboard-container,
-.sidebar,
-.main-content,
-.header {
-  transition: all 0.3s ease;
+.dark-mode .content-area {
+  background-color: #2d3748;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Design */
-@media (min-width: 769px) {
-  .dashboard-container {
-    flex-direction: row;
-  }
-
-  .sidebar {
-    left: 0;
-  }
-
-  .main-content {
-    margin-left: 250px;
-  }
+/* Loading Spinner Styling (as needed by your component) */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2em;
 }
+
+/* Hamburger Menu for Responsiveness */
+.hamburger-menu {
+  display: none; /* Hidden by default on larger screens */
+  font-size: 1.8em;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Ensure it's above the sidebar */
+  color: #333;
+}
+
+.dark-mode .hamburger-menu {
+  color: #e2e8f0;
+}
+
+/* --- Responsive Design --- */
 
 @media (max-width: 768px) {
+  .sidebar {
+    width: 250px; /* Keep width, but it will be an overlay */
+    transform: translateX(-100%); /* Hide sidebar by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+
   .main-content {
-    padding: 15px;
+    margin-left: 0; /* No margin on smaller screens */
+    padding-top: 70px; /* Add space for the fixed header/hamburger */
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger menu on smaller screens */
+  }
+
+  .header {
+    position: fixed; /* Fix header to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0; /* No rounded corners for full width header */
+    box-sizing: border-box; /* Include padding in width */
+    z-index: 999; /* Below hamburger, above main content */
+  }
+
+  .header h1 {
+    font-size: 1.2em; /* Smaller font for header title */
+  }
+}
+
+/* Optional: Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px; /* Slightly smaller sidebar on very small screens */
+  }
+
+  .sidebar img {
+    width: 120px; /* Adjust logo size */
+  }
+
+  .header {
+    padding: 10px 15px; /* Smaller header padding */
+  }
+
+  .header h1 {
+    font-size: 1em;
+  }
+
+  .hamburger-menu {
+    font-size: 1.5em;
+    top: 15px;
+    left: 15px;
+  }
+
+  .dark-mode-toggle {
+    font-size: 1.3em;
+    margin-left: 10px;
+  }
+
+  .main-content {
+    padding: 15px; /* Smaller main content padding */
+    padding-top: 60px; /* Adjust top padding based on smaller header */
+  }
+
+  .sidebar li {
+    padding: 10px 12px; /* Smaller sidebar item padding */
+    margin-bottom: 8px;
   }
 }

@@ -1,6 +1,6 @@
 /* Color Variables */
 :root {
-  --primary-color: #1c1c1c;
+  --footer-primary-color: #1c1c1c;
   --text-color: white;
   --secondary-text: #b3b3b3;
   --accent-color: #4e9ff2;
@@ -9,7 +9,7 @@
 
 /* Footer Styling */
 .footer {
-  background-color: var(--primary-color);
+  background-color: var(--footer-primary-color) !important;
   color: var(--text-color);
   padding: 40px 20px;
   text-align: center;
@@ -197,9 +197,7 @@
 .register-form .ant-form-item {
   margin-bottom: 16px;
 }
-.footer-logo {
-  text-align: left;
-}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
@@ -246,30 +244,6 @@
 .footer-address p {
   margin: 5px 0;
   font-size: 16px;
-}
-/* Footer Address Section */
-.footer-address {
-  flex: 1;
-  min-width: 200px;
-  color: #ecf0f1;
-  font-size: 14px;
-}
-
-.footer-address h4 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #3498db; /* Highlight heading color */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
-}
-
-.footer-address p {
-  margin: 10px 0;
-  line-height: 1.6; /* Improve readability */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Space between icon and text */
 }
 
 .footer-address a {

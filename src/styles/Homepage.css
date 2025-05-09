@@ -347,3 +347,14 @@
   background: #dad2ff; /* Soft Lavender */
   color: #003366;
 }
+.smaller-text {
+  font-size: 28px;
+
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.more-small {
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.4;
+}

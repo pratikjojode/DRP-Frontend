@@ -6,28 +6,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky; /* Change from fixed to sticky */
-  top: 0; /* Sticks to the top */
+  position: sticky;
+  top: 0;
   width: 100%;
   z-index: 1000;
+}
+
+/* Navbar Container */
+.navbarContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 /* Navbar Links */
 .navMenu {
   display: flex;
-  list-style: none; /* Remove bullets */
+  list-style: none;
   gap: 20px;
   transition: transform 0.3s ease-in-out;
   padding: 0;
+  margin: 0;
 }
-.drpppp {
-  color: white !important;
-  cursor: pointer;
-}
-.drpppp:hover {
-  color: yellow !important;
-}
-/* Navbar Links */
+
 .navMenu li a {
   color: white;
   text-decoration: none;
@@ -36,22 +44,96 @@
   display: block;
 }
 
-/* Active Link */
-.navMenu li a.active {
-  color: yellow !important; /* Active link color */
+/* Dropdown Toggle Button */
+.dropdownToggle {
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
 }
 
-/* Hover Effect */
-.navMenu li a:hover {
+.dropdownToggle:hover {
+  color: yellow;
+}
+
+/* Arrow Icon */
+.arrowIcon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-left: 4px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  list-style: none;
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #010810;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+  display: none;
+  list-style: none;
+  border-radius: 5px;
+  z-index: 1001;
+  padding: 0;
+  margin: 0;
+}
+
+/* Dropdown Menu Display */
+.dropdownMenu.show {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdownMenu li {
+  list-style: none;
+  padding: 0;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.dropdownMenu li a,
+.dropdownMenu li .drpppp {
+  color: white;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Register special item */
+.drpppp {
+  color: white !important;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+
+.drpppp:hover {
   color: yellow !important;
 }
 
-/* Navbar container */
-.navbarContainer {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+/* Active Link */
+.navMenu li a.active {
+  color: yellow !important;
+}
+
+/* Hover Effects */
+.navMenu li a:hover,
+.dropdownMenu li:hover a,
+.dropdownMenu li:hover .drpppp {
+  color: yellow !important;
+}
+
+.dropdownMenu li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Hamburger Button */
@@ -61,23 +143,27 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: white; /* Ensuring visibility */
+  color: white;
 }
 
-/* Hide navMenu on small screens */
+/* Mobile Styles */
 @media screen and (max-width: 767px) {
   .navMenu {
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
-    background: #010810; /* Ensure mobile menu has same background */
-    width: 100%;
-    height: 100vh;
+    background: #010810;
+    width: 80%;
+    height: calc(100vh - 60px);
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     padding: 20px;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    gap: 5px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin: 0;
   }
 
   /* Show menu when active */
@@ -88,70 +174,52 @@
   .hamburger {
     display: block;
   }
-}
 
-/* Dropdown */
-.dropdown {
-  position: relative;
-  list-style: none; /* Remove bullets */
-}
+  /* Mobile Dropdown */
+  .dropdownMenu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-left: 15px;
+  }
 
-/* Dropdown Menu */
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #010810; /* Dropdown same background as navbar */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-width: 250px;
-  display: none;
-  list-style: none; /* Remove bullets */
-  border-radius: 5px;
-}
+  .dropdownMenu.show {
+    max-height: 1000px; /* Large enough to fit all content */
+  }
 
-/* Dropdown links */
-.dropdownMenu li {
-  list-style: none; /* Remove bullets */
-  padding: 0px 10px;
-  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-}
+  /* Indent dropdown items on mobile */
+  .dropdownMenu li a,
+  .dropdownMenu li .drpppp {
+    padding-left: 25px;
+  }
 
-/* Hover effect on dropdown items */
-.dropdownMenu li:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light white hover effect */
-}
+  /* Adjust dropdown toggle for mobile */
+  .dropdownToggle {
+    width: 100%;
+    justify-content: space-between;
+  }
 
-.dropdownMenu li a {
-  color: white; /* White text */
-  display: block;
-  transition: color 0.3s ease;
-  text-decoration: none; /* Remove underline */
-}
+  /* Rotate arrow when dropdown is open */
+  .dropdown .dropdownToggle .arrowIcon {
+    transition: transform 0.3s ease;
+  }
 
-/* Text color change on hover */
-.dropdownMenu li:hover a {
-  color: yellow !important;
+  .dropdown:has(.dropdownMenu.show) .dropdownToggle .arrowIcon {
+    transform: rotate(180deg);
+  }
 }
-
-/* Large screen dropdowns open on hover */
 @media screen and (min-width: 768px) {
   .dropdown:hover .dropdownMenu {
     display: block;
   }
-}
 
-/* Small screen dropdowns open on click */
-@media screen and (max-width: 767px) {
-  .dropdownMenu {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: none;
-    padding: 0;
-  }
-
-  .dropdownMenu.show {
-    display: block;
+  .dropdown:hover .arrowIcon {
+    transform: rotate(180deg);
   }
 }

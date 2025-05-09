@@ -5,13 +5,16 @@
   padding: 15px 20px;
   width: 100%;
   position: sticky;
-  top: 0%;
+  top: 0;
   left: 0;
   z-index: 1000;
 }
+
 .register-link {
   color: white !important;
+  cursor: pointer;
 }
+
 .software-navbar-main {
   display: flex;
   justify-content: center;
@@ -23,7 +26,6 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
   margin: 0 auto;
 }
 
@@ -39,16 +41,18 @@
   display: flex;
   gap: 25px;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .software-navbar-ul li {
   cursor: pointer;
   padding: 10px 15px;
+  position: relative;
 }
 
 .software-navbar-ul li a {
   color: white;
-
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -64,54 +68,6 @@
   cursor: pointer;
 }
 
-/* ✅ Fix: Ensure Navbar is Always Visible */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  .software-navbar-ul {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    background: rgba(1, 8, 16, 0.95);
-    width: 250px; /* Set a fixed width */
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding-top: 80px;
-    transition: left 0.3s ease-in-out;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  }
-
-  .software-navbar-ul.open {
-    left: 0;
-  }
-
-  .software-navbar-ul li {
-    font-size: 18px;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-  }
-
-  .software-navbar-ul li a {
-    display: block;
-    width: 100%;
-  }
-}
-
-/* Small Screens */
-@media (max-width: 480px) {
-  .logo {
-    width: 130px;
-  }
-
-  .software-navbar-ul li {
-    font-size: 16px;
-  }
-}
 /* Dropdown container */
 .dropdown-sol {
   position: relative;
@@ -125,9 +81,10 @@
   align-items: center;
   color: white;
   cursor: pointer;
+  gap: 5px;
 }
 
-/* Dropdown menu */
+/* Dropdown menu - Base styling */
 .dropdown-menu-sol {
   position: absolute;
   top: 100%;
@@ -138,20 +95,23 @@
   margin: 0;
   border-radius: 5px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  min-width: 150px;
-  display: none;
+  min-width: 200px;
   z-index: 10;
+  display: none; /* Hidden by default */
 }
 
-/* Display dropdown on hover */
-.dropdown-sol:hover .dropdown-menu-sol {
-  display: block;
+/* Display dropdown on hover for desktop */
+@media (min-width: 769px) {
+  .dropdown-sol:hover .dropdown-menu-sol {
+    display: block;
+  }
 }
 
 /* Dropdown items */
 .dropdown-menu-sol li {
   white-space: nowrap;
   background-color: #01081071;
+  padding: 10px 15px;
 }
 
 .dropdown-menu-sol li a {
@@ -163,7 +123,6 @@
 /* Hover effect */
 .dropdown-menu-sol li:hover {
   background-color: rgb(0, 0, 0);
-  color: yellow;
 }
 
 .dropdown-menu-sol li:hover a {
@@ -171,43 +130,41 @@
 }
 
 .dropdown-sol.active .dropdown-toggle-sol {
-  color: #ffcc00; /* Change color for active dropdown */
+  color: yellow; /* Change color for active dropdown */
 }
 
 .dropdown-menu-sol li.active {
   background-color: #003366; /* Highlight active link */
-  color: white;
 }
 
 .dropdown-menu-sol li.active a {
   color: white;
 }
-/* Navbar Base Styles */
-.software-navbar {
-  background-color: #010810;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+
+/* Make dropdowns work on mobile */
+.dropdown-menu-sol.open {
+  display: block;
 }
 
-/* Remove hover-based dropdown on mobile */
+/* Mobile styles */
 @media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
   .software-navbar-ul {
     position: fixed;
     top: 0;
     left: -100%;
     background: rgba(1, 8, 16, 0.95);
-    width: 270px; /* Increase width for better tap experience */
+    width: 340px; /* Increase width for better tap experience */
     height: 100vh;
     flex-direction: column;
     align-items: start;
-    padding: 80px 20px;
+    padding: 80px 20px 20px 20px;
     transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
   }
 
   .software-navbar-ul.open {
@@ -236,33 +193,38 @@
     width: 100%;
   }
 
-  .dropdown-menu-sol {
-    display: none;
-    position: static;
-    background: none;
-    box-shadow: none;
-    padding-left: 15px;
+  /* Style the dropdown when open */
+  .dropdown-sol.dropdown-open .dropdown-toggle-sol {
+    color: yellow;
   }
 
-  .dropdown-sol.active .dropdown-menu-sol {
-    display: block;
+  .dropdown-menu-sol {
+    position: static;
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    margin-top: 5px;
+    border-radius: 0;
   }
 
   .dropdown-menu-sol li {
-    padding: 10px 0;
+    padding: 10px 0 10px 15px;
+    border-bottom: none;
+    background-color: rgba(1, 8, 16, 0.5);
   }
 
-  .menu-icon {
-    display: block;
-    cursor: pointer;
+  .dropdown-menu-sol li:last-child {
+    border-bottom: none;
   }
 
-  /* Hide dropdown hover effects */
-  .dropdown-sol:hover .dropdown-menu-sol {
-    display: none;
-  }
-}
+  /* Small Screens */
+  @media (max-width: 480px) {
+    .logo {
+      width: 130px;
+    }
 
-.dropdown-menu-sol.open {
-  display: block;
+    .software-navbar-ul li {
+      font-size: 16px;
+    }
+  }
 }
