@@ -22,8 +22,8 @@ const DrpCompHeader = () => {
           onMouseLeave={handleMouseLeave}
         >
           <span>
-            DRP Computer Education & Traning Institute
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+            "Strategic Alliance for Admissions, Recruitement, Development, and
+            Resource Planning" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </span>
           <span>

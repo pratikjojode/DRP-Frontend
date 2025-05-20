@@ -10,7 +10,7 @@ import {
   FaBars,
   FaTimes,
   FaCommentDots,
-} from "react-icons/fa"; // Import icons
+} from "react-icons/fa";
 import Courses from "./Courses";
 import Blogs from "./Blogs";
 import Users from "./Users";
@@ -18,9 +18,8 @@ import InquiryForm from "./InquiryForm";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Adminfeedbacks from "./Adminfeedbacks";
 
-import Footer from "../components/Footer";
 import "../styles/AdminDashboard.css";
-import drpmain from "../images/DRP_foot.png";
+import drpmain from "../images/DRP_new1.png";
 
 const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);

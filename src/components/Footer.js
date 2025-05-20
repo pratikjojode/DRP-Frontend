@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Input, Button, message } from "antd";
 import axios from "axios";
-import logo from "../images/DRP_group1.png"; // Update with your logo
-import "../styles/Footer.css"; // Import CSS
+import logo from "../images/DRP_new1.png";
+import "../styles/Footer.css";
 
 const Footer = () => {
   const [registerLoading, setRegisterLoading] = useState(false);
@@ -25,7 +25,6 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo Section */}
         <div className="footer-logo">
           <img
             src={logo}
@@ -34,11 +33,11 @@ const Footer = () => {
             width="150px"
           />
           <p>
-            &copy; {new Date().getFullYear()} DRP Groups. All Rights Reserved.
+            &copy; {new Date().getFullYear()} SAARDRP INTERNATIONAL VENTURES PVT
+            LTD. All rights reserved.
           </p>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
@@ -69,8 +68,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
-        {/* Register Form */}
 
         <div className="footer-social">
           <h3>Follow Us</h3>

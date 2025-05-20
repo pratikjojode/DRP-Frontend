@@ -1,10 +1,42 @@
-/* Dark Mode Styling */
-.dark-mode {
-  background-color: #1a202c; /* Dark background */
-  color: #e2e8f0; /* Light text color */
+/* Base Styles */
+:root {
+  --primary-color: #1a73e8;
+  --primary-hover: #0d62d0;
+  --danger-color: #dc3545;
+  --danger-hover: #c82333;
+  --light-bg: #ffffff;
+  --light-text: #333333;
+  --dark-bg: #121a29;
+  --dark-sidebar: #1e293b;
+  --dark-content: #253349;
+  --dark-text: #e2e8f0;
+  --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 2px 10px rgba(0, 0, 0, 0.3);
+  --border-radius: 8px;
+  --transition-speed: 0.25s;
 }
 
-/* Dashboard Container */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  background-color: #f5f7fa;
+  color: var(--light-text);
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+}
+
+.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* Dashboard Layout */
 .dashboard-container {
   display: flex;
   min-height: 100vh;
@@ -12,115 +44,130 @@
 
 /* Sidebar Styling */
 .sidebar {
-  width: 250px; /* Default sidebar width */
-  background-color: #ffffff; /* Light sidebar background */
-  color: #333; /* Sidebar text color */
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  padding: 24px 16px;
+  box-shadow: var(--shadow-light);
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, width 0.3s ease;
-  position: fixed; /* Make sidebar fixed for better scrolling of main content */
+  transition: transform var(--transition-speed) ease,
+    width var(--transition-speed) ease;
+  position: fixed;
   height: 100%;
-  overflow-y: auto; /* Enable scrolling if content exceeds height */
-  z-index: 1000; /* Ensure sidebar is above other content on small screens */
+  overflow-y: auto;
+  z-index: 1000;
 }
 
-/* Dark mode sidebar styling */
 .dark-mode .sidebar {
-  background-color: #2d3748; /* Dark sidebar background */
-  color: #e2e8f0;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  background-color: var(--dark-sidebar);
+  color: var(--dark-text);
+  box-shadow: var(--shadow-dark);
 }
 
 .sidebar img {
   display: block;
-  margin: 0 auto 20px auto; /* Center logo and add bottom margin */
+  margin: 0 auto 32px;
+  max-width: 160px;
+  height: auto;
 }
 
 .sidebar h3 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #007bff; /* Highlight the dashboard title */
+  margin-bottom: 32px;
+  color: var(--primary-color);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .dark-mode .sidebar h3 {
-  color: #90cdf4; /* Highlight in dark mode */
+  color: #90cdf4;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* Allow the list to take available space */
+  flex-grow: 1;
 }
 
 .sidebar li {
   display: flex;
   align-items: center;
-  padding: 12px 15px;
-  margin-bottom: 10px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: var(--border-radius);
+  transition: all var(--transition-speed) ease;
+  font-weight: 500;
 }
 
 .sidebar li svg {
-  margin-right: 10px;
-  font-size: 1.1em;
+  margin-right: 12px;
+  font-size: 1.2em;
+  opacity: 0.8;
 }
 
 .sidebar li:hover {
-  background-color: #e2e6ea; /* Light hover background */
-  color: #0056b3; /* Darker hover text color */
+  background-color: rgba(0, 123, 255, 0.08);
+  color: var(--primary-color);
 }
 
 .dark-mode .sidebar li:hover {
-  background-color: #4a5568; /* Dark hover background */
-  color: #c3dafe; /* Lighter hover text color */
+  background-color: rgba(144, 205, 244, 0.1);
+  color: #90cdf4;
 }
 
 .sidebar li.active {
-  background-color: #007bff; /* Active item background */
-  color: #ffffff; /* Active item text color */
-  font-weight: bold;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
 }
 
 .dark-mode .sidebar li.active {
-  background-color: #90cdf4; /* Dark mode active item background */
-  color: #1a202c; /* Dark mode active item text color */
+  background-color: #2b6cb0;
+}
+
+.sidebar li.active svg {
+  opacity: 1;
 }
 
 .logout-button {
-  margin-top: auto; /* Push logout to the bottom */
-  color: #dc3545; /* Red color for logout */
+  margin-top: auto;
+  color: var(--danger-color);
+  margin-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 16px;
 }
 
 .dark-mode .logout-button {
-  color: #fc8181; /* Lighter red in dark mode */
+  color: #fc8181;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logout-button:hover {
-  background-color: #dc3545;
-  color: #ffffff;
+  background-color: rgba(220, 53, 69, 0.1);
 }
 
 .dark-mode .logout-button:hover {
-  background-color: #fc8181;
-  color: #1a202c;
+  background-color: rgba(252, 129, 129, 0.1);
 }
 
 /* Main Content Area */
 .main-content {
-  flex-grow: 1; /* Allow main content to take remaining space */
-  padding: 20px;
-  margin-left: 250px; /* Add margin equal to sidebar width */
-  transition: margin-left 0.3s ease;
+  flex-grow: 1;
+  padding: 24px;
+  margin-left: 280px;
+  transition: margin-left var(--transition-speed) ease;
   display: flex;
   flex-direction: column;
+  background-color: #f5f7fa;
 }
 
-/* Adjust main content margin when sidebar is closed (for responsiveness) */
+.dark-mode .main-content {
+  background-color: var(--dark-bg);
+}
+
 .dashboard-container.sidebar-closed .main-content {
   margin-left: 0;
 }
@@ -130,161 +177,199 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff; /* Light header background */
-  padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  border-radius: 8px; /* Rounded corners for a softer look */
+  background-color: var(--light-bg);
+  padding: 16px 24px;
+  box-shadow: var(--shadow-light);
+  margin-bottom: 24px;
+  border-radius: var(--border-radius);
 }
 
-/* Dark mode header styling */
 .dark-mode .header {
-  background-color: #2d3748; /* Dark header background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: var(--dark-content);
+  box-shadow: var(--shadow-dark);
 }
 
 .header h1 {
   margin: 0;
-  font-size: 1.5em;
-  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--light-text);
 }
 
 .dark-mode .header h1 {
-  color: #e2e8f0;
+  color: var(--dark-text);
 }
 
 .header-right {
   display: flex;
   align-items: center;
+  gap: 16px;
 }
 
 .dark-mode-toggle {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   cursor: pointer;
-  margin-left: 20px;
-  color: #ffc107; /* Sun icon color */
+  color: #ffc107;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .dark-mode .dark-mode-toggle {
-  color: #a0aec0; /* Moon icon color in dark mode */
+  color: #cbd5e0;
 }
 
-/* Content Area within Main Content */
+.dark-mode .dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Content Area */
 .content-area {
-  flex-grow: 1; /* Allow content area to fill space */
-  background-color: #ffffff; /* White background for content cards */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  background-color: var(--light-bg);
+  padding: 24px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
 }
 
 .dark-mode .content-area {
-  background-color: #2d3748;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  background-color: var(--dark-content);
+  box-shadow: var(--shadow-dark);
 }
 
-/* Loading Spinner Styling (as needed by your component) */
+/* Loading Spinner */
 .loading-spinner {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 2em;
+  font-size: 2rem;
+  color: var(--primary-color);
 }
 
-/* Hamburger Menu for Responsiveness */
+.dark-mode .loading-spinner {
+  color: #90cdf4;
+}
+
+/* Hamburger Menu */
 .hamburger-menu {
-  display: none; /* Hidden by default on larger screens */
-  font-size: 1.8em;
+  display: none;
+  font-size: 1.8rem;
   cursor: pointer;
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1001; /* Ensure it's above the sidebar */
-  color: #333;
+  z-index: 1001;
+  color: var(--light-text);
+  background: var(--light-bg);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-light);
 }
 
 .dark-mode .hamburger-menu {
-  color: #e2e8f0;
+  color: var(--dark-text);
+  background: var(--dark-sidebar);
+  box-shadow: var(--shadow-dark);
 }
 
-/* --- Responsive Design --- */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .main-content {
+    margin-left: 240px;
+  }
+}
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 250px; /* Keep width, but it will be an overlay */
-    transform: translateX(-100%); /* Hide sidebar by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 1000;
+    transform: translateX(-100%);
+    width: 280px;
   }
 
   .sidebar.open {
-    transform: translateX(0); /* Show sidebar when open */
+    transform: translateX(0);
   }
 
   .main-content {
-    margin-left: 0; /* No margin on smaller screens */
-    padding-top: 70px; /* Add space for the fixed header/hamburger */
+    margin-left: 0;
+    padding-top: 80px;
   }
 
   .hamburger-menu {
-    display: block; /* Show hamburger menu on smaller screens */
+    display: flex;
   }
 
   .header {
-    position: fixed; /* Fix header to the top */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 0; /* No rounded corners for full width header */
-    box-sizing: border-box; /* Include padding in width */
-    z-index: 999; /* Below hamburger, above main content */
-  }
-
-  .header h1 {
-    font-size: 1.2em; /* Smaller font for header title */
+    border-radius: 0;
+    z-index: 999;
+    padding: 16px 24px;
   }
 }
 
-/* Optional: Further adjustments for very small screens */
 @media (max-width: 480px) {
   .sidebar {
-    width: 200px; /* Slightly smaller sidebar on very small screens */
+    width: 240px;
   }
 
   .sidebar img {
-    width: 120px; /* Adjust logo size */
+    width: 120px;
   }
 
   .header {
-    padding: 10px 15px; /* Smaller header padding */
+    padding: 14px 20px;
   }
 
   .header h1 {
-    font-size: 1em;
+    font-size: 1.2rem;
   }
 
   .hamburger-menu {
-    font-size: 1.5em;
-    top: 15px;
-    left: 15px;
+    font-size: 1.5rem;
+    top: 16px;
+    left: 16px;
+    width: 40px;
+    height: 40px;
   }
 
   .dark-mode-toggle {
-    font-size: 1.3em;
-    margin-left: 10px;
+    font-size: 1.3rem;
+    width: 36px;
+    height: 36px;
   }
 
   .main-content {
-    padding: 15px; /* Smaller main content padding */
-    padding-top: 60px; /* Adjust top padding based on smaller header */
+    padding: 16px;
+    padding-top: 70px;
+  }
+
+  .content-area {
+    padding: 16px;
   }
 
   .sidebar li {
-    padding: 10px 12px; /* Smaller sidebar item padding */
-    margin-bottom: 8px;
+    padding: 12px 14px;
   }
 }
