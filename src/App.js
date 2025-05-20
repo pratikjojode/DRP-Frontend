@@ -112,9 +112,9 @@ const ScrollToTop = () => {
 
     // Define tab titles based on routes
     const routeTitles = {
-      "/": "Home - DRP",
-      "/login": "Login - DRP",
-      "/register": "Register - DRP",
+      "/": "Home - SAARDRP",
+      "/login": "Login - SAARDRP",
+      "/register": "Register - SAARDRP",
       "/admin/dashboard": "Admin Panel - DRP",
       "/inquiry": "Inquiry - DRP",
       "/blogs": "Blogs - DRP",

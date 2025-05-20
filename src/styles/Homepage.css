@@ -124,6 +124,8 @@
 .dr {
   font-size: 20px;
   font-weight: 700;
+
+  margin-left: 5px;
 }
 .dropdown-menu li a:hover {
   color: var(--hover-color);

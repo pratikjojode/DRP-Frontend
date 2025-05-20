@@ -33,10 +33,11 @@ const HomePage = () => {
       <div className="content">
         <h1>
           Welcome to <span className="smaller-text">SAAR</span>
-          DRP Group
+          DRP International Ventures Pvt Ltd
         </h1>
         <p>
-          The <span className="more-small">SAAR</span>DRP Group, founded by{" "}
+          The <span className="more-small">SAAR</span>DRP International Ventures
+          Pvt Ltd, founded by
           <span className="dr">Dr. D. R. Patil</span>, is a dynamic organization
           based in Maharashtra, India, with a strong presence both nationally
           and internationally. We specialize in education consultancy,

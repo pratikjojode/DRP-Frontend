@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Modal, Form, Input, Button, message, Spin } from "antd";
 import axios from "axios";
-import loginimage from "../images/DRP_group1.png";
+import loginimage from "../images/DRP_new1.png";
 import "../styles/Navbar.css";
 
 const Navbar = () => {

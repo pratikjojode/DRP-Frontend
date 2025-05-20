@@ -1,21 +1,20 @@
 import React, { useState, useRef } from "react";
 import "../styles/header.css";
-import ChatComponent from "../components/ChatComponent"; // Import chat component
+import ChatComponent from "../components/ChatComponent";
 
 const Header = () => {
   const [showChat, setShowChat] = useState(false);
   const marqueeRef = useRef(null);
 
-  // Use a valid ObjectId for _id, for demonstration we will use a 24 character hex string
   const user = { _id: "65123abc1234567890abcdef", name: "John Doe" };
-  const room = "DRP Chat Room"; // Default chat room
+  const room = "DRP Chat Room";
 
   const handleMouseEnter = () => {
-    marqueeRef.current.stop(); // Stops marquee on hover
+    marqueeRef.current.stop();
   };
 
   const handleMouseLeave = () => {
-    marqueeRef.current.start(); // Resumes marquee when hover is removed
+    marqueeRef.current.start();
   };
 
   return (
@@ -39,8 +38,8 @@ const Header = () => {
           style={{ whiteSpace: "nowrap", display: "block", width: "100%" }}
         >
           <span style={{ marginRight: "50px" }}>
-            "Empowering Futures with Global Education, Smart Solutions, Expert
-            Training!"
+            "Strategic Alliance for Admissions, Recruitement, Development, and
+            Resource Planning"
           </span>
           <span style={{ marginRight: "50px" }}>
             <i className="fa-solid fa-envelope"></i> Email: info@drp.org.in
