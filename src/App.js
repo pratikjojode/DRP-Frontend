@@ -109,19 +109,19 @@ const ScrollToTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 100);
-
+    
     // Define tab titles based on routes
     const routeTitles = {
       "/": "Home - SAARDRP",
       "/login": "Login - SAARDRP",
       "/register": "Register - SAARDRP",
-      "/admin/dashboard": "Admin Panel - DRP",
-      "/inquiry": "Inquiry - DRP",
-      "/blogs": "Blogs - DRP",
-      "/services/our-courses": "Our Courses - DRP",
-      "/drpIndia&AbroadEducation": "DRP Education - DRP",
-      "/contact": "Contact Us - DRP",
-      "/about": "About Us - DRP",
+      "/admin/dashboard": "Admin Panel - SAARDRP",
+      "/inquiry": "Inquiry - SAARDRP",
+      "/blogs": "Blogs - SAARDRP",
+      "/services/our-courses": "Our Courses - SAARDRP",
+      "/drpIndia&AbroadEducation": "DRP Education - SAARDRP",
+      "/contact": "Contact Us - SAARDRP",
+      "/about": "About Us - SAARDRP",
       "/feedback": "Feedback - DRP",
       "/countries": "Countries - DRP",
       "/usa": "USA - DRP",

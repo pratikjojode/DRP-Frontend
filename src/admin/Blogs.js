@@ -11,7 +11,7 @@ import {
 } from "antd";
 import axios from "axios";
 import { UploadOutlined } from "@ant-design/icons";
-import "../styles/Blogs.css"; // Make sure to add custom styling here
+import "../styles/Blogs.css"; 
 
 const CreateBlog = () => {
   const [loading, setLoading] = useState(false);
@@ -19,9 +19,9 @@ const CreateBlog = () => {
   const [blogs, setBlogs] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [editingBlog, setEditingBlog] = useState(null);
-  const [isTableView, setIsTableView] = useState(false); // State for table view
+  const [isTableView, setIsTableView] = useState(false); 
 
-  // Fetch all blogs when the component mounts
+
   const fetchAllBlogs = async () => {
     try {
       const response = await axios.get("/api/v1/blogs/getblogs");

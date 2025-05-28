@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Modal, Form, Input, Button, Spin, message } from "antd";
 import styles from "../styles/DrpEduNavbar.module.css";
-import logo from "../images/DRP_banner3.png";
+import logo from "../images/DRP_bann_new_ab.png";
 import axios from "axios";
 
 const DrpEduNavbar = () => {

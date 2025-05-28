@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import "../styles/DrpCompNavbar.css";
-import complog from "../images/drpcomplogo.png";
+import complog from "../images/DRP_bann_new_comp.png";
 import { Button, Form, Input, message, Modal, Select } from "antd";
 import axios from "axios";
 const DrpCompNavbar = () => {

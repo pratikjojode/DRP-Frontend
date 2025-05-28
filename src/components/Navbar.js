@@ -68,7 +68,7 @@ const Navbar = () => {
     }
   };
 
-  // Close mobile menu when clicking outside
+ 
   const closeMobileMenu = () => {
     setMenuOpen(false);
   };

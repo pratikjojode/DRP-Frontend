@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Modal, Button, Select, Form, Input, message } from "antd";
-import logoSoftware from "../images/DRP_banner4.png";
+import logoSoftware from "../images/DRP_bann_new_sol.png";
 import "../styles/DrpsofwatreNavbar.css";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaCaretDown } from "react-icons/fa";
