@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Homepage.css";
 import edu from "../images/DRP_letterhead.png"; // Import the new image
-import cardImage1 from "../../src/images/Picsart_25-02-11_12-48-40-307.jpg";
-import cardImage2 from "../../src/images/WhatsApp Image 2025-02-11 at 13.06.23_6f7d264e.jpg";
-import cardImage3 from "../../src/images/Picsart_25-02-11_12-51-45-345.jpg";
+import cardImage1 from "../../src/images/DRP_Abro.png";
+import cardImage2 from "../../src/images/DRP_Soft.png";
+import cardImage3 from "../../src/images/DRP_Com.png";
 import InquiryFormModal from "../components/InquiryFormModal";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
