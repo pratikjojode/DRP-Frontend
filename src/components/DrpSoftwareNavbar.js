@@ -433,7 +433,7 @@ const DrpSoftwareNavbar = () => {
                       }}
                       className="register-link"
                     >
-                      SAARDrp Software <br /> Solutions and Pvt Ltd
+                      SAARDrp Software <br /> Solutions
                     </span>
                   </li>
                 </ul>

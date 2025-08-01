@@ -68,7 +68,6 @@ const Navbar = () => {
     }
   };
 
- 
   const closeMobileMenu = () => {
     setMenuOpen(false);
   };
@@ -344,7 +343,7 @@ const Navbar = () => {
                     closeMobileMenu();
                   }}
                 >
-                  SAARDRP Software Solutions Pvt Ltd
+                  SAARDRP Software Solutions
                 </button>
               </li>
               <li>

@@ -34,7 +34,7 @@ const DrpEeduHeader = () => {
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
         <span>
-          <i className="fa-solid fa-phone"></i> Call us: +91 7058857891
+          <i className="fa-solid fa-phone"></i> Call us: +91 9699657891
         </span>
       </marquee>
     </div>

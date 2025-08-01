@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Homepage.css";
-import edu from "../images/DRP_letterhead.png"; // Import the new image
+
 import cardImage1 from "../../src/images/DRP_Abro.png";
 import cardImage2 from "../../src/images/DRP_Soft.png";
 import cardImage3 from "../../src/images/DRP_Com.png";

@@ -109,8 +109,7 @@ const ScrollToTop = () => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, 100);
-    
-    // Define tab titles based on routes
+
     const routeTitles = {
       "/": "Home - SAARDRP",
       "/login": "Login - SAARDRP",

@@ -8,7 +8,9 @@ import axios from "axios";
 const DrpEduNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [subDropdownOpen, setSubDropdownOpen] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+  const [subSubDropdownOpen, setSubSubDropdownOpen] = useState(null);
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState(
@@ -21,8 +23,19 @@ const DrpEduNavbar = () => {
   };
 
   const toggleDropdown = (menu) => {
-    // For mobile: toggle the dropdown
     setDropdownOpen(dropdownOpen === menu ? null : menu);
+    setSubDropdownOpen(null); // Close any open sub-dropdowns
+  };
+
+  const toggleSubDropdown = (subDropdownName) => {
+    setSubDropdownOpen(
+      subDropdownOpen === subDropdownName ? null : subDropdownName
+    );
+  };
+  const toggleSubSubDropdown = (dropdownName) => {
+    setSubSubDropdownOpen(
+      subSubDropdownOpen === dropdownName ? null : dropdownName
+    );
   };
 
   const showRegisterModal = (service) => {
@@ -30,7 +43,6 @@ const DrpEduNavbar = () => {
       service || "SAARDRP India & Abroad Education and Recruitment Services"
     );
     setModalVisible(true);
-    // Close mobile menu after selection
     setMenuOpen(false);
   };
 
@@ -78,7 +90,6 @@ const DrpEduNavbar = () => {
             ☰
           </button>
 
-          {/* Navigation Links */}
           <ul className={`${styles.navMenu} ${menuOpen ? styles.active : ""}`}>
             <li>
               <Link
@@ -103,7 +114,6 @@ const DrpEduNavbar = () => {
               </Link>
             </li>
 
-            {/* Services Dropdown */}
             <li className={styles.dropdown}>
               <div
                 className={styles.dropdownToggle}
@@ -170,57 +180,141 @@ const DrpEduNavbar = () => {
               </ul>
             </li>
 
-            {/* Countries Dropdown */}
             <li className={styles.dropdown}>
               <div
-                className={styles.dropdownToggle}
-                onClick={() => toggleDropdown("countries")}
+                className={`${styles.dropdownToggle} ${
+                  dropdownOpen === "education" ? styles.active : ""
+                }`}
+                onClick={() => toggleDropdown("education")}
               >
-                <span>Countries</span>
-                <span className={styles.arrowIcon}>▼</span>
+                <span>Education ▼</span>
               </div>
               <ul
                 className={`${styles.dropdownMenu} ${
-                  dropdownOpen === "countries" ? styles.show : ""
+                  dropdownOpen === "education" ? styles.show : ""
                 }`}
               >
-                <li>
-                  <Link
-                    to="/services/education/india"
-                    onClick={() => setMenuOpen(false)}
+                {/* Medical Sub-Dropdown */}
+                <li className={styles.subDropdown}>
+                  <div
+                    className={`${styles.subDropdownToggle} ${
+                      subDropdownOpen === "medical" ? styles.active : ""
+                    }`}
+                    onClick={() => toggleSubDropdown("medical")}
                   >
-                    India
-                  </Link>
+                    <span>Medical ▼</span>
+                  </div>
+                  <ul
+                    className={`${styles.subDropdownMenu} ${
+                      subDropdownOpen === "medical" ? styles.show : ""
+                    }`}
+                  >
+                    {/* Single Dropdown for Medical Degrees */}
+                    <li className={styles.subSubDropdown}>
+                      <div
+                        className={`${styles.subSubDropdownToggle} ${
+                          subSubDropdownOpen === "medicalDegrees"
+                            ? styles.active
+                            : ""
+                        }`}
+                        onClick={() => toggleSubSubDropdown("medicalDegrees")}
+                      >
+                        <span>MBBS/MD/MS/BAMS ▼</span>
+                      </div>
+                      <ul
+                        className={`${styles.subSubDropdownMenu} ${
+                          subSubDropdownOpen === "medicalDegrees"
+                            ? styles.show
+                            : ""
+                        }`}
+                      >
+                        {/* Country links */}
+                        <li>
+                          <Link
+                            to="/services/education/medical/degrees/india"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            India
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/education/medical/degrees/usa"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            USA
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/education/medical/degrees/uk"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            UK
+                          </Link>
+                        </li>
+                        <li>
+                          <Link
+                            to="/services/education/medical/degrees/canada"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            Canada
+                          </Link>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </li>
-                <li>
-                  <Link to="/usa" onClick={() => setMenuOpen(false)}>
-                    USA
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/uk" onClick={() => setMenuOpen(false)}>
-                    UK
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/canada" onClick={() => setMenuOpen(false)}>
-                    Canada
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/australia" onClick={() => setMenuOpen(false)}>
-                    Australia
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/germany" onClick={() => setMenuOpen(false)}>
-                    Germany
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/europe" onClick={() => setMenuOpen(false)}>
-                    Europe
-                  </Link>
+
+                {/* Non-Medical Sub-Dropdown */}
+                <li className={styles.subDropdown}>
+                  <div
+                    className={`${styles.subDropdownToggle} ${
+                      subDropdownOpen === "non-medical" ? styles.active : ""
+                    }`}
+                    onClick={() => toggleSubDropdown("non-medical")}
+                  >
+                    <span>Non-Medical ▼</span>
+                  </div>
+                  <ul
+                    className={`${styles.subDropdownMenu} ${
+                      subDropdownOpen === "non-medical" ? styles.show : ""
+                    }`}
+                  >
+                    {/* Links for Non-Medical */}
+                    <li>
+                      <Link
+                        to="/services/education/non-medical/ms"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        MS
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/services/education/non-medical/phd-post-doc"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        PhD/Post Doc
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/services/education/non-medical/diploma-etc"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Dip/DE/GF/MEF
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/services/education/non-medical/pharmacy"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        Pharmacy
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>
@@ -237,7 +331,6 @@ const DrpEduNavbar = () => {
               </Link>
             </li>
 
-            {/* Register Dropdown */}
             <li className={styles.dropdown}>
               <div
                 className={styles.dropdownToggle}
@@ -302,7 +395,6 @@ const DrpEduNavbar = () => {
         </div>
       </nav>
 
-      {/* Ant Design Modal with Form */}
       <Modal
         title={`Register for ${selectedService}`}
         open={modalVisible}

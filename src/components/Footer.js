@@ -244,8 +244,10 @@ const Footer = () => {
         <div className="footer-contact">
           <h3>Contact Us</h3>
           <p>
-            <strong>Address:</strong> 123 Main Street,
-            <br /> City, Country
+            <strong>Address:</strong> Shop no. 02, Dwarka Apartment, Professor
+            Colony,
+            <br /> Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra,Pin
+            No.- 424002
           </p>
           <p>
             <strong>Email:</strong>
@@ -275,7 +277,7 @@ const Footer = () => {
             </li>
           </ul>
           <p>
-            <strong>Phone:</strong> +91 7058857891
+            <strong>Phone:</strong> +91 9699657891
           </p>
         </div>
       </div>

@@ -223,3 +223,186 @@
     transform: rotate(180deg);
   }
 }
+/* =======================================
+   Navbar and General Styles
+   ======================================= */
+.navbar {
+  background-color: #010810; /* Dark background for the main navbar */
+  color: #fff;
+  padding: 1rem;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.navMenu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navMenu li a:hover,
+.navMenu li .active {
+  color: #ffc107; /* Yellow hover/active color */
+}
+
+/* =======================================
+   Dropdown Styles (First Level)
+   ======================================= */
+.dropdown {
+  position: relative;
+}
+
+.dropdownToggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdownMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #010810; /* Updated dropdown background color */
+  border: 1px solid #444;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* On hover, show the dropdown menu */
+.dropdown:hover > .dropdownMenu {
+  display: block;
+}
+
+.dropdownMenu li {
+  position: relative;
+}
+
+.dropdownMenu a,
+.dropdownMenu div {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #ffc107; /* Yellow text color */
+}
+
+.dropdownMenu a:hover,
+.dropdownMenu div:hover {
+  background-color: #444; /* Slightly lighter dark grey on hover */
+  color: #fff; /* White text on hover for contrast */
+}
+
+/* =======================================
+   Sub-Dropdown Styles (Second Level)
+   ======================================= */
+.subDropdown {
+  position: relative;
+}
+
+.subDropdownToggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: #ffc107; /* Yellow text color */
+}
+
+.subDropdownMenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Positions the menu to the right of its parent */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #010810; /* Updated sub-dropdown background color */
+  border: 1px solid #444;
+  min-width: 200px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+/* On hover, show the sub-dropdown menu */
+.subDropdown:hover > .subDropdownMenu {
+  display: block;
+}
+
+/* Style for links in the sub-dropdown */
+.subDropdownMenu li a {
+  color: #ffc107; /* Yellow text color */
+}
+
+.subDropdownMenu li a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* =======================================
+   Arrow Icon Rotation
+   ======================================= */
+.arrowIcon {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrowIcon,
+.subDropdown:hover .arrowIcon {
+  transform: rotate(-180deg);
+}
+/* ... Your existing styles for dropdown and subDropdown ... */
+
+.subSubDropdown {
+  position: relative;
+}
+
+.subSubDropdownToggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  color: #ffc107;
+}
+
+.subSubDropdownToggle:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+.subSubDropdownMenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #010810;
+  border: 1px solid #444;
+  min-width: 150px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1002;
+}
+
+/* On hover, show the sub-sub-dropdown menu */
+.subSubDropdown:hover > .subSubDropdownMenu {
+  display: block;
+}
