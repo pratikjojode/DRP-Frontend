@@ -131,6 +131,9 @@ const DrpEduNavbar = () => {
                   <Link to="/service1" onClick={() => setMenuOpen(false)}>
                     Abroad Education
                   </Link>
+                  <Link to="/service11" onClick={() => setMenuOpen(false)}>
+                    Attestation and Apostille (MEA)
+                  </Link>
                 </li>
                 <li>
                   <Link to="/service9" onClick={() => setMenuOpen(false)}>
