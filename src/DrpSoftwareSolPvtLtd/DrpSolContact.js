@@ -13,7 +13,11 @@ const DrpSolContact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  const address =
+    "Shop no. 02, Dwarka Apartment, Professor Colony, Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra, Pin No.- 424002";
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    address
+  )}`;
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -59,10 +63,17 @@ const DrpSolContact = () => {
             </p>
             <p>
               <strong>Phone:</strong>{" "}
-              <Link to="tel:+1234567890">+1 (234) 567-890</Link>
+              <Link to="tel:+919699657891">+91 9699657891</Link>
             </p>
             <p>
-              <strong>Address:</strong> 123 DrP Street, Tech City, TX 12345, USA
+              <strong>Address:</strong> Shop no. 02, Dwarka Apartment, Professor
+              Colony,
+              <br /> Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra,
+              Pin No.- 424002
+              <br />
+              <a href={mapLink} target="_blank" rel="noreferrer">
+                View on Map
+              </a>
             </p>
           </div>
         </div>

@@ -7,31 +7,25 @@ import "../styles/Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [registerDropdownOpen, setRegisterDropdownOpen] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedService, setSelectedService] = useState("");
   const [loading, setLoading] = useState(false);
   const [activeDropdowns, setActiveDropdowns] = useState([]);
   const [form] = Form.useForm();
 
-  // Function to toggle specific dropdown by ID
   const toggleDropdown = (dropdownId) => {
-    if (window.innerWidth <= 768) {
-      setActiveDropdowns((prevState) =>
-        prevState.includes(dropdownId)
-          ? prevState.filter((id) => id !== dropdownId)
-          : [...prevState, dropdownId]
-      );
-    }
+    setActiveDropdowns((prevState) =>
+      prevState.includes(dropdownId)
+        ? prevState.filter((id) => id !== dropdownId)
+        : [...prevState, dropdownId]
+    );
   };
 
-  // Check if dropdown is active
   const isDropdownActive = (dropdownId) => {
     return activeDropdowns.includes(dropdownId);
   };
 
   const showModal = (serviceName) => {
-    console.log("Selected service:", serviceName);
     setSelectedService(serviceName);
     setModalVisible(true);
   };
@@ -47,14 +41,14 @@ const Navbar = () => {
         "/api/v1/inquiry/contact-form-drp-register",
         values,
         {
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
-
       message.success(
         response.data.message || "Successfully submitted the form!"
       );
-
       setModalVisible(false);
       form.resetFields();
     } catch (error) {
@@ -70,12 +64,41 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setMenuOpen(false);
+    setActiveDropdowns([]);
   };
+
+  const handleMouseEnter = (dropdownId) => {
+    if (window.innerWidth > 768) {
+      setActiveDropdowns((prevState) =>
+        prevState.includes(dropdownId) ? prevState : [...prevState, dropdownId]
+      );
+    }
+  };
+
+  const handleMouseLeave = (dropdownId) => {
+    if (window.innerWidth > 768) {
+      setActiveDropdowns((prevState) =>
+        prevState.filter((id) => id !== dropdownId)
+      );
+    }
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest(".navbar")) {
+        closeMobileMenu();
+      }
+    };
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [menuOpen]);
 
   useEffect(() => {
     if (modalVisible) {
       form.resetFields();
-      form.setFieldsValue({ serviceName: selectedService });
+      form.setFieldsValue({
+        serviceName: selectedService,
+      });
     }
   }, [modalVisible, selectedService, form]);
 
@@ -94,19 +117,25 @@ const Navbar = () => {
           <button className="mobile-close" onClick={closeMobileMenu}>
             ✕
           </button>
-
           <li>
-            <NavLink to="/" activeClassName="active">
+            <NavLink
+              to="/"
+              onClick={closeMobileMenu}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Home
             </NavLink>
           </li>
-
-          <li className={`dropdown ${isDropdownActive("about") ? "show" : ""}`}>
+          <li
+            className={`dropdown ${isDropdownActive("about") ? "show" : ""}`}
+            onMouseEnter={() => handleMouseEnter("about")}
+            onMouseLeave={() => handleMouseLeave("about")}
+          >
             <span
               className="dropdown-toggle"
               onClick={() => toggleDropdown("about")}
             >
-              About▼ {isDropdownActive("about")}
+              About<span className="dropdown-arrow">▼</span>
             </span>
             <ul className="dropdown-menu-home">
               <li>
@@ -136,22 +165,24 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-
-          {/* Services Dropdown */}
           <li
             className={`dropdown ${isDropdownActive("services") ? "show" : ""}`}
+            onMouseEnter={() => handleMouseEnter("services")}
+            onMouseLeave={() => handleMouseLeave("services")}
           >
             <span
               className="dropdown-toggle"
               onClick={() => toggleDropdown("services")}
             >
-              Services▼ {isDropdownActive("services")}
+              Services<span className="dropdown-arrow">▼</span>
             </span>
             <ul className="dropdown-menu-home">
               <li
                 className={`sub-dropdown ${
                   isDropdownActive("education") ? "show" : ""
                 }`}
+                onMouseEnter={() => handleMouseEnter("education")}
+                onMouseLeave={() => handleMouseLeave("education")}
               >
                 <span
                   className="sub-dropdown-toggle"
@@ -160,7 +191,10 @@ const Navbar = () => {
                     toggleDropdown("education");
                   }}
                 >
-                  Education {isDropdownActive("education") ? "▼" : "▶"}
+                  Education{" "}
+                  <span className="sub-dropdown-arrow">
+                    {isDropdownActive("education") ? "▼" : "▶"}
+                  </span>
                 </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
@@ -181,11 +215,12 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-
               <li
                 className={`sub-dropdown ${
                   isDropdownActive("it-services") ? "show" : ""
                 }`}
+                onMouseEnter={() => handleMouseEnter("it-services")}
+                onMouseLeave={() => handleMouseLeave("it-services")}
               >
                 <span
                   className="sub-dropdown-toggle"
@@ -194,7 +229,10 @@ const Navbar = () => {
                     toggleDropdown("it-services");
                   }}
                 >
-                  IT Services {isDropdownActive("it-services") ? "▼" : "▶"}
+                  IT Services{" "}
+                  <span className="sub-dropdown-arrow">
+                    {isDropdownActive("it-services") ? "▼" : "▶"}
+                  </span>
                 </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
@@ -231,11 +269,12 @@ const Navbar = () => {
                   </li>
                 </ul>
               </li>
-
               <li
                 className={`sub-dropdown ${
                   isDropdownActive("training") ? "show" : ""
                 }`}
+                onMouseEnter={() => handleMouseEnter("training")}
+                onMouseLeave={() => handleMouseLeave("training")}
               >
                 <span
                   className="sub-dropdown-toggle"
@@ -244,7 +283,10 @@ const Navbar = () => {
                     toggleDropdown("training");
                   }}
                 >
-                  Training {isDropdownActive("training") ? "▼" : "▶"}
+                  Training{" "}
+                  <span className="sub-dropdown-arrow">
+                    {isDropdownActive("training") ? "▼" : "▶"}
+                  </span>
                 </span>
                 <ul className="sub-dropdown-menu-home">
                   <li>
@@ -299,29 +341,18 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-
           <li
             className={`dropdown ${isDropdownActive("register") ? "show" : ""}`}
-            onMouseEnter={() =>
-              window.innerWidth > 768 && setRegisterDropdownOpen(true)
-            }
-            onMouseLeave={() =>
-              window.innerWidth > 768 && setRegisterDropdownOpen(false)
-            }
+            onMouseEnter={() => handleMouseEnter("register")}
+            onMouseLeave={() => handleMouseLeave("register")}
           >
             <span
               className="dropdown-toggle"
               onClick={() => toggleDropdown("register")}
             >
-              Register Now▼ {isDropdownActive("register")}
+              Register Now<span className="dropdown-arrow">▼</span>
             </span>
-            <ul
-              className={`dropdown-menu-home ${
-                registerDropdownOpen || isDropdownActive("register")
-                  ? "show"
-                  : ""
-              }`}
-            >
+            <ul className="dropdown-menu-home">
               <li>
                 <button
                   className="dropdown-btn"
@@ -362,20 +393,29 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-
           <li>
-            <NavLink to="/contactHome" activeClassName="active">
+            <NavLink
+              to="/contactHome"
+              onClick={closeMobileMenu}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Contact Us
             </NavLink>
           </li>
           <li>
-            <NavLink to="/blogs" activeClassName="active">
+            <NavLink
+              to="/blogs"
+              onClick={closeMobileMenu}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Our Blogs
             </NavLink>
           </li>
         </ul>
       </div>
-
+      {menuOpen && (
+        <div className="mobile-backdrop" onClick={closeMobileMenu}></div>
+      )}
       <Modal
         title={`Register for ${selectedService}`}
         open={modalVisible}
@@ -400,7 +440,10 @@ const Navbar = () => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: "Please enter your email" }]}
+            rules={[
+              { required: true, message: "Please enter your email" },
+              { type: "email", message: "Please enter a valid email address" },
+            ]}
           >
             <Input type="email" placeholder="Enter your email" />
           </Form.Item>
@@ -413,12 +456,12 @@ const Navbar = () => {
           >
             <Input placeholder="Enter your phone number" />
           </Form.Item>
-          <Form.Item
-            label="Select Service"
-            name="serviceName"
-            initialValue={selectedService}
-          >
-            <Input placeholder="Enter service name" disabled />
+          <Form.Item label="Select Service" name="serviceName">
+            <Input
+              placeholder="Enter service name"
+              disabled
+              value={selectedService}
+            />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" block disabled={loading}>

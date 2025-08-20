@@ -235,7 +235,7 @@ const DrpSoftwareSolHome = () => {
       </div>
       <Footer />
       <Modal
-        title="Register for DRP Software Solutions Pvt Ltd"
+        title="Register for SAARDRP Software Solutions"
         open={isModalVisible}
         onCancel={handleCancel}
         footer={null}
@@ -245,7 +245,7 @@ const DrpSoftwareSolHome = () => {
         <Form
           layout="vertical"
           onFinish={handleFinish}
-          initialValues={{ serviceName: "DRP Software Solutions Pvt Ltd" }}
+          initialValues={{ serviceName: "SAARDRP Software Solutions " }}
           className="apply-form"
           form={form}
         >
@@ -293,8 +293,8 @@ const DrpSoftwareSolHome = () => {
             className="form-item"
           >
             <Select className="select-field">
-              <Option value=" DRP Software Solutions Pvt Ltd">
-                DRP Software Solutions Pvt Ltd
+              <Option value=" SAARDRP Software Solutions ">
+                SAARDRP Software Solutions
               </Option>
             </Select>
           </Form.Item>

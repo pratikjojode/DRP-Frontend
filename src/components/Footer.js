@@ -11,10 +11,10 @@ const Footer = () => {
   const handleRegister = async (values) => {
     setRegisterLoading(true);
     try {
-      const response = await axios.post("/api/v1/auth/register", values, {
+      await axios.post("/api/v1/auth/register", values, {
         headers: { "x-auth-token": localStorage.getItem("token") },
       });
-      message.success("Subscribed successfully to Drp check your email!!");
+      message.success("Subscribed successfully to Drp, check your email!");
     } catch (error) {
       message.error("Failed to register user");
     } finally {
@@ -22,9 +22,16 @@ const Footer = () => {
     }
   };
 
+  const address =
+    "Shop no. 02, Dwarka Apartment, Professor Colony, Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra, Pin No.- 424002";
+  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    address
+  )}`;
+
   return (
     <footer className="footer">
       <div className="footer-container">
+        {/* Logo & Copyright */}
         <div className="footer-logo">
           <img
             src={logo}
@@ -38,6 +45,7 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* Quick Links */}
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
@@ -69,21 +77,34 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Social Media */}
         <div className="footer-social">
           <h3>Follow Us</h3>
           <ul>
             <li>
-              <a href="https://www.facebook.com/profile.php?id=61573323855079">
+              <a
+                href="https://www.facebook.com/profile.php?id=61573323855079"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-facebook"></i> Facebook
               </a>
             </li>
             <li>
-              <a href="https://x.com/DrDRPGroup" target="_blank">
+              <a
+                href="https://x.com/DrDRPGroup"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-twitter"></i> Twitter
               </a>
             </li>
             <li>
-              <a href="www.linkedin.com/in/drdrpgroup" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/drdrpgroup"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <i className="fab fa-linkedin"></i> LinkedIn
               </a>
             </li>
@@ -91,6 +112,7 @@ const Footer = () => {
               <a
                 href="https://www.instagram.com/drdrpatilgroup/"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fab fa-instagram"></i> Instagram
               </a>
@@ -99,18 +121,17 @@ const Footer = () => {
               <a
                 href="https://www.youtube.com/channel/UCW9vVLLGyc6SeOP9YgZVECA"
                 target="_blank"
+                rel="noreferrer"
               >
                 <i className="fab fa-youtube"></i> Youtube
               </a>
             </li>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
           </ul>
         </div>
+
+        {/* Newsletter Subscription */}
         <div className="footer-register">
           <h3>Stay Updated! 📩 Subscribe to Our Newsletter</h3>
-
           <Form
             onFinish={handleRegister}
             layout="vertical"
@@ -137,12 +158,12 @@ const Footer = () => {
             </Form.Item>
             <Form.Item
               name="password"
-              rules={[{ required: true, message: "password is required" }]}
+              rules={[{ required: true, message: "Password is required" }]}
             >
               <Input
-                prefix={<i className="fas fa-envelope"></i>}
+                prefix={<i className="fas fa-lock"></i>}
                 type="password"
-                placeholder="Enter your  New password"
+                placeholder="Enter your new password"
               />
             </Form.Item>
             <Button
@@ -155,13 +176,14 @@ const Footer = () => {
             </Button>
           </Form>
         </div>
+
+        {/* SAARDRP India & Abroad Education */}
         <div className="footer-social">
+          <h4 className="footer-drp-abroad">
+            SAARDRP India & Abroad
+            <br /> Education
+          </h4>
           <ul>
-            <h4 className="footer-drp-abroad">
-              SAARDRPIndia&Abroad
-              <br />
-              Education
-            </h4>
             <li>
               <Link to="/service1">• Abroad Education</Link>
             </li>
@@ -180,45 +202,44 @@ const Footer = () => {
             <li>
               <Link to="/service10">• Dummy Ticket</Link>
             </li>
-
             <li>
               <Link to="/service5">• Accommodation</Link>
             </li>
           </ul>
         </div>
+
+        {/* SAARDRP Software Solutions */}
         <div className="footer-social">
           <h3 className="footer-ser">Our Services</h3>
+          <h4 className="footer-drp-sol">SAARDRP Software Solutions</h4>
           <ul>
-            <h4 className="footer-drp-sol">
-              SAARDRPSoftwareSolutions
-              <br />
-            </h4>
             <li>
               <Link to="/softwaresol/SoftwareDevelopment">
-                •Software Development
+                • Software Development
               </Link>
             </li>
             <li>
-              <Link to="/softwaresol/Training">•Traning</Link>
+              <Link to="/softwaresol/Training">• Training</Link>
             </li>
             <li>
               <Link to="/softwaresol/Internship">• Internship</Link>
             </li>
             <li>
-              <Link to="/softwaresol/projects">•Projects</Link>
+              <Link to="/softwaresol/projects">• Projects</Link>
             </li>
             <li>
               <Link to="/softwaresol/educ">• Educational</Link>
             </li>
           </ul>
         </div>
+
+        {/* SAARDRP Computer Education */}
         <div className="footer-social">
+          <h4 className="footer-drp-edu">
+            SAARDRP Computer
+            <br /> Education
+          </h4>
           <ul>
-            <h4 className="footer-drp-edu">
-              SAARDRPComputer
-              <br />
-              Education
-            </h4>
             <li>
               <Link to="/courses/Trending-Courses">• MSCIT</Link>
             </li>
@@ -241,20 +262,25 @@ const Footer = () => {
           </ul>
         </div>
 
+        {/* Contact Info */}
         <div className="footer-contact">
           <h3>Contact Us</h3>
           <p>
             <strong>Address:</strong> Shop no. 02, Dwarka Apartment, Professor
             Colony,
-            <br /> Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra,Pin
+            <br /> Opposite Chirantan Hospital, Devpur, Dhule, Maharashtra, Pin
             No.- 424002
+            <br />
+            <a href={mapLink} target="_blank" rel="noreferrer">
+              View on Map
+            </a>
           </p>
           <p>
             <strong>Email:</strong>
           </p>
           <ul>
             <li>
-              <a href="mailto:info@drp.com">info@drp.org.in</a>
+              <a href="mailto:info@drp.org.in">info@drp.org.in</a>
             </li>
             <li>
               <a href="mailto:indiaabroadedu@drp.org.in">
@@ -267,17 +293,20 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="mailto:comptraning@drp.com">comptraining@drp.org.in</a>
+              <a href="mailto:comptraining@drp.org.in">
+                comptraining@drp.org.in
+              </a>
             </li>
             <li>
-              <a href="mailto:ceo@drp.com">ceo@drp.org.in</a>
+              <a href="mailto:ceo@drp.org.in">ceo@drp.org.in</a>
             </li>
             <li>
-              <a href="mailto:support@drp.com">support@drp.org.in</a>
+              <a href="mailto:support@drp.org.in">support@drp.org.in</a>
             </li>
           </ul>
           <p>
-            <strong>Phone:</strong> +91 9699657891
+            <strong>Phone:</strong>
+            <a href="tel:+919699657891">+91 9699657891</a>
           </p>
         </div>
       </div>

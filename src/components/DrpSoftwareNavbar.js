@@ -86,6 +86,32 @@ const DrpSoftwareNavbar = () => {
     }
   };
 
+  // Helper function to check if a pathname is within a group of paths
+  const isActivePath = (paths) => {
+    return paths.includes(location.pathname);
+  };
+
+  const servicesPaths = [
+    "/softwaresol/SoftwareDevelopment",
+    "/softwaresol/Training",
+    "/softwaresol/Internship",
+    "/softwaresol/projects",
+    "/softwaresol/educ",
+  ];
+
+  const certificationsPaths = [
+    "/softwaresol/ManualTesting",
+    "/softwaresol/AutomationTesting",
+    "/softwaresol/JavaFullStackDevelopment",
+    "/softwaresol/SalesForce",
+    "/softwaresol/DataScience",
+    "/softwaresol/RESTAPITesting",
+    "/softwaresol/NetFullstackDevelopment",
+    "/softwaresol/ReactJsDevelopment",
+    "/softwaresol/RPA",
+    "/softwaresol/Hardware&Networking",
+  ];
+
   return (
     <>
       <div className="software-navbar">
@@ -94,7 +120,6 @@ const DrpSoftwareNavbar = () => {
             <Link to="/drpSoftwareSolutions&pvtltd">
               <img src={logoSoftware} alt="DRP Solution" className="logo" />
             </Link>
-            {/* Hamburger Icon */}
             <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
               {menuOpen ? (
                 <FiX size={30} color="white" />
@@ -102,8 +127,6 @@ const DrpSoftwareNavbar = () => {
                 <FiMenu size={30} color="white" />
               )}
             </div>
-
-            {/* Navigation Links */}
             <ul className={`software-navbar-ul ${menuOpen ? "open" : ""}`}>
               <li
                 className={location.pathname === "/" ? "active" : ""}
@@ -130,18 +153,9 @@ const DrpSoftwareNavbar = () => {
                 <Link to="/drpsoftwareabout">About</Link>
               </li>
 
-              {/* Services Dropdown */}
               <li
                 className={`dropdown-sol ${
-                  [
-                    "/softwaresol/SoftwareDevelopment",
-                    "/softwaresol/Training",
-                    "/softwaresol/Internship",
-                    "/softwaresol/projects",
-                    "/softwaresol/educ",
-                  ].includes(location.pathname)
-                    ? "active"
-                    : ""
+                  isActivePath(servicesPaths) ? "active" : ""
                 } ${servicesDropdown ? "dropdown-open" : ""}`}
                 onMouseEnter={() => !isMobile && setServicesDropdown(true)}
                 onMouseLeave={() => !isMobile && setServicesDropdown(false)}
@@ -230,20 +244,7 @@ const DrpSoftwareNavbar = () => {
 
               <li
                 className={`dropdown-sol ${
-                  [
-                    "/softwaresol/ManualTesting",
-                    "/softwaresol/AutomationTesting",
-                    "/softwaresol/JavaFullStackDevelopment",
-                    "/softwaresol/SalesForce",
-                    "/softwaresol/DataScience",
-                    "/softwaresol/RESTAPITesting",
-                    "/softwaresol/NetFullstackDevelopment",
-                    "/softwaresol/ReactJsDevelopment",
-                    "/softwaresol/RPA",
-                    "/softwaresol/Hardware&Networking",
-                  ].includes(location.pathname)
-                    ? "active"
-                    : ""
+                  isActivePath(certificationsPaths) ? "active" : ""
                 } ${certificationsDropdown ? "dropdown-open" : ""}`}
                 onMouseEnter={() =>
                   !isMobile && setCertificationsDropdown(true)
@@ -406,7 +407,6 @@ const DrpSoftwareNavbar = () => {
                 </ul>
               </li>
 
-              {/* Register Dropdown */}
               <li
                 className={`dropdown-sol ${
                   registerDropdown ? "dropdown-open" : ""
@@ -452,7 +452,6 @@ const DrpSoftwareNavbar = () => {
         </div>
       </div>
 
-      {/* Modal for Register */}
       <Modal
         title="Register for SAARDRP Software Solutions"
         open={isModalVisible}

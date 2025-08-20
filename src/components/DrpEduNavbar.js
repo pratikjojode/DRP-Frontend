@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Modal, Form, Input, Button, Spin, message } from "antd";
 import styles from "../styles/DrpEduNavbar.module.css";
@@ -7,10 +7,8 @@ import axios from "axios";
 
 const DrpEduNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
-  const [subDropdownOpen, setSubDropdownOpen] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState({});
   const [modalVisible, setModalVisible] = useState(false);
-  const [subSubDropdownOpen, setSubSubDropdownOpen] = useState(null);
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [selectedService, setSelectedService] = useState(
@@ -22,20 +20,11 @@ const DrpEduNavbar = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const toggleDropdown = (menu) => {
-    setDropdownOpen(dropdownOpen === menu ? null : menu);
-    setSubDropdownOpen(null); // Close any open sub-dropdowns
-  };
-
-  const toggleSubDropdown = (subDropdownName) => {
-    setSubDropdownOpen(
-      subDropdownOpen === subDropdownName ? null : subDropdownName
-    );
-  };
-  const toggleSubSubDropdown = (dropdownName) => {
-    setSubSubDropdownOpen(
-      subSubDropdownOpen === dropdownName ? null : dropdownName
-    );
+  const toggleDropdown = (menuId) => {
+    setDropdownOpen((prevState) => ({
+      ...prevState,
+      [menuId]: !prevState[menuId],
+    }));
   };
 
   const showRegisterModal = (service) => {
@@ -61,11 +50,9 @@ const DrpEduNavbar = () => {
           headers: { "Content-Type": "application/json" },
         }
       );
-
       message.success(
         response.data.message || "Successfully submitted the form!"
       );
-
       setModalVisible(false);
       form.resetFields();
     } catch (error) {
@@ -79,12 +66,47 @@ const DrpEduNavbar = () => {
     }
   };
 
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
+    setDropdownOpen({});
+  };
+
+  const handleMouseEnter = (menuId) => {
+    if (window.innerWidth > 768) {
+      setDropdownOpen((prevState) => ({
+        ...prevState,
+        [menuId]: true,
+      }));
+    }
+  };
+
+  const handleMouseLeave = (menuId) => {
+    if (window.innerWidth > 768) {
+      setDropdownOpen((prevState) => ({
+        ...prevState,
+        [menuId]: false,
+      }));
+    }
+  };
+
+  useEffect(() => {
+    if (modalVisible) {
+      form.resetFields();
+      form.setFieldsValue({ serviceName: selectedService });
+    }
+  }, [modalVisible, selectedService, form]);
+
   return (
     <>
       <nav className={styles.navbar}>
         <div className={styles.navbarContainer}>
           <Link to="/" className={styles.logo}>
-            <img src={logo} alt="Logo" className="logo-main-ok" width="250px" />
+            <img
+              src={logo}
+              alt="Logo"
+              className={styles.logoMainOk}
+              width="250px"
+            />
           </Link>
           <button className={styles.hamburger} onClick={toggleMenu}>
             ☰
@@ -95,7 +117,7 @@ const DrpEduNavbar = () => {
               <Link
                 to="/"
                 className={location.pathname === "/" ? styles.active : ""}
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Welcome!
               </Link>
@@ -108,13 +130,18 @@ const DrpEduNavbar = () => {
                     ? styles.active
                     : ""
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Home
               </Link>
             </li>
-
-            <li className={styles.dropdown}>
+            <li
+              className={`${styles.dropdown} ${
+                dropdownOpen["services"] ? styles.show : ""
+              }`}
+              onMouseEnter={() => handleMouseEnter("services")}
+              onMouseLeave={() => handleMouseLeave("services")}
+            >
               <div
                 className={styles.dropdownToggle}
                 onClick={() => toggleDropdown("services")}
@@ -122,120 +149,111 @@ const DrpEduNavbar = () => {
                 <span>Services</span>
                 <span className={styles.arrowIcon}>▼</span>
               </div>
-              <ul
-                className={`${styles.dropdownMenu} ${
-                  dropdownOpen === "services" ? styles.show : ""
-                }`}
-              >
+              <ul className={styles.dropdownMenu}>
                 <li>
-                  <Link to="/service1" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service1" onClick={closeMobileMenu}>
                     Abroad Education
-                  </Link>
-                  <Link to="/service11" onClick={() => setMenuOpen(false)}>
-                    Attestation and Apostille (MEA)
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service9" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service11" onClick={closeMobileMenu}>
+                    Attestation and Apostille (MEA)
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/service9" onClick={closeMobileMenu}>
                     Air Ticket Booking
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service7" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service7" onClick={closeMobileMenu}>
                     Travel and Tourism
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service6" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service6" onClick={closeMobileMenu}>
                     Passport & Visa
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service8" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service8" onClick={closeMobileMenu}>
                     Immigration
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service5" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service5" onClick={closeMobileMenu}>
                     Accommodation
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service2" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service2" onClick={closeMobileMenu}>
                     Insurance
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service3" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service3" onClick={closeMobileMenu}>
                     SIM Cards
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service4" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service4" onClick={closeMobileMenu}>
                     Forex
                   </Link>
                 </li>
                 <li>
-                  <Link to="/service10" onClick={() => setMenuOpen(false)}>
+                  <Link to="/service10" onClick={closeMobileMenu}>
                     Dummy Ticket
                   </Link>
                 </li>
               </ul>
             </li>
 
-            <li className={styles.dropdown}>
+            <li
+              className={`${styles.dropdown} ${
+                dropdownOpen["education"] ? styles.show : ""
+              }`}
+              onMouseEnter={() => handleMouseEnter("education")}
+              onMouseLeave={() => handleMouseLeave("education")}
+            >
               <div
-                className={`${styles.dropdownToggle} ${
-                  dropdownOpen === "education" ? styles.active : ""
-                }`}
+                className={styles.dropdownToggle}
                 onClick={() => toggleDropdown("education")}
               >
                 <span>Education ▼</span>
               </div>
-              <ul
-                className={`${styles.dropdownMenu} ${
-                  dropdownOpen === "education" ? styles.show : ""
-                }`}
-              >
-                {/* Medical Sub-Dropdown */}
-                <li className={styles.subDropdown}>
+              <ul className={styles.dropdownMenu}>
+                <li
+                  className={`${styles.subDropdown} ${
+                    dropdownOpen["medical"] ? styles.show : ""
+                  }`}
+                  onMouseEnter={() => handleMouseEnter("medical")}
+                  onMouseLeave={() => handleMouseLeave("medical")}
+                >
                   <div
-                    className={`${styles.subDropdownToggle} ${
-                      subDropdownOpen === "medical" ? styles.active : ""
-                    }`}
-                    onClick={() => toggleSubDropdown("medical")}
+                    className={styles.subDropdownToggle}
+                    onClick={() => toggleDropdown("medical")}
                   >
                     <span>Medical ▼</span>
                   </div>
-                  <ul
-                    className={`${styles.subDropdownMenu} ${
-                      subDropdownOpen === "medical" ? styles.show : ""
-                    }`}
-                  >
-                    {/* Single Dropdown for Medical Degrees */}
-                    <li className={styles.subSubDropdown}>
+                  <ul className={styles.subDropdownMenu}>
+                    <li
+                      className={`${styles.subSubDropdown} ${
+                        dropdownOpen["medicalDegrees"] ? styles.show : ""
+                      }`}
+                      onMouseEnter={() => handleMouseEnter("medicalDegrees")}
+                      onMouseLeave={() => handleMouseLeave("medicalDegrees")}
+                    >
                       <div
-                        className={`${styles.subSubDropdownToggle} ${
-                          subSubDropdownOpen === "medicalDegrees"
-                            ? styles.active
-                            : ""
-                        }`}
-                        onClick={() => toggleSubSubDropdown("medicalDegrees")}
+                        className={styles.subSubDropdownToggle}
+                        onClick={() => toggleDropdown("medicalDegrees")}
                       >
                         <span>MBBS/MD/MS/BAMS ▼</span>
                       </div>
-                      <ul
-                        className={`${styles.subSubDropdownMenu} ${
-                          subSubDropdownOpen === "medicalDegrees"
-                            ? styles.show
-                            : ""
-                        }`}
-                      >
-                        {/* Country links */}
+                      <ul className={styles.subSubDropdownMenu}>
                         <li>
                           <Link
                             to="/services/education/medical/degrees/india"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeMobileMenu}
                           >
                             India
                           </Link>
@@ -243,7 +261,7 @@ const DrpEduNavbar = () => {
                         <li>
                           <Link
                             to="/services/education/medical/degrees/usa"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeMobileMenu}
                           >
                             USA
                           </Link>
@@ -251,7 +269,7 @@ const DrpEduNavbar = () => {
                         <li>
                           <Link
                             to="/services/education/medical/degrees/uk"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeMobileMenu}
                           >
                             UK
                           </Link>
@@ -259,7 +277,7 @@ const DrpEduNavbar = () => {
                         <li>
                           <Link
                             to="/services/education/medical/degrees/canada"
-                            onClick={() => setMenuOpen(false)}
+                            onClick={closeMobileMenu}
                           >
                             Canada
                           </Link>
@@ -268,27 +286,24 @@ const DrpEduNavbar = () => {
                     </li>
                   </ul>
                 </li>
-
-                {/* Non-Medical Sub-Dropdown */}
-                <li className={styles.subDropdown}>
+                <li
+                  className={`${styles.subDropdown} ${
+                    dropdownOpen["non-medical"] ? styles.show : ""
+                  }`}
+                  onMouseEnter={() => handleMouseEnter("non-medical")}
+                  onMouseLeave={() => handleMouseLeave("non-medical")}
+                >
                   <div
-                    className={`${styles.subDropdownToggle} ${
-                      subDropdownOpen === "non-medical" ? styles.active : ""
-                    }`}
-                    onClick={() => toggleSubDropdown("non-medical")}
+                    className={styles.subDropdownToggle}
+                    onClick={() => toggleDropdown("non-medical")}
                   >
                     <span>Non-Medical ▼</span>
                   </div>
-                  <ul
-                    className={`${styles.subDropdownMenu} ${
-                      subDropdownOpen === "non-medical" ? styles.show : ""
-                    }`}
-                  >
-                    {/* Links for Non-Medical */}
+                  <ul className={styles.subDropdownMenu}>
                     <li>
                       <Link
                         to="/services/education/non-medical/ms"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         MS
                       </Link>
@@ -296,7 +311,7 @@ const DrpEduNavbar = () => {
                     <li>
                       <Link
                         to="/services/education/non-medical/phd-post-doc"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         PhD/Post Doc
                       </Link>
@@ -304,7 +319,7 @@ const DrpEduNavbar = () => {
                     <li>
                       <Link
                         to="/services/education/non-medical/diploma-etc"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         Dip/DE/GF/MEF
                       </Link>
@@ -312,7 +327,7 @@ const DrpEduNavbar = () => {
                     <li>
                       <Link
                         to="/services/education/non-medical/pharmacy"
-                        onClick={() => setMenuOpen(false)}
+                        onClick={closeMobileMenu}
                       >
                         Pharmacy
                       </Link>
@@ -328,13 +343,19 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/drpCoaching" ? styles.active : ""
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Coaching
               </Link>
             </li>
 
-            <li className={styles.dropdown}>
+            <li
+              className={`${styles.dropdown} ${
+                dropdownOpen["register"] ? styles.show : ""
+              }`}
+              onMouseEnter={() => handleMouseEnter("register")}
+              onMouseLeave={() => handleMouseLeave("register")}
+            >
               <div
                 className={styles.dropdownToggle}
                 onClick={() => toggleDropdown("register")}
@@ -342,18 +363,14 @@ const DrpEduNavbar = () => {
                 <span>Register Now</span>
                 <span className={styles.arrowIcon}>▼</span>
               </div>
-              <ul
-                className={`${styles.dropdownMenu} ${
-                  dropdownOpen === "register" ? styles.show : ""
-                }`}
-              >
+              <ul className={styles.dropdownMenu}>
                 <li
                   className={styles.drpppp}
                   onClick={() => {
                     showRegisterModal(
                       "SAARDRP India & Abroad Education and Recruitment Services"
                     );
-                    setMenuOpen(false);
+                    closeMobileMenu();
                   }}
                 >
                   SAARDRP India & Abroad Education and Recruitment Services
@@ -367,7 +384,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/drpEduBlogs" ? styles.active : ""
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Blogs
               </Link>
@@ -378,7 +395,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/contact" ? styles.active : ""
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Contact
               </Link>
@@ -389,7 +406,7 @@ const DrpEduNavbar = () => {
                 className={
                   location.pathname === "/feedback" ? styles.active : ""
                 }
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMobileMenu}
               >
                 Feedback
               </Link>
@@ -421,7 +438,10 @@ const DrpEduNavbar = () => {
           <Form.Item
             label="Email"
             name="email"
-            rules={[{ required: true, message: "Please enter your email" }]}
+            rules={[
+              { required: true, message: "Please enter your email" },
+              { type: "email", message: "Please enter a valid email address" },
+            ]}
           >
             <Input type="email" placeholder="Enter your email" />
           </Form.Item>
@@ -434,12 +454,12 @@ const DrpEduNavbar = () => {
           >
             <Input placeholder="Enter your phone number" />
           </Form.Item>
-          <Form.Item
-            label="Select Service"
-            name="serviceName"
-            initialValue={selectedService}
-          >
-            <Input placeholder="Enter service name" disabled />
+          <Form.Item label="Select Service" name="serviceName">
+            <Input
+              placeholder="Enter service name"
+              disabled
+              value={selectedService}
+            />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" block disabled={loading}>

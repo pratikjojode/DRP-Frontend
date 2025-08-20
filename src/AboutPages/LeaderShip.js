@@ -15,14 +15,14 @@ const leaders = [
     description:
       "With over 40 years of experience in the medical field, Dr. D. R. Patil brings a unique blend of expertise, innovation, and leadership to the world of technology and business. Leveraging a deep understanding of problem-solving and strategic development.",
   },
-  {
-    id: 2,
-    name: "Vishal Patil",
-    title: "Co-founder & CEO",
-    image: vishal,
-    description:
-      "Vishal is a highly accomplished Academic Professor with over 16 years of experience in training, including a decade of teaching at renowned colleges. He has extensive expertise in the entire product lifecycle and has served as a hands-on architect. At DRP Group, he oversees strategy, technology, and business development. Vishal holds a Master's degree in Computer Engineering and an MBA in Business Analysis from SPPU Pune. Vishal has founded a dynamic enterprise encompassing three key sectors:\n • Software Services\n • Consultancy\n • Computer Training Centre. Driven by a vision to bridge technology, education, and business excellence, Vishal is committed to fostering innovation, skill development, and digital transformation.",
-  },
+  // {
+  //   id: 2,
+  //   name: "Vishal Patil",
+  //   title: "Co-founder & CEO",
+  //   image: vishal,
+  //   description:
+  //     "Vishal is a highly accomplished Academic Professor with over 16 years of experience in training, including a decade of teaching at renowned colleges. He has extensive expertise in the entire product lifecycle and has served as a hands-on architect. At DRP Group, he oversees strategy, technology, and business development. Vishal holds a Master's degree in Computer Engineering and an MBA in Business Analysis from SPPU Pune. Vishal has founded a dynamic enterprise encompassing three key sectors:\n • Software Services\n • Consultancy\n • Computer Training Centre. Driven by a vision to bridge technology, education, and business excellence, Vishal is committed to fostering innovation, skill development, and digital transformation.",
+  // },
 ];
 
 const LeaderShip = () => {
