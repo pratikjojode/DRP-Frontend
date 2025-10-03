@@ -363,7 +363,8 @@ const Navbar = () => {
                     closeMobileMenu();
                   }}
                 >
-                  SAARDRP India & Abroad Education and Recruitment Services
+                  SAARDRP India & Abroad Education
+                  <br /> and Recruitment Services
                 </button>
               </li>
               <li>
@@ -388,6 +389,7 @@ const Navbar = () => {
                   }}
                 >
                   <span className="saar-text">SAAR</span>DRP Computer Education
+                  <br />
                   and Training Institute
                 </button>
               </li>

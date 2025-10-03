@@ -5,11 +5,19 @@ import "../styles/DrpCompNavbar.css";
 import complog from "../images/DRP_bann_new_comp.png";
 import { Button, Form, Input, message, Modal, Select } from "antd";
 import axios from "axios";
+
 const DrpCompNavbar = () => {
   const { Option } = Select;
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form] = Form.useForm();
+
+  const [openCourse, setOpenCourse] = useState(false);
+  const [certificationsDropdown, setCertificationsDropdown] = useState(false);
+  const [openRegister, setOpenRegister] = useState(false);
+  const [activeTab, setActiveTab] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -31,6 +39,7 @@ const DrpCompNavbar = () => {
       );
       form.resetFields();
       setIsModalVisible(false);
+      setMenuOpen(false);
     } catch (error) {
       message.error(
         error.response?.data?.message ||
@@ -40,13 +49,32 @@ const DrpCompNavbar = () => {
       setLoading(false);
     }
   };
+
   const location = useLocation();
 
-  const [openCourse, setOpenCourse] = useState(false);
-  const [activeTab, setActiveTab] = useState(null);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const handleDropdownToggle = (dropdownName) => {
+    if (dropdownName === "course") {
+      setOpenCourse((prev) => !prev);
+      setCertificationsDropdown(false);
+      setOpenRegister(false);
+    } else if (dropdownName === "certifications") {
+      setCertificationsDropdown((prev) => !prev);
+      setOpenCourse(false);
+      setOpenRegister(false);
+    } else if (dropdownName === "register") {
+      setOpenRegister((prev) => !prev);
+      setOpenCourse(false);
+      setCertificationsDropdown(false);
+    }
+  };
 
-  const [certificationsDropdown, setCertificationsDropdown] = useState(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenCourse(false);
+    setCertificationsDropdown(false);
+    setOpenRegister(false);
+  };
+
   const courses = [
     {
       name: "Trending Courses",
@@ -119,25 +147,30 @@ const DrpCompNavbar = () => {
       name: "AutoDesk CAD",
       link: "/courses/AutoDesk-CAD",
       subTabs: [
-        "1.AutoDesk CAD",
-        "2.AutoCAD",
-        "3.AutoCad Mechanical",
-        "4.AutoCad Civil",
-        "5.3Ds Max",
-        "6.Revit",
-        "7.Revit MEP",
-        "8.V-Ray",
+        "AutoDesk CAD",
+        "AutoCAD",
+        "AutoCad Mechanical",
+        "AutoCad Civil",
+        "3Ds Max",
+        "Revit",
+        "Revit MEP",
+        "V-Ray",
       ],
     },
   ];
 
   return (
     <>
+      {/* Overlay for mobile menu */}
+      {menuOpen && (
+        <div className="drp-overlay active" onClick={closeMenu}></div>
+      )}
+
       <nav className="drp-navbar">
         {/* Logo */}
         <div className="drp-logo">
           <Link to="/drpComputerEducation">
-            <img src={complog} alt="" />
+            <img src={complog} alt="DRP Computer Education" />
           </Link>
         </div>
 
@@ -148,12 +181,17 @@ const DrpCompNavbar = () => {
 
         {/* Navigation Links */}
         <ul className={`drp-nav-links ${menuOpen ? "active" : ""}`}>
+          {/* Close icon for mobile */}
+          <div className="drp-close-icon" onClick={closeMenu}>
+            ✕
+          </div>
+
           <li
             className={`drp-nav-item ${
               location.pathname === "/" ? "active" : ""
             }`}
           >
-            <Link to="/" className="drp-nav-link">
+            <Link to="/" className="drp-nav-link" onClick={closeMenu}>
               Welcome!
             </Link>
           </li>
@@ -162,47 +200,61 @@ const DrpCompNavbar = () => {
               location.pathname === "/drpComputerEducation" ? "active" : ""
             }`}
           >
-            <Link to="/drpComputerEducation" className="drp-nav-link">
+            <Link
+              to="/drpComputerEducation"
+              className="drp-nav-link"
+              onClick={closeMenu}
+            >
               Home
             </Link>
           </li>
-          {/* Courses Dropdown */}
+
+          {/* Courses Dropdown (Mega Menu) */}
           <li
             className={`drp-dropdown ${
               location.pathname.includes("/courses") ? "active" : ""
-            }`}
-            onMouseEnter={() => setOpenCourse(true)}
-            onMouseLeave={() => setOpenCourse(false)}
+            } ${openCourse ? "open" : ""}`}
+            onMouseEnter={() => !menuOpen && setOpenCourse(true)}
+            onMouseLeave={() => !menuOpen && setOpenCourse(false)}
           >
-            <button className="drp-dropbtn">Courses▼</button>
+            <button
+              className="drp-dropbtn"
+              onClick={() => menuOpen && handleDropdownToggle("course")}
+            >
+              Courses
+            </button>
 
-            {openCourse && (
-              <div className="drp-course-dropdown">
-                {courses.map((course, index) => (
-                  <div
-                    key={index}
-                    className="drp-course-tab"
-                    onMouseEnter={() => setActiveTab(index)}
-                    onMouseLeave={() => setActiveTab(null)}
+            <div className="drp-course-dropdown">
+              {courses.map((course, index) => (
+                <div
+                  key={index}
+                  className="drp-course-tab"
+                  onMouseEnter={() => setActiveTab(index)}
+                  onMouseLeave={() => setActiveTab(null)}
+                >
+                  <Link
+                    to={course.link}
+                    className="drp-course-title"
+                    onClick={closeMenu}
                   >
-                    <Link to={course.link} className="drp-course-title">
-                      {course.name}
-                    </Link>
+                    {course.name}
+                  </Link>
 
-                    {activeTab === index && (
-                      <div className="drp-sub-tabs">
-                        {course.subTabs.map((sub, subIndex) => (
-                          <div key={subIndex} className="drp-sub-tab">
-                            {sub}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
+                  {(activeTab === index || menuOpen) && (
+                    <div className="drp-sub-tabs">
+                      {course.subTabs.map((sub, subIndex) => (
+                        <div key={subIndex} className="drp-sub-tab">
+                          {sub}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </li>
+
+          {/* IT Certifications Dropdown */}
           <li
             className={`dropdown-sol ${
               [
@@ -219,169 +271,160 @@ const DrpCompNavbar = () => {
               ].includes(location.pathname)
                 ? "active"
                 : ""
-            }`}
-            onMouseEnter={() => setCertificationsDropdown(true)}
-            onMouseLeave={() => setCertificationsDropdown(false)}
+            } ${certificationsDropdown ? "open" : ""}`}
+            onMouseEnter={() => !menuOpen && setCertificationsDropdown(true)}
+            onMouseLeave={() => !menuOpen && setCertificationsDropdown(false)}
           >
-            <span className="dropdown-toggle-sol">IT Certifications▼</span>
-            {certificationsDropdown && (
-              <ul className="dropdown-menu-sol">
-                <li
-                  className={
-                    location.pathname === "/compTraning/ManualTesting"
-                      ? "active"
-                      : ""
-                  }
+            <span
+              className="dropdown-toggle-sol"
+              onClick={() => menuOpen && handleDropdownToggle("certifications")}
+            >
+              IT Certifications
+            </span>
+
+            <ul className="dropdown-menu-sol">
+              <li
+                className={
+                  location.pathname === "/compTraning/ManualTesting"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/ManualTesting" onClick={closeMenu}>
+                  Manual Testing
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/AutomationTesting"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/AutomationTesting" onClick={closeMenu}>
+                  Automation Testing (Python Or Java Selenium)
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/JavaFullStackDevelopment"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link
+                  to="/compTraning/JavaFullStackDevelopment"
+                  onClick={closeMenu}
                 >
-                  <Link
-                    to="/compTraning/ManualTesting"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Manual Testing
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/AutomationTesting"
-                      ? "active"
-                      : ""
-                  }
+                  Java Full Stack Development
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/SalesForce"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/SalesForce" onClick={closeMenu}>
+                  SalesForce
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/DataScience"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/DataScience" onClick={closeMenu}>
+                  Data Science
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/RESTAPITesting"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/RESTAPITesting" onClick={closeMenu}>
+                  REST API Testing
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/NetFullstackDevelopment"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link
+                  to="/compTraning/NetFullstackDevelopment"
+                  onClick={closeMenu}
                 >
-                  <Link
-                    to="/compTraning/AutomationTesting"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Automation Testing (Python Or Java Selenium)
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname ===
-                    "/compTraning/JavaFullStackDevelopment"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/JavaFullStackDevelopment"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Java Full Stack Development
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/SalesForce"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/SalesForce"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    SalesForce
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/DataScience"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/DataScience"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Data Science
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/RESTAPITesting"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/RESTAPITesting"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    REST API Testing
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/NetFullstackDevelopment"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/NetFullstackDevelopment"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    .Net Full Stack Development
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/ReactJsDevelopment"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/ReactJsDevelopment"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    React Js Development
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/RPA" ? "active" : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/RPA"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    RPA (Robotic Process Automation)
-                  </Link>
-                </li>
-                <li
-                  className={
-                    location.pathname === "/compTraning/Hardware&Networking"
-                      ? "active"
-                      : ""
-                  }
-                >
-                  <Link
-                    to="/compTraning/Hardware&Networking"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Hardware & Networking (CCNA, CCIE, CCNP)
-                  </Link>
-                </li>
-              </ul>
-            )}
+                  .Net Full Stack Development
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/ReactJsDevelopment"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/ReactJsDevelopment" onClick={closeMenu}>
+                  React Js Development
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/RPA" ? "active" : ""
+                }
+              >
+                <Link to="/compTraning/RPA" onClick={closeMenu}>
+                  RPA (Robotic Process Automation)
+                </Link>
+              </li>
+              <li
+                className={
+                  location.pathname === "/compTraning/Hardware&Networking"
+                    ? "active"
+                    : ""
+                }
+              >
+                <Link to="/compTraning/Hardware&Networking" onClick={closeMenu}>
+                  Hardware & Networking (CCNA, CCIE, CCNP)
+                </Link>
+              </li>
+            </ul>
           </li>
+
           {/* Register Dropdown */}
           <li
             className={`drp-dropdown ${
               location.pathname === "/register" ? "active" : ""
-            }`}
+            } ${openRegister ? "open" : ""}`}
+            onMouseEnter={() => !menuOpen && setOpenRegister(true)}
+            onMouseLeave={() => !menuOpen && setOpenRegister(false)}
           >
-            <button className="drp-dropbtn">Register▼</button>
+            <button
+              className="drp-dropbtn"
+              onClick={() => menuOpen && handleDropdownToggle("register")}
+            >
+              Register
+            </button>
             <div className="drp-dropdown-content">
               <Link
-                to=""
-                className={location.pathname === "/" ? "active" : ""}
-                onClick={showModal}
+                to="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  showModal();
+                  closeMenu();
+                }}
               >
-                Drp Computer Education And training Institute
+                Drp Computer Education
+                <br /> And training Institute
               </Link>
             </div>
           </li>
@@ -392,7 +435,11 @@ const DrpCompNavbar = () => {
               location.pathname === "/drpCompAbout" ? "active" : ""
             }`}
           >
-            <Link to="/drpCompAbout" className="drp-nav-link">
+            <Link
+              to="/drpCompAbout"
+              className="drp-nav-link"
+              onClick={closeMenu}
+            >
               About
             </Link>
           </li>
@@ -401,7 +448,11 @@ const DrpCompNavbar = () => {
               location.pathname === "/drpcompContact" ? "active" : ""
             }`}
           >
-            <Link to="/drpcompContact" className="drp-nav-link">
+            <Link
+              to="/drpcompContact"
+              className="drp-nav-link"
+              onClick={closeMenu}
+            >
               Contact
             </Link>
           </li>
@@ -409,7 +460,7 @@ const DrpCompNavbar = () => {
       </nav>
 
       <Modal
-        title="Register for  DRP Computer Education & Training Institute"
+        title="Register for DRP Computer Education & Training Institute"
         open={isModalVisible}
         onCancel={handleCancel}
         footer={null}
@@ -420,7 +471,7 @@ const DrpCompNavbar = () => {
           layout="vertical"
           onFinish={handleFinish}
           initialValues={{
-            serviceName: " DRP Computer Education & Training Institute",
+            serviceName: "DRP Computer Education & Training Institute",
           }}
           className="apply-form"
           form={form}

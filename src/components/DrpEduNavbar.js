@@ -373,7 +373,8 @@ const DrpEduNavbar = () => {
                     closeMobileMenu();
                   }}
                 >
-                  SAARDRP India & Abroad Education and Recruitment Services
+                  SAARDRP India & Abroad Education
+                  <br /> and Recruitment Services
                 </li>
               </ul>
             </li>
