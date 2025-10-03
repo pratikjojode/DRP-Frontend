@@ -13,6 +13,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
 .drp-navbar {
@@ -40,6 +47,7 @@
   width: 190px;
   max-height: 40px;
   display: block;
+  transition: width var(--transition-speed);
 }
 
 .drp-nav-links {
@@ -47,8 +55,6 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  margin: 0;
-  padding: 0;
 }
 
 .drp-nav-links li {
@@ -73,6 +79,7 @@
 .dropdown-toggle-sol {
   background: none;
   border: none;
+  font-family: inherit;
   color: var(--link-color);
   font-size: 16px;
   cursor: pointer;
@@ -147,7 +154,6 @@
 
 .drp-course-tab {
   width: calc(50% - 10px);
-  background-color: var(--navbar-bg);
 }
 
 .drp-course-title {
@@ -164,6 +170,7 @@
 }
 
 .drp-sub-tabs {
+  list-style: none;
   padding-left: 10px;
   margin-top: 5px;
   font-size: 14px;
@@ -206,6 +213,9 @@
   color: var(--link-color);
   transition: color var(--transition-speed);
   z-index: 1002;
+  padding: 5px;
+  border: none;
+  background: transparent;
 }
 
 .drp-menu-icon:hover {
@@ -226,8 +236,8 @@
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-speed),
-    visibility var(--transition-speed);
+  transition: opacity var(--transition-speed) ease,
+    visibility var(--transition-speed) ease;
 }
 
 .drp-overlay.active {
@@ -235,7 +245,19 @@
   visibility: visible;
 }
 
+/* =================================== */
+/* ========== MOBILE STYLES ========== */
+/* =================================== */
+
 @media (max-width: 992px) {
+  .drp-navbar {
+    padding: 10px 15px;
+  }
+
+  .drp-logo img {
+    width: 150px;
+  }
+
   .drp-menu-icon {
     display: block;
   }
@@ -243,12 +265,14 @@
   .drp-close-icon {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
     font-size: 28px;
     color: var(--link-color);
     cursor: pointer;
     z-index: 1003;
+    background: none;
+    border: none;
   }
 
   .drp-close-icon:hover {
@@ -258,22 +282,24 @@
   .drp-nav-links {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
+    transform: translateX(-100%);
     width: 280px;
-    height: 100vh;
+    max-width: 85vw;
+    height: 100dvh;
     background: var(--navbar-bg);
     flex-direction: column;
     align-items: flex-start;
     padding-top: 60px;
     gap: 0;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    transition: left var(--transition-speed) ease-in-out;
+    transition: transform var(--transition-speed) ease-in-out;
     overflow-y: auto;
     z-index: 1001;
   }
 
   .drp-nav-links.active {
-    left: 0;
+    transform: translateX(0);
   }
 
   .drp-nav-links li {
@@ -281,11 +307,11 @@
     border-bottom: 1px solid var(--border-color);
   }
 
-  .drp-nav-link {
-    width: 100%;
-    padding: 15px 20px;
+  .drp-nav-links li:first-child {
+    border-top: 1px solid var(--border-color);
   }
 
+  .drp-nav-link,
   .drp-dropbtn,
   .dropdown-toggle-sol {
     justify-content: space-between;
@@ -336,12 +362,20 @@
     border-bottom: 1px solid var(--border-color);
   }
 
+  .drp-course-tab:last-child {
+    border-bottom: none;
+  }
+
   .drp-course-title {
-    padding: 10px 30px;
+    padding: 12px 30px;
+  }
+
+  .drp-sub-tabs {
+    padding-left: 0;
   }
 
   .drp-sub-tab {
-    padding: 8px 40px;
+    padding: 10px 40px;
   }
 
   .dropdown-menu-sol,
@@ -361,7 +395,10 @@
   }
 }
 
-/* Modal Styles */
+/* =================================== */
+/* ========== MODAL STYLES =========== */
+/* =================================== */
+
 .apply-modal .ant-modal-content {
   background-color: var(--modal-bg);
   color: var(--link-color);
@@ -370,13 +407,22 @@
 
 .apply-modal .ant-modal-header {
   background-color: var(--navbar-bg);
-  border-bottom: 1px solid #333;
+  color: var(--link-color);
+  border-bottom: 1px solid var(--border-color);
   padding: 16px 24px;
+  border-radius: 8px 8px 0 0;
 }
 
 .apply-modal .ant-modal-title {
-  color: var(--link-color);
+  color: inherit;
   font-size: 18px;
+}
+
+.apply-modal .ant-modal-close-x {
+  color: var(--link-color);
+}
+.apply-modal .ant-modal-close-x:hover {
+  color: var(--link-hover-color);
 }
 
 .apply-modal .ant-form-item-label > label {
@@ -419,10 +465,6 @@
   background-color: #fce883 !important;
   border-color: #fce883 !important;
   color: #000 !important;
-}
-
-.apply-modal .ant-modal-close-x {
-  color: var(--link-color);
 }
 
 .apply-modal .ant-spin-dot-item {
